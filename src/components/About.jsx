@@ -1,6 +1,45 @@
 import about from "@/assets/images/about.jpg";
 
 export default function About() {
+    const benefits = [
+        {
+            id: 1,
+            icon: '🎓',
+            title: '30+ Years of Educational Excellence',
+            color: 'text-blue-600'
+        },
+        {
+            id: 2,
+            icon: '👨‍👩‍👧‍👦',
+            title: 'Student-Family Financing',
+            color: 'text-green-600'
+        },
+        {
+            id: 3,
+            icon: '💼',
+            title: 'High Earning Potential',
+            color: 'text-orange-600'
+        },
+        {
+            id: 4,
+            icon: '🤝',
+            title: '80+ Franchise Network',
+            color: 'text-purple-600'
+        },
+        {
+            id: 5,
+            icon: '📚',
+            title: 'End-to-End Implementation Support',
+            color: 'text-blue-600'
+        },
+        {
+            id: 6,
+            icon: '🏥',
+            title: '30+ in-House Healthcare Education Provider',
+            color: 'text-teal-600'
+        }
+    ];
+
     return (
         <section className="relative   overflow-hidden   py-10  ">
             {/* Floating Elements */}
@@ -31,36 +70,58 @@ export default function About() {
 
             <div className="container mx-auto relative z-10">
                 {/* Top Badge */}
-                <div className="flex items-center gap-2 mb-6 md:mb-8">
-                    <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
-                    <span className="text-orange-500 font-semibold text-sm md:text-base">
-                        Your Growth, Our Commitment
-                    </span>
-                </div>
+
 
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+
                     {/* Left Content */}
-                    <div className="space-y-6 md:space-y-8">
-                        <h1 className="text-3xl lg:text-4xl font-bold leading-tight">
-                            <span className="">Empowering the</span>
+                    <div className="space-y-6 md:space-y-3">
+                        <div className="flex items-center gap-2  ">
+                            <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                            <span className="text-orange-500 font-semibold text-sm md:text-base">
+                                Your Growth, Our Commitment
+                            </span>
+                        </div>
+                        <h2 className="text-3xl lg:text-4xl font-bold leading-tight">
+
+                            <span className="">Join our franchise opportunity</span>
                             <br />
-                            <span className="text-orange-500">Skilled Professionals</span>
-                            <br />of
-                            <span className="text-green-500"> Tomorrow</span>
-                        </h1>
+                            <span className="text-orange-500">to unlock entrepreneurial</span>
+                            <br />
+                            <span className=" "> success.</span>
+                        </h2>
 
-                        <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-xl">
-                            Welcome to IGCSM where we empower Future Professionals with
-                            Quality Education, Industry Expertise, and Career Opportunities
-                            through comprehensive skill development programs.
-                        </p>
+                        {/* <p className="text-gray-600 text-sm! leading-relaxed max-w-xl">
+                            Welcome to IGCSM where we empower aspiring professionals with quality education industry expertise and career opportunities.
+                        </p> */}
 
-                        <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                            <button className="bg-orange-500 hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform active:scale-97 shadow-lg hover:shadow-xl">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6 pt-4">
+                            {benefits.map((benefit) => (
+                                <div
+                                    key={benefit.id}
+                                    className="flex items-start gap-3 sm:gap-4 group"
+                                >
+                                    {/* Icon */}
+                                    <div className="flex-shrink-0 w-7 h-7 sm:w-10 sm:h-10 bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <span className="text-sm sm:text-xl">{benefit.icon}</span>
+                                    </div>
+
+                                    {/* Text */}
+                                    <div className="flex-1 pt-1">
+                                        <p className={`  font-semibold text-sm! sm:text-base leading-snug`}>
+                                            {benefit.title}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="flex flex-col justify-center sm:flex-row gap-4 pt-4">
+                            <button className="bg-orange-500 hover:bg-amber-600 text-white font-semibold px-6 py-1.5 rounded-lg transition-all duration-300 transform active:scale-97 shadow-lg hover:shadow-xl">
                                 Enquire Now
                             </button>
 
-                            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform active:scale-97 shadow-lg hover:shadow-xl">
+                            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-1.5 rounded-lg transition-all duration-300 transform active:scale-97 shadow-lg hover:shadow-xl">
                                 Call Us
                             </button>
                         </div>

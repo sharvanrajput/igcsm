@@ -1,10 +1,11 @@
 import React from 'react'
 import video from "@/assets/videos/banner.mp4"
+import LogoSlider from './LogoSlide'
 
 const Banner = () => {
     return (
-        <section className=' h-screen lg:h-[50vh] xl:h-screen  top-0 z-0'>
-            
+        <section className=' relative h-screen lg:h-[50vh] xl:h-full  top-0 z-0'>
+
             <div className="container">
                 <video
                     autoPlay
@@ -34,9 +35,19 @@ const Banner = () => {
                                 Welcome to IGCSM, where we empower future professionals through skill-based education, industry expertise, and career-oriented opportunities.
                             </p>
 
+
+
+
+
                         </div>
+
+                    </div>
+                    <div className="bg-white! relative rounded-lg! overflow-hidden ">
+
+                        <LogoSlider />
                     </div>
                 </div>
+
             </div>
         </section>
     )
