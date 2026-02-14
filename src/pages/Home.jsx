@@ -9,7 +9,7 @@ const Home = () => {
 
     return (
         <>
-c
+ 
 
             <Banner />
             <About />
