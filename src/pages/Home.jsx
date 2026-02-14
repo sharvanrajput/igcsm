@@ -9,8 +9,6 @@ const Home = () => {
 
     return (
         <>
- 
-
             <Banner />
             <About />
             {/* <Joinus /> */}
