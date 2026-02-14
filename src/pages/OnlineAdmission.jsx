@@ -8,7 +8,7 @@ const OnlineAdmission = () => {
         <section className='pt-35'>
             <div className="container">
 
-                <Tabs defaultValue="one"  >
+                <Tabs defaultValue="one" className={"pt-10"}  >
                     <TabsList className="grid w-full grid-cols-3 bg-gray-100 p-1 rounded-lg">
                         <TabsTrigger
                             value="one"
