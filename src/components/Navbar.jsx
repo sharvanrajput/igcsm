@@ -178,26 +178,26 @@
 //                                     {/* Dropdown Menu */}
 //                                     <div className="absolute left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-2 transition-all duration-300 overflow-hidden z-50">
 //                                         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
-//                                         <a href="/about" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+//                                         <a href="/about" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
 
 //                                             About &nbsp; IGCSM
 //                                         </a>
-//                                         <a href="/about" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+//                                         <a href="/about" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
 
 //                                             Our &nbsp; Mission &nbsp; & &nbsp; Vision
 //                                         </a>
-//                                         <a href="/about" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+//                                         <a href="/about" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
 
 //                                             From &nbsp; Founder's &nbsp; Desk
 //                                         </a>
-//                                         <a href="/about" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+//                                         <a href="/about" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
 
 //                                             Awards &nbsp; and &nbsp; Recognition
 //                                         </a>
-//                                         <a href="/about" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+//                                         <a href="/about" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
 //                                             Team &nbsp; IGCSM
 //                                         </a>
-//                                         <a href="/about" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+//                                         <a href="/about" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
 //                                             International &nbsp; Student &nbsp; Suport
 //                                         </a>
 
@@ -214,19 +214,19 @@
 
 //                                     <div className="absolute left-0 mt-2 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-2 transition-all duration-300 overflow-hidden z-50">
 //                                         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
-//                                         <a href="/hr-management" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+//                                         <a href="/hr-management" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
 //                                             HR Management
 //                                         </a>
-//                                         <a href="/payroll" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+//                                         <a href="/payroll" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
 //                                             Payroll Management
 //                                         </a>
-//                                         <a href="/recruitment" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+//                                         <a href="/recruitment" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
 //                                             Recruitment & Talent
 //                                         </a>
-//                                         <a href="/training" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+//                                         <a href="/training" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
 //                                             Corporate Training
 //                                         </a>
-//                                         <a href="/upskilling" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200">
+//                                         <a href="/upskilling" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200">
 //                                             Upskilling Programs
 //                                         </a>
 //                                     </div>
@@ -242,19 +242,19 @@
 
 //                                     <div className="absolute left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-2 transition-all duration-300 overflow-hidden z-50">
 //                                         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
-//                                         <a href="/blue-collar" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+//                                         <a href="/blue-collar" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
 //                                             Blue-Collar & Support
 //                                         </a>
-//                                         <a href="/construction" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+//                                         <a href="/construction" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
 //                                             Construction
 //                                         </a>
-//                                         <a href="/it" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+//                                         <a href="/it" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
 //                                             IT
 //                                         </a>
-//                                         <a href="/engineering" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+//                                         <a href="/engineering" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
 //                                             Engineering
 //                                         </a>
-//                                         <a href="/white-collar" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200">
+//                                         <a href="/white-collar" className="block px-3 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200">
 //                                             White-Collar Roles
 //                                         </a>
 //                                     </div>
@@ -393,7 +393,7 @@
 //                                     Contact
 //                                 </a>
 
-//                                 <button className="mx-4 mt-4 flex items-center justify-center gap-2 bg-linear-to-r from-orange-500 to-yellow-500   px-6 py-3 rounded-lg font-semibold text-sm">
+//                                 <button className="mx-4 mt-4 flex items-center justify-center gap-2 bg-linear-to-r from-orange-500 to-yellow-500   px-3 py-3 rounded-lg font-semibold text-sm">
 //                                     Get Started
 //                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 //                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -456,10 +456,13 @@
 
 // export default Navbar
 
-import React, { useState, useEffect } from 'react'
-import { ChevronDown, Menu, X, Phone, Mail } from 'lucide-react'
-import { Button } from './ui/button'
 import logo from "@/assets/images/logo.webp"
+import { ChevronDown, Menu, Phone, X } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import MegaDropdown from './MegaDropdown'
+import { Button } from './ui/button'
+import { ScrollArea } from './ui/scroll-area'
 
 const data = ["Students can now take direct admission in the skill course of their choice. Go to Apply Now for instant enrollment. "]
 
@@ -570,38 +573,34 @@ const Navbar = () => {
                         <div className=" ">
                             {/* Home */}
                             <div className='hidden lg:flex items-center justify-end '>
-                                <a
-                                    href="/"
+                                <Link to="/"
                                     className={`ps-4 py-1 ${animatenav ? "text-black" : "text-white"}  hover:text-orange-600 font-medium text-[12px] transition-all duration-200 relative group`}
                                 >
                                     Student Login
                                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
-                                </a>
+                                </Link>
 
 
                                 {/* Career */}
-                                <a
-                                    href="/career"
+                                <Link to="/career"
                                     className={`ps-4 py-1 ${animatenav ? "text-black" : "text-white"}  hover:text-orange-600 font-medium text-[12px] transition-all duration-200 relative group`}
                                 >
                                     Franchise Login
                                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
-                                </a>
+                                </Link>
 
                                 {/* Contact */}
-                                <a
-                                    href="/contact"
+                                <Link to="/contact"
                                     className={`ps-4 py-1 ${animatenav ? "text-black" : "text-white"}  hover:text-orange-600 font-medium text-[12px] transition-all duration-200 relative group`}
                                 >
                                     Apply Now
                                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
-                                </a>
+                                </Link>
                                 {/* Get Started Button */}
 
                             </div>
 
                             <div className='hidden lg:flex  items-center'>
-
                                 {/* About Dropdown */}
                                 <div className="relative group">
                                     <button className={`"px-4 py-2 me-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
@@ -611,112 +610,283 @@ const Navbar = () => {
                                     </button>
 
                                     {/* Dropdown Menu */}
-                                    <div className="absolute left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-2 transition-all duration-300 overflow-hidden z-50">
+                                    <div className="absolute py-3 left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-2 transition-all duration-300 overflow-hidden z-50">
                                         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
-                                        <a href="/about" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+                                        <div className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
+                                        <Link to="/about" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
 
-                                            About &nbsp; IGCSM
-                                        </a>
-                                        <a href="/about" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+                                            About   IGCSM
+                                        </Link>
+                                        <Link to="/about" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
 
-                                            Our &nbsp; Mission &nbsp; & &nbsp; Vision
-                                        </a>
-                                        <a href="/about" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+                                            Our  Mission   &   Vision
+                                        </Link>
+                                        <Link to="/about" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
 
-                                            From &nbsp; Founder's &nbsp; Desk
-                                        </a>
-                                        <a href="/about" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
+                                            From   Founder's   Desk
+                                        </Link>
+                                        <Link to="/about" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
 
-                                            Awards &nbsp; and &nbsp; Recognition
-                                        </a>
-                                        <a href="/about" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
-                                            Team &nbsp; IGCSM
-                                        </a>
-                                        <a href="/about" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
-                                            International &nbsp; Student &nbsp; Suport
-                                        </a>
+                                            Awards  and   Recognition
+                                        </Link>
+                                        <Link to="/about" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Team  IGCSM
+                                        </Link>
+                                        <Link to="/about" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            International   Student  Suport
+                                        </Link>
 
                                     </div>
                                 </div>
-
                                 {/* Services Dropdown */}
                                 <div className="relative group">
                                     <button className={`"px-4 py-2 me-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
-                                        Courses
+                                        Courses Category
                                         <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
                                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
                                     </button>
 
-                                    <div className="absolute left-0 mt-2 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-2 transition-all duration-300 overflow-hidden z-50">
+                                    <div className="absolute gap-0 py-3 left-0 mt-2 -translate-x-[40%]  w-200 pt-3   bg-white rounded-xl shadow-2xl    opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-2 transition-all duration-300 overflow-hidden z-50">
                                         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
-                                        <a href="/hr-management" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
-                                            HR Management
-                                        </a>
-                                        <a href="/payroll" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
-                                            Payroll Management
-                                        </a>
-                                        <a href="/recruitment" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
-                                            Recruitment & Talent
-                                        </a>
-                                        <a href="/training" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
-                                            Corporate Training
-                                        </a>
-                                        <a href="/upskilling" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200">
-                                            Upskilling Programs
-                                        </a>
+                                        <div className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
+                                        <p className="pb-2 mb-0 block  border-b border-green-500 text-orange-500  mx-3 v font-semibold">Select the category of courses</p>
+                                        <div className="grid xl:grid-cols-3 md:grid-cols-1 gap-0">
+                                            <div className="   ">
+                                                <Link to="/hr-management" className="inline-block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Software Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Web Designing Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Teacher Training Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Web Development Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Occupational Health Programs
+                                                </Link>
+
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Hardware & Networking Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="inline-block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Mobile App Development Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="inline-block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Multimedia & Animation Programs
+                                                </Link>
+
+                                            </div>
+                                             <div className="  ps-6">
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Accounting Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Beautician Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Management Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Photography Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Call Center Executive (CCE)
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Skill & Vocational Courses
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Fashion Designing Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Interior Designing Programs
+                                                </Link>
+
+
+                                            </div>
+                                            <div className="  w-65!">
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Yoga Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Handicraft Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Toy Making Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Architecture Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Spoken English Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Advance Computer Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Jewellery Designing Programs
+                                                </Link>
+                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                    Hotel & Hospitality Programs
+                                                </Link>
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                {/* <MegaDropdown animatenav={animatenav} /> */}
 
                                 {/* Industries Dropdown */}
                                 <div className="relative group">
-                                    <button className={`"px-4 py-2  ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
+                                    <button className={`"pl-4 py-2  ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
                                         Admission
                                         <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
                                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
                                     </button>
 
-                                    <div className="absolute left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-2 transition-all duration-300 overflow-hidden z-50">
+                                    <div className="absolute py-3 left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-2 transition-all duration-300 overflow-hidden z-50">
                                         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
-                                        <a href="/blue-collar" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
-                                            Blue-Collar & Support
-                                        </a>
-                                        <a href="/construction" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
-                                            Construction
-                                        </a>
-                                        <a href="/it" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
-                                            IT
-                                        </a>
-                                        <a href="/engineering" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200 border-b border-gray-50">
-                                            Engineering
-                                        </a>
-                                        <a href="/white-collar" className="block px-6 py-3.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm font-medium transition-all duration-200">
-                                            White-Collar Roles
-                                        </a>
+                                        <div className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Online Admission
+                                        </Link>
+
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Notice Board
+                                        </Link>
+
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Online Examination
+                                        </Link>
+
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Online Results
+                                        </Link>
+
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Payment Information
+                                        </Link>
+
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            IGCSM Sample Marksheet
+                                        </Link>
+
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            IGCSM Sample Certificate
+                                        </Link>
+
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            IGCSM Sample Verification
+                                        </Link>
+
+
+                                    </div>
+                                </div>
+                                <div className="relative group">
+                                    <button className={`pl-4 py-2  ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
+                                        Verification
+                                        <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+                                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
+                                    </button>
+
+                                    <div className="absolute py-3 left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-2 transition-all duration-300 overflow-hidden z-50">
+                                        <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
+                                        <div className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Admission Verification
+                                        </Link>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Result Verification
+                                        </Link>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Certificate Verification
+                                        </Link>
+
+
+
+                                    </div>
+                                </div>
+                                <div className="relative group">
+                                    <button className={`pl-4 py-2  ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
+                                        Franchise
+                                        <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+                                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
+                                    </button>
+
+                                    <div className="absolute py-3 left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-2 transition-all duration-300 overflow-hidden z-50">
+                                        <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
+                                        <div className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            India’s Best Franchise & it’s Benefits
+                                        </Link>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Apply for Franchise
+                                        </Link>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Terms & Conditions
+                                        </Link>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Download Franchise Brochure
+                                        </Link>
+
+
+
+
+                                    </div>
+                                </div>
+                                <div className="relative group">
+                                    <button className={`pl-4 py-2  ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
+                                        Downloads
+                                        <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+                                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
+                                    </button>
+
+                                    <div className="absolute py-3 left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-2 transition-all duration-300 overflow-hidden z-50">
+                                        <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
+                                        <div className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Student Application Form
+                                        </Link>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Centre Affiliation Form
+                                        </Link>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Agreement Sample
+                                        </Link>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Affiliation Certificate Sample
+                                        </Link>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Student Marksheet Sample
+                                        </Link>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Student Certificate Sample
+                                        </Link>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            IGCSM Brochure
+                                        </Link>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            IGCSM Information Voucher
+                                        </Link>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            IGCSM Centre Front Flex
+                                        </Link>
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            IGCSM Centre Office Backdrop Flex
+                                        </Link>
+
+
+
+
                                     </div>
                                 </div>
 
-                                {/* Career */}
-                                <a
-                                    href="/career"
-                                    className={`ps-4 py-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 relative group`}
-                                >
-                                    Verification
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
-                                </a>
-                                <a
-                                    href="/career"
-                                    className={`ps-4 py-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 relative group`}
-                                >
-                                    Franchise
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
-                                </a>
-                                <a
-                                    href="/career"
-                                    className={`ps-4 py-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 relative group`}
-                                >
-                                    Downloads
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
-                                </a>
+
+
+
                                 <a
                                     href="/career"
                                     className={`ps-4 py-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 relative group`}
@@ -755,7 +925,7 @@ const Navbar = () => {
 
                     {/* Mobile Menu */}
                     {isMobileMenuOpen && (
-                        <div className="lg:hidden pb-6 animate-slideDown">
+                        <div className="lg:hidden pb-6 animate-slideDown  ">
                             <div className="flex flex-col space-y-1 mt-4">
 
 
@@ -787,48 +957,140 @@ const Navbar = () => {
                                         onClick={() => toggleDropdown('services')}
                                         className="w-full px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all flex items-center justify-between"
                                     >
-                                        Services
+                                        COURSES
                                         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'services' ? 'rotate-180' : ''}`} />
                                     </button>
                                     {activeDropdown === 'services' && (
                                         <div className="pl-8 py-2 space-y-1 animate-slideDown">
-                                            <a href="/hr-management" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">HR Management</a>
-                                            <a href="/hr-management" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Payroll Management</a>
-                                            <a href="/hr-management" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Recruitment & Talent</a>
-                                            <a href="/hr-management" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Corporate Training</a>
-                                            <a href="/hr-management" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Upskilling Programs</a>
+                                            <ScrollArea className="h-50   rounded-md  ">
+
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> 	Teacher Training Programs		 </Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Advance Computer Programs </Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">	Software Programs  </Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Web Designing Programs 	 </Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">	Web Development Programs  </Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> 	Hardware & Networking Programs	</Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> 	Mobile App Development Programs		</Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">	Multimedia & Animation Programs </Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">	Accounting Programs		</Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">	Call Center Executive (CCE) </Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Fire Safety </Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">	Management Programs</Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> 	Photography Programs</Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> Skill & Vocational Courses</Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Fashion Designing Programs</Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Interior Designing Programs </Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Beautician Programs </Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Handicraft Programs </Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> Jewellery Designing Programs</Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Toy Making Programs </Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Spoken English Programs</Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Architecture Programs	</Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> Yoga Programs</Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Hotel & Hospitality Programs </Link>
+                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> Occupational Health Programs</Link>
+                                            </ScrollArea>
+
                                         </div>
                                     )}
                                 </div>
+
 
                                 {/* Mobile Industries Dropdown */}
                                 <div>
                                     <button
-                                        onClick={() => toggleDropdown('industries')}
+                                        onClick={() => toggleDropdown('ADMISSION')}
                                         className="w-full px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all flex items-center justify-between"
                                     >
-                                        Industries
-                                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'industries' ? 'rotate-180' : ''}`} />
+                                        ADMISSION
+                                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'ADMISSION' ? 'rotate-180' : ''}`} />
                                     </button>
-                                    {activeDropdown === 'industries' && (
+                                    {activeDropdown === 'ADMISSION' && (
                                         <div className="pl-3 py-2 space-y-1   animate-slideDown">
-                                            <a href="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Blue-Collar & Support</a>
-                                            <a href="/construction" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Construction</a>
-                                            <a href="/it" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">IT</a>
-                                            <a href="/engineering" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Engineering</a>
+                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Online Admission </Link>
+                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Notice Board </Link>
+                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Online Examination </Link>
+                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Online Results </Link>
+                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Payment Information </Link>
+                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">IGCSM Sample Marksheet </Link>
+                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">IGCSM Sample Certificate </Link>
+                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">IGCSM Sample Verification </Link>
+                                        </div>
+                                    )}
+                                </div>
+                                <div>
+                                    <button
+                                        onClick={() => toggleDropdown('VERIFICATION')}
+                                        className="w-full px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all flex items-center justify-between"
+                                    >
+                                        VERIFICATION
+                                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'VERIFICATION' ? 'rotate-180' : ''}`} />
+                                    </button>
+                                    {activeDropdown === 'VERIFICATION' && (
+                                        <div className="pl-3 py-2 space-y-1   animate-slideDown">
+                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Admission Verification</Link>
+                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Result Verification</Link>
+                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Certificate Verification</Link>
+                                        </div>
+                                    )}
+                                </div>
+                                <div>
+                                    <button
+                                        onClick={() => toggleDropdown('FRANCHISE')}
+                                        className="w-full px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all flex items-center justify-between"
+                                    >
+                                        FRANCHISE
+                                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'FRANCHISE' ? 'rotate-180' : ''}`} />
+                                    </button>
+                                    {activeDropdown === 'FRANCHISE' && (
+                                        <div className="pl-3 py-2 space-y-1   animate-slideDown">
+                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> India’s Best Franchise & it’s Benefits</Link>
+                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Apply for Franchise</Link>
+                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Terms & Conditions	</Link>
+                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Download Franchise Brochure</Link>
+                                        </div>
+                                    )}
+                                </div>
+                                <div>
+                                    <button
+                                        onClick={() => toggleDropdown('DOWNLOADS')}
+                                        className="w-full px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all flex items-center justify-between"
+                                    >
+                                        DOWNLOADS
+                                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'DOWNLOADS' ? 'rotate-180' : ''}`} />
+                                    </button>
+                                    {activeDropdown === 'DOWNLOADS' && (
+                                        <div className="pl-3 py-2 space-y-1   animate-slideDown">
+                                            <ScrollArea className="h-30   rounded-md  ">
+
+                                                <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Student Application Form </Link>
+                                                <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Centre Affiliation Form </Link>
+                                                <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> Agreement Sample </Link>
+                                                <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Affiliation Certificate Sample </Link>
+                                                <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> Student Marksheet Sample </Link>
+                                                <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> Student Certificate Sample </Link>
+                                                <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">IGCSM Brochure </Link>
+                                                <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">IGCSM Information Voucher </Link>
+                                                <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> IGCSM Centre Front Flex </Link>
+                                                <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> IGCSM Centre Office Backdrop Flex </Link>
+                                            </ScrollArea>
                                         </div>
                                     )}
                                 </div>
 
-                                <a href="/career" className="px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all">
-                                    Career
-                                </a>
 
-                                <a href="/contact" className="px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all">
-                                    Contact
-                                </a>
+                                <Link to="/career" className="px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all">
+                                    GALLERY
+                                </Link>
+                                <Link to="/career" className="px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all">
+                                    JOB UPDATES
+                                </Link>
+                                <Link to="/career" className="px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all">
+                                    CONTACT US
+                                </Link>
 
-                                <button className="mx-4 mt-4 flex items-center justify-center gap-2 bg-linear-to-r from-orange-500 to-yellow-500   px-6 py-3 rounded-lg font-semibold text-sm">
+
+                                <button className="mx-4 mt-4 flex items-center justify-center gap-2 bg-linear-to-r from-orange-500 to-yellow-500   px-3 py-3 rounded-lg font-semibold text-sm">
                                     Get Started
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -841,11 +1103,7 @@ const Navbar = () => {
             </div>
 
             <style jsx>{`
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-        
-        * {
-          font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+    
 
         @keyframes slideDown {
           from {

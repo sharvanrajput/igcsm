@@ -1,11 +1,13 @@
-import one from "@/assets/images/1.png"
+// import one from "@/assets/images/1.png"
 import two from "@/assets/images/2.png"
 import three from "@/assets/images/3.webp"
 import four from "@/assets/images/1.webp"
-import six from "@/assets/images/2.webp"
+import six from "@/assets/images/2.jpg"
 import seven from "@/assets/images/3.webp"
 import eight from "@/assets/images/4.webp"
 import nine from "@/assets/images/5.webp"
+import msme from "@/assets/images/five.png"
+import iso from "@/assets/images/iso.png"
 // import one from "@/assets/images/1.png"
 // import one from "@/assets/images/1.png"
 // import one from "@/assets/images/1.png"
@@ -16,14 +18,14 @@ import nine from "@/assets/images/5.webp"
 
 export default function LogoSlider() {
     const logos = [
-        one,
+        // one,
         two,
         three,
         four,
         six,
         seven,
         eight,
-        nine
+        nine, msme, iso
     ];
 
     return (

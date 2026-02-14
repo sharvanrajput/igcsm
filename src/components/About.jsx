@@ -1,6 +1,10 @@
 import about from "@/assets/images/about.jpg";
-
+import student1 from "@/assets/images/student1.png"
+import student2 from "@/assets/images/student2.png"
+import student3 from "@/assets/images/student3.png"
+import student4 from "@/assets/images/student4.png"
 export default function About() {
+
     const benefits = [
         {
             id: 1,
@@ -133,10 +137,18 @@ export default function About() {
                         <div className="absolute -top-5 md:top-1 left-0 md:-left-20 bg-white rounded-2xl shadow-xl p-2 md:p-3 z-20 animate-float-slow">
                             <div className="flex items-center gap-3">
                                 <div className="flex -space-x-2">
-                                    <div className="w-8 h-8 rounded-full bg-linear-to-br from-blue-400 to-blue-600 border-2 border-white"></div>
-                                    <div className="w-8 h-8 rounded-full bg-linear-to-br from-purple-400 to-purple-600 border-2 border-white"></div>
-                                    <div className="w-8 h-8 rounded-full bg-linear-to-br from-pink-400 to-pink-600 border-2 border-white"></div>
-                                    <div className="w-8 h-8 rounded-full bg-linear-to-br from-amber-400 to-amber-600 border-2 border-white"></div>
+                                    <div className="w-7 h-7 rounded-full  border-2  border-orange-500">
+                                        <img src={student1} className="w-full h-full" alt="" />
+                                    </div>
+                                    <div className="w-7 h-7 rounded-full  border-2  border-orange-500">
+                                        <img src={student2} className="w-full h-full" alt="" />
+                                    </div>
+                                    <div className="w-7 h-7 rounded-full  border-2  border-orange-500">
+                                        <img src={student3} className="w-full h-full" alt="" />
+                                    </div>
+                                    <div className="w-7 h-7 rounded-full  border-2  border-orange-500">
+                                        <img src={student4} className="w-full h-full" alt="" />
+                                    </div>
                                 </div>
                                 <div>
                                     <p className="text-xs md:text-sm! text-gray-500">Enrolled Students</p>

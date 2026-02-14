@@ -270,3 +270,43 @@
   width: 30px !important;
   border-radius: 10px !important;
 }
+
+.featured-courses-swiper .swiper-pagination {
+  bottom: 16px;
+  padding: 0 16px;
+}
+
+@media (min-width: 640px) {
+  .featured-courses-swiper .swiper-pagination {
+    bottom: 20px;
+    padding: 0 20px;
+  }
+}
+
+.featured-courses-swiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5);
+  width: 6px;
+  height: 6px;
+  opacity: 1;
+  margin: 0 3px;
+}
+
+@media (min-width: 640px) {
+  .featured-courses-swiper .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+  }
+}
+
+.featured-courses-swiper .swiper-pagination-bullet-active {
+  width: 20px;
+  border-radius: 4px;
+  background: #f59e0b !important;
+}
+
+@media (min-width: 640px) {
+  .featured-courses-swiper .swiper-pagination-bullet-active {
+    width: 24px;
+  }
+}

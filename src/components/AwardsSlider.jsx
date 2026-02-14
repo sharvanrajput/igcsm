@@ -1,5 +1,5 @@
 import React from 'react';
- 
+
 import 'swiper/css';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -15,7 +15,8 @@ import {
     FaUsers,
     FaStar
 } from "react-icons/fa";
- 
+import Counter from './Counter';
+
 
 export const awardsData = [
     {
@@ -61,10 +62,10 @@ const AwardsSlider = () => {
     // Sample awards data
 
     const statistics = [
-        { value: '30+', label: 'Years of Legacy' },
-        { value: '99%', label: 'Placement Success' },
-        { value: '100+', label: 'Centers Across India' },
-        { value: '500+', label: 'Placement Partners' },
+        { value: 30,  suffix:"+" , label: 'Years of Legacy' },
+        { value: 99,  suffix:"%" , label: 'Placement Success' },
+        { value: 100, suffix:"+" ,  label: 'Centers Across India' },
+        { value: 500, suffix:"+" ,  label: 'Placement Partners' },
     ];
 
     // Awards logos data
@@ -119,20 +120,21 @@ const AwardsSlider = () => {
                                 className="py-4 sm:py-5 md:py-6 text-center text-white"
                             >
                                 <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-1 sm:mb-2">
-                                    {stat.value}
+                                    <Counter end={stat.value} suffix={stat.suffix} />
                                 </h3>
                                 <p className="text-xs sm:text-sm md:text-base font-medium opacity-90">
                                     {stat.label}
                                 </p>
                             </div>
                         ))}
+                        {/* <Counter number={100} title="check" /> */}
                         {/* <CountUp end={100} /> */}
                     </div>
                 </div>
             </div>
 
             {/* Awards Section */}
-            <div className="bg-gray-50 py-12 sm:py-16 md:py-20">
+            <div className=" py-12 sm:py-16 md:pt-15 ">
                 <div className="container mx-auto px-4 sm:px-6 md:px-8">
                     {/* Section Title */}
                     <h2 className="text-2xl sm:text-3xl md:text-4xl  font-bold mb-3 sm:mb-4 md:mb-6 text-center leading-tight">               Awards & Achievements

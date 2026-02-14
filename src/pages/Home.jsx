@@ -2,20 +2,23 @@ import About from '@/components/About'
 import AwardsSlider from '@/components/AwardsSlider'
 import Banner from '@/components/Banner'
 import CoursesSection from '@/components/CoursesSection'
-import Joinus from '@/components/Joinus'
-import MissionVision from '@/components/MissionVision'
-import StatSection from '@/components/Stats'
+import Cta from '@/components/Cta'
+import WhyPartnerWithUs from '@/components/WhyPartnerWithUs'
 
 const Home = () => {
-    
+
     return (
         <>
+c
+
             <Banner />
             <About />
             {/* <Joinus /> */}
             {/* <MissionVision /> */}
             <AwardsSlider />
-            {/* <CoursesSection /> */}
+            <CoursesSection />
+            {/* <WhyPartnerWithUs /> */}
+            <Cta />
             {/* <StatSection /> */}
         </>
     )
