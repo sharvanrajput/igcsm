@@ -459,7 +459,7 @@
 import logo from "@/assets/images/logo.webp"
 import { ChevronDown, Menu, Phone, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import MegaDropdown from './MegaDropdown'
 import { Button } from './ui/button'
 import { ScrollArea } from './ui/scroll-area'
@@ -476,7 +476,7 @@ const Navbar = () => {
 
     const [animatenav, setanimatenav] = useState(false);
 
-
+    const location = useLocation()
 
     useEffect(() => {
         const handleScroll = () => {
@@ -485,10 +485,14 @@ const Navbar = () => {
 
         window.addEventListener("scroll", handleScroll);
         console.log(scrollY)
-        if (scrollY > 70) {
-            setanimatenav(true)
+        if (location.path == "/") {
+            if (scrollY > 70) {
+                setanimatenav(true)
+            } else {
+                setanimatenav(false)
+            }
         } else {
-            setanimatenav(false)
+            setanimatenav(true)
         }
 
         return () => {
@@ -679,7 +683,7 @@ const Navbar = () => {
                                                 </Link>
 
                                             </div>
-                                             <div className="  ps-6">
+                                            <div className="  ps-6">
                                                 <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
                                                     Accounting Programs
                                                 </Link>
@@ -750,7 +754,7 @@ const Navbar = () => {
                                     <div className="absolute py-3 left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-2 transition-all duration-300 overflow-hidden z-50">
                                         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
                                         <div className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
-                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                        <Link to="/online-admission" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
                                             Online Admission
                                         </Link>
 
@@ -1007,7 +1011,7 @@ const Navbar = () => {
                                     </button>
                                     {activeDropdown === 'ADMISSION' && (
                                         <div className="pl-3 py-2 space-y-1   animate-slideDown">
-                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Online Admission </Link>
+                                            <Link to="/online-admission" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Online Admission </Link>
                                             <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Notice Board </Link>
                                             <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Online Examination </Link>
                                             <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Online Results </Link>
