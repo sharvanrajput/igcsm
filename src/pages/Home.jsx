@@ -3,6 +3,9 @@ import AwardsSlider from '@/components/AwardsSlider'
 import Banner from '@/components/Banner'
 import CoursesSection from '@/components/CoursesSection'
 import Cta from '@/components/Cta'
+import ImageGallery from '@/components/GalarySection'
+import Reviews from '@/components/Reviews'
+import TeamSecton from '@/components/TeamSecton'
 import WhyPartnerWithUs from '@/components/WhyPartnerWithUs'
 
 const Home = () => {
@@ -15,7 +18,10 @@ const Home = () => {
             {/* <MissionVision /> */}
             <AwardsSlider />
             <CoursesSection />
-            {/* <WhyPartnerWithUs /> */}
+            <TeamSecton />
+            <ImageGallery />
+            <Reviews />
+
             <Cta />
             {/* <StatSection /> */}
         </>
