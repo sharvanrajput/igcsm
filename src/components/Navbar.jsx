@@ -477,6 +477,7 @@ const Navbar = () => {
     const [animatenav, setanimatenav] = useState(false);
 
     const location = useLocation()
+    const animatedPaths = ["/online-admission"];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -484,21 +485,20 @@ const Navbar = () => {
         };
 
         window.addEventListener("scroll", handleScroll);
-        console.log(scrollY)
-        if (location.path == "/") {
+        if (animatedPaths.includes(location.pathname)) {
+            setanimatenav(true)
+        } else {
             if (scrollY > 70) {
                 setanimatenav(true)
             } else {
                 setanimatenav(false)
             }
-        } else {
-            setanimatenav(true)
         }
-
+        
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, [scrollY]);
+    }, [scrollY, location.pathname]);
     const toggleDropdown = (menu) => {
         setActiveDropdown(activeDropdown === menu ? null : menu)
     }
@@ -569,7 +569,9 @@ const Navbar = () => {
                     <div className="flex items-center justify-between py-1">
                         {/* Logo */}
                         <div className="flex items-center gap-3 group pb-3">
-                            <img src={logo} alt="" width={270} />
+                            <Link to={"/"} >
+                                <img src={logo} alt="" width={270} />
+                            </Link>
 
                         </div>
 
