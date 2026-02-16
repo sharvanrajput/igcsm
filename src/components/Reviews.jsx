@@ -3,6 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { IoStar } from "react-icons/io5";
+
 import coma from "@/assets/images/coma.png"
 
 import s1 from "@/assets/images/s1.jpg"
@@ -32,7 +34,6 @@ const Reviews = () => {
             role: "Student",
             image: s2,
             msg: "igcsm में जुड़ना मेरे जीवन का सबसे अच्छा निर्णय था। यहाँ की शिक्षा और ट्रेनिंग से मुझे अपने करियर में आगे बढ़ने का आत्मविश्वास मिला है।"
-
         },
         {
             id: 3,
@@ -40,7 +41,6 @@ const Reviews = () => {
             role: "Student",
             image: s3,
             msg: " igcsm में कौशल विकास पर जोर दिया जाता है। यहाँ के कोर्स इंडस्ट्री से जुड़े हुए हैं और मुझे यहाँ से बहुत कुछ सीखने को मिला है।"
-
         },
         {
             id: 4,
@@ -48,7 +48,6 @@ const Reviews = () => {
             role: "Student",
             image: s4,
             msg: " igcsm में पढ़ाई का माहौल बहुत अच्छा है। शिक्षक बहुत जानकार हैं और हमेशा मदद के लिए तैयार रहते हैं। यहाँ के कोर्स लेटेस्ट इंडस्ट्री ट्रेंड्स के अनुसार हैं।"
-
         },
         {
             id: 5,
@@ -56,7 +55,6 @@ const Reviews = () => {
             role: "Student",
             image: s5,
             msg: "  मैं igcsm में दी गई ट्रेनिंग से बहुत खुश हूँ। यहाँ के कोर्स प्रैक्टिकल और इंडस्ट्री से रिलेटेड हैं, जिससे मुझे अपने करियर में बहुत मदद मिली है।"
-
         },
         {
             id: 6,
@@ -64,7 +62,6 @@ const Reviews = () => {
             role: "Student",
             image: s6,
             msg: " igcsm ने मेरी उम्मीदों से बढ़कर प्रदर्शन किया है। यहाँ की शिक्षा की गुणवत्ता और छात्रों की सफलता के प्रति उनकी प्रतिबद्धता बेजोड़ है।"
-
         },
         {
             id: 7,
@@ -72,7 +69,6 @@ const Reviews = () => {
             role: "Student",
             image: s7,
             msg: "  igcsm में सुविधाएँ और संसाधन बहुत अच्छे हैं। यहाँ सैद्धांतिक ज्ञान और प्रैक्टिकल ट्रेनिंग का सही मिश्रण है। मुझे स्नातक होने से पहले ही नौकरी मिल गई।"
-
         },
         {
             id: 8,
@@ -80,7 +76,6 @@ const Reviews = () => {
             role: "Student",
             image: s8,
             msg: " आईजीसीएसएम में मेरा अनुभव बहुत अच्छा रहा है। डीडीयू-जीकेवाई के तहत मुझे जो प्रशिक्षण मिला, उससे मुझे अच्छी नौकरी पाने में मदद मिली और अब मैं अच्छी कमाई कर रहा हूं।"
-
         },
         {
             id: 9,
@@ -88,7 +83,6 @@ const Reviews = () => {
             role: "Student",
             image: s9,
             msg: "  मैं एक गरीब परिवार से हूं जो गुजारा करने के लिए संघर्ष कर रहा है। आईजीसीएसएम में कौशल विकास पाठ्यक्रम में शामिल होने से मेरा जीवन बदल गया है। मैंने कभी कंप्यूटर लैब नहीं देखी थी और न ही उसमें काम किया था और इतने जीवंत वातावरण का अनुभव किया था। मैं भी अब काम शुरू कर रहा हूं.' मेरा जीवन बदलने के लिए आईजीसीएसएम टीम को धन्यवाद।"
-
         },
 
     ];
@@ -128,7 +122,7 @@ const Reviews = () => {
                         <SwiperSlide key={review.id} className="mb-10">
                             <div
                                 key={review.id}
-                                className="group relative overflow-hidden bg-green-100 shadow-md rounded-bl-4xl rounded-tr-4xl p-5  cursor-pointer"
+                                className="group relative overflow-hidden h-full bg-green-100 shadow-md rounded-bl-4xl rounded-tr-4xl p-5  cursor-pointer"
                                 onMouseEnter={() => setHoveredCard(review.id)}
                                 onMouseLeave={() => setHoveredCard(null)}
                             >
@@ -145,8 +139,13 @@ const Reviews = () => {
                                             className="w-17 h-17 object-cover rounded-full overflow-hidden transition-transform duration-700 group-hover:scale-110"
                                         />
                                         <div>
-                                            <p className='font-semibold '>{review.name}</p>
+                                            <p className='font-semibold pb-0! mb-0!'>{review.name}</p>
                                             <p className='text-sm!'>{review.role}</p>
+                                            <span className='text-sm! flex text-yellow-500'>
+                                                {[...Array(5)].map((_, i) => (
+                                                    <IoStar />
+                                                ))}
+                                            </span>
                                         </div>
                                     </div>
                                 </div>

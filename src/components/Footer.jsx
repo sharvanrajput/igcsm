@@ -3,119 +3,111 @@ import logo from "@/assets/images/logo.webp"
 import { Link } from 'react-router-dom'
 import { FaAngleRight } from "react-icons/fa";
 import { FaAngleDoubleRight } from "react-icons/fa";
+import { IoLocationSharp } from "react-icons/io5";
+import { BiSolidPhoneCall } from "react-icons/bi";
 
 const Footer = () => {
     return (
         <footer class="text-white bg-black body-font">
-            <div class="container   py-15 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="container   pt-15 pb-20 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
 
-                <div class="grid lg:grid-cols-5 md:grid-cols-3   -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                <div class="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1   -mb-10 md:mt-0 mt-10 md:text-left text-center">
 
-                    <div class=" md:ps-10  shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                    <div class=" md:ps-10 lg:col-span-2  shrink-0 md:mx-0 mx-auto text-center md:text-left">
                         <div className="logo flex  flex-col gap-3 justifycenter md:items-start items-center">
-                            <img src={logo} alt="Logo" className="w-[350px] h-auto" />
-                            <p className="text-lg text-orange-500 font-bold">Desert Talent Finders </p>
+                            <img src={logo} alt="Logo" className="w-[250px] h-auto" />
                         </div>
-                        <p class="mt-2 text-sm! text-white">Air plant banjo lyft occupy retro adaptogen indego</p>
+
+
+                        <p class="my-5 text-sm! text-white flex items-start gap-2 "> <IoLocationSharp className='flex-nowrap size-10 text-green-500 ' /> <span> IGCSM
+                            424, 4th Floor, DLF Prime Tower, Okhla Industrial Area, Phase 1, New Delhi 110020 </span></p>
+                        <p className="mt-2 !text-sm text-white flex items-center gap-2">
+                            <BiSolidPhoneCall className='flex-nowrap size-6 text-green-500 ' />
+                            <span>
+                                <Link href="tel:+919818841248">+91-9818-841-248</Link>
+                                {" , "}
+                                <Link href="tel:+919911065358">+91-9911-065-358</Link>
+                            </span>
+                        </p>
+
                     </div>
 
                     <div class="md:ps-10 ">
-                        <h2 class="title-font font-medium text-orange-500 tracking-widest text-lg mb-3">Quick links</h2>
+                        <h2 class="title-font font-medium text-orange-500 tracking-widest text-2xl mb-3">Our Glance</h2>
                         <nav class="list-none mb-10">
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2 '> <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
-                                <Link class="text-white text-xs hover:text-gray-300 ">Home  </Link>
+                                <Link class="text-white   hover:text-gray-300 ">Radio Ad  </Link>
                             </li>
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2 '>
                                 <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
-                                <Link class="text-white text-xs   hover:text-gray-300">About </Link>
+                                <Link class="text-white     hover:text-gray-300">Tv News </Link>
                             </li>
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
                                 <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
-                                <Link class="text-white text-xs  hover:text-gray-300"> Contact</Link>
+                                <Link class="text-white    hover:text-gray-300"> Newspaper Ad</Link>
                             </li>
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
                                 <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
-                                <Link class="text-white text-xs    hover:text-gray-300">
-                                Download</Link>
+                                <Link class="text-white     hover:text-gray-300">
+                                    Video Ad</Link>
                             </li>
-                             
+
 
                         </nav>
                     </div>
-                    <div class="md:ps-10 ">
-                        <h2 class="title-font font-medium text-orange-500 tracking-widest text-lg mb-3">Quick links
-                        </h2>
-                        <nav class="list-none mb-10">
-                             
 
-                            <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
-                                <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
-                                <Link class="text-white text-xs hover:text-gray-300"> WORKING WITH IGCSM</Link>
-                            </li>
-
-                            <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
-                                <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
-                                <Link class="text-white text-xs hover:text-gray-300"> JOB SEEKER FAQ</Link>
-                            </li>
-
-                        </nav>
-                    </div>
                     <div class=" md:ps-10">
-                        <h2 class="title-font font-medium text-orange-500 tracking-widest text-lg mb-3">Quick links</h2>
+                        <h2 class="title-font font-medium text-orange-500 tracking-widest text-2xl mb-3">Useful Link</h2>
                         <nav class="list-none mb-10">
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
                                 <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
-                                <Link class="text-white text-xs hover:text-gray-300"> the IGCSM advantage</Link>
+                                <Link class="text-white   hover:text-gray-300"> RTI</Link>
                             </li>
 
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
                                 <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
-                                <Link class="text-white text-xs hover:text-gray-300"> how we work</Link>
+                                <Link class="text-white   hover:text-gray-300"> Disclaimer</Link>
                             </li>
 
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
                                 <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
-                                <Link class="text-white text-xs hover:text-gray-300"> Industries</Link>
+                                <Link class="text-white   hover:text-gray-300"> Privacy Policy</Link>
                             </li>
 
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
                                 <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
-                                <Link class="text-white text-xs hover:text-gray-300"> Recruitment & HR Solutions</Link>
+                                <Link class="text-white   hover:text-gray-300">Terms & Conditions</Link>
                             </li>
-
-                            
-
                         </nav>
                     </div>
+
                     <div class="md:ps-10 ">
-                        <h2 class="title-font font-medium text-orange-500 tracking-widest text-lg mb-3">IGCSM</h2>
+                        <h2 class="title-font font-medium text-orange-500 tracking-widest text-2xl mb-3">Quick Link</h2>
                         <nav class="list-none mb-10">
-                            
+
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
                                 <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
-                                <Link class="text-white text-xs hover:text-gray-300"> Who we are</Link>
+                                <Link class="text-white   hover:text-gray-300">Coursese</Link>
                             </li>
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
                                 <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
-                                <Link class="text-white text-xs hover:text-gray-300"> RESOURCES</Link>
+                                <Link class="text-white   hover:text-gray-300"> FAQ</Link>
                             </li>
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
                                 <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
-                                <Link class="text-white text-xs hover:text-gray-300">careers @ IGCSM </Link>
+                                <Link class="text-white  hover:text-gray-300">Download </Link>
                             </li>
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
                                 <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
-                                <Link class="text-white text-xs hover:text-gray-300">EMPLOYER FAQ </Link>
+                                <Link class="text-white  hover:text-gray-300">Support Us </Link>
                             </li>
-                            <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
-                                <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
-                                <Link class="text-white text-xs hover:text-gray-300"> investors</Link>
-                            </li>
+
 
                         </nav>
                     </div>
                 </div>
             </div>
+
             <div class="bg-gray-900">
                 <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
                     <p class="text-white text-sm text-center sm:text-left">© {new Date().getFullYear()}  Desert Talent Finders  || All Rights Reserved
@@ -147,6 +139,7 @@ const Footer = () => {
                     </span>
                 </div>
             </div>
+
         </footer>
     )
 }
