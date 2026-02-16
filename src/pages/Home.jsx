@@ -18,9 +18,9 @@ const Home = () => {
             {/* <MissionVision /> */}
             <AwardsSlider />
             <CoursesSection />
-            <TeamSecton />
-            <ImageGallery />
-            <Reviews />
+            {/* <TeamSecton /> */}
+            {/* <ImageGallery /> */}
+            {/* <Reviews /> */}
 
             <Cta />
             {/* <StatSection /> */}
