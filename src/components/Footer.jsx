@@ -19,9 +19,9 @@ const Footer = () => {
                         </div>
 
 
-                        <p class="my-5 text-sm! text-white flex items-start gap-2 "> <IoLocationSharp className='flex-nowrap size-10 text-green-500 ' /> <span> IGCSM
+                        <p class="my-5  text-white flex  gap-2 "> <IoLocationSharp className='flex-nowrap size-10 text-green-500 ' /> <span> IGCSM
                             424, 4th Floor, DLF Prime Tower, Okhla Industrial Area, Phase 1, New Delhi 110020 </span></p>
-                        <p className="mt-2 !text-sm text-white flex items-center gap-2">
+                        <p className="mt-2  text-white flex  gap-2">
                             <BiSolidPhoneCall className='flex-nowrap size-6 text-green-500 ' />
                             <span>
                                 <Link href="tel:+919818841248">+91-9818-841-248</Link>
