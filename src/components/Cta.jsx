@@ -17,7 +17,7 @@ const Cta = () => {
                 </span>
               </div>
               <h2 data-aos="fade-right" data-aos-duration="600" className="text-2xl lg:text-4xl  font-bold   ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Join India’s leading education & skill-development network.
               </h2>
               <Button className={"bg-white text-black hover:bg-green-500"}>Enquire Now</Button>
             </div>

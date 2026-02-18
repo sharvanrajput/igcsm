@@ -35,19 +35,19 @@ const Footer = () => {
                     <div class="md:ps-10 ">
                         <h2 class="title-font font-medium text-orange-500 tracking-widest text-2xl mb-3">Our Glance</h2>
                         <nav class="list-none mb-10">
-                            <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2 '> <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
+                            <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2 '> 
                                 <Link class="text-white   hover:text-gray-300 ">Radio Ad  </Link>
                             </li>
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2 '>
-                                <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
+                                
                                 <Link class="text-white     hover:text-gray-300">Tv News </Link>
                             </li>
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
-                                <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
+                                
                                 <Link class="text-white    hover:text-gray-300"> Newspaper Ad</Link>
                             </li>
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
-                                <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
+                                
                                 <Link class="text-white     hover:text-gray-300">
                                     Video Ad</Link>
                             </li>
@@ -60,22 +60,22 @@ const Footer = () => {
                         <h2 class="title-font font-medium text-orange-500 tracking-widest text-2xl mb-3">Useful Link</h2>
                         <nav class="list-none mb-10">
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
-                                <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
+                                
                                 <Link class="text-white   hover:text-gray-300"> RTI</Link>
                             </li>
 
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
-                                <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
+                                
                                 <Link class="text-white   hover:text-gray-300"> Disclaimer</Link>
                             </li>
 
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
-                                <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
+                                
                                 <Link class="text-white   hover:text-gray-300"> Privacy Policy</Link>
                             </li>
 
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
-                                <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
+                                
                                 <Link class="text-white   hover:text-gray-300">Terms & Conditions</Link>
                             </li>
                         </nav>
@@ -86,19 +86,19 @@ const Footer = () => {
                         <nav class="list-none mb-10">
 
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
-                                <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
+                                
                                 <Link class="text-white   hover:text-gray-300">Coursese</Link>
                             </li>
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
-                                <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
+                                
                                 <Link class="text-white   hover:text-gray-300"> FAQ</Link>
                             </li>
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
-                                <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
+                                
                                 <Link class="text-white  hover:text-gray-300">Download </Link>
                             </li>
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
-                                <FaAngleDoubleRight className='text-orange-500 size-4 me-1' />
+                                
                                 <Link class="text-white  hover:text-gray-300">Support Us </Link>
                             </li>
 
