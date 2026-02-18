@@ -1,7 +1,7 @@
 import Breadcrumb from '@/components/about/Breadcrumb'
 import ChairmanMesage from '@/components/about/ChairmanMesage'
 import React from 'react'
-import chairman from "@/assets/images/chairmar.webp"
+import chairman from "@/assets/images/chairman.webp"
 
 const Chariman = () => {
   return (
