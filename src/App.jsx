@@ -8,6 +8,7 @@ import StudentRegistrationForm from './components/StudentRegistrationForm';
 import OnlineAdmission from './pages/OnlineAdmission';
 import About from './pages/about/About';
 import Chariman from './pages/about/Chariman';
+import Team from './pages/about/Team';
  
 // Import Swiper styles
 
@@ -22,6 +23,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/chairman-mesage' element={<Chariman />} />
+          <Route path='/team' element={<Team />} />
           <Route path='/online-admission' element={<OnlineAdmission />} />
           
         </Route>
