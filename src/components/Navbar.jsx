@@ -463,6 +463,7 @@ import { Link, useLocation } from 'react-router-dom'
 import MegaDropdown from './MegaDropdown'
 import { Button } from './ui/button'
 import { ScrollArea } from './ui/scroll-area'
+import { courseData } from "./data/courseData "
 
 const data = ["Students can now take direct admission in the skill course of their choice. Go to Apply Now for instant enrollment. "]
 
@@ -473,6 +474,7 @@ const Navbar = () => {
     const [activeDropdown, setActiveDropdown] = useState(null)
     const [isScrolled, setIsScrolled] = useState(false)
     const [scrollY, setScrollY] = useState(0);
+    const [courseCategory, setCourseCategory] = useState(null);
 
     const [animatenav, setanimatenav] = useState(false);
 
@@ -502,6 +504,22 @@ const Navbar = () => {
     const toggleDropdown = (menu) => {
         setActiveDropdown(activeDropdown === menu ? null : menu)
     }
+
+
+
+    useEffect(() => {
+
+        const categories = [];
+
+        courseData.forEach(item => {
+            categories.push(item.category);
+        });
+
+        setCourseCategory(categories)
+
+    }, [])
+
+
 
     return (
         <nav className={`w-full  fixed top-0 z-20 relaive ${animatenav && "shadow-lg"}  rounded-bl-2xl rounded-br-2xl`}>
@@ -656,88 +674,26 @@ const Navbar = () => {
                                         <div className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
                                         <p className="pb-2 mb-0 block  border-b border-green-500 text-orange-500  mx-3 v font-semibold">Select the category of courses</p>
                                         <div className="grid xl:grid-cols-3 md:grid-cols-1 gap-0">
-                                            <div className="   ">
-                                                <Link to="/hr-management" className="inline-block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Software Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Web Designing Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Teacher Training Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Web Development Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Occupational Health Programs
-                                                </Link>
-
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Hardware & Networking Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="inline-block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Mobile App Development Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="inline-block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Multimedia & Animation Programs
-                                                </Link>
-
+                                            <div className="">
+                                                {courseCategory?.slice(0, 8).map((data, i) => (
+                                                    <Link key={i} to={`/courses/${data.toLowerCase().replace(/\s+/g, "-")}`} className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                        {data}
+                                                    </Link>
+                                                ))}
                                             </div>
-                                            <div className="  ps-6">
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Accounting Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Beautician Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Management Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Photography Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Call Center Executive (CCE)
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Skill & Vocational Courses
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Fashion Designing Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Interior Designing Programs
-                                                </Link>
-
-
+                                            <div className="">
+                                                {courseCategory?.slice(8, 16).map((data, i) => (
+                                                    <Link key={i} to={`/courses/${data.toLowerCase().replace(/\s+/g, "-")}`} className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                        {data}
+                                                    </Link>
+                                                ))}
                                             </div>
-                                            <div className="  w-65!">
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Yoga Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Handicraft Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Toy Making Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Architecture Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Spoken English Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Advance Computer Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Jewellery Designing Programs
-                                                </Link>
-                                                <Link to="/hr-management" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                    Hotel & Hospitality Programs
-                                                </Link>
-
+                                            <div className="">
+                                                {courseCategory?.slice(16).map((data, i) => (
+                                                    <Link key={i} to={`/courses/${data.toLowerCase().replace(/\s+/g, "-")}`} className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                                        {data}
+                                                    </Link>
+                                                ))}
                                             </div>
                                         </div>
                                     </div>
@@ -759,7 +715,7 @@ const Navbar = () => {
                                             Online Admission
                                         </Link>
 
-                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                        <Link to="/notice-board" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
                                             Notice Board
                                         </Link>
 
@@ -968,32 +924,9 @@ const Navbar = () => {
                                     {activeDropdown === 'services' && (
                                         <div className="pl-8 py-2 space-y-1 animate-slideDown">
                                             <ScrollArea className="h-50   rounded-md  ">
-
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> 	Teacher Training Programs		 </Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Advance Computer Programs </Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">	Software Programs  </Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Web Designing Programs 	 </Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">	Web Development Programs  </Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> 	Hardware & Networking Programs	</Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> 	Mobile App Development Programs		</Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">	Multimedia & Animation Programs </Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">	Accounting Programs		</Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">	Call Center Executive (CCE) </Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Fire Safety </Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">	Management Programs</Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> 	Photography Programs</Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> Skill & Vocational Courses</Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Fashion Designing Programs</Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Interior Designing Programs </Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Beautician Programs </Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Handicraft Programs </Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> Jewellery Designing Programs</Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Toy Making Programs </Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Spoken English Programs</Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Architecture Programs	</Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> Yoga Programs</Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Hotel & Hospitality Programs </Link>
-                                                <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> Occupational Health Programs</Link>
+                                                {courseCategory?.map((data, i) => (
+                                                    <Link to={`/courses/${data.toLowerCase().replace(/\s+/g, "-")}`} key={importScripts} className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm"> 	{data}	 </Link>
+                                                ))}
                                             </ScrollArea>
 
                                         </div>
@@ -1013,13 +946,13 @@ const Navbar = () => {
                                     {activeDropdown === 'ADMISSION' && (
                                         <div className="pl-3 py-2 space-y-1   animate-slideDown">
                                             <Link to="/online-admission" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Online Admission </Link>
-                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Notice Board </Link>
-                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Online Examination </Link>
-                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Online Results </Link>
-                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Payment Information </Link>
-                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">IGCSM Sample Marksheet </Link>
-                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">IGCSM Sample Certificate </Link>
-                                            <Link to="/blue-collar" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">IGCSM Sample Verification </Link>
+                                            <Link to="/notice-board" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Notice Board </Link>
+                                            <Link to="" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Online Examination </Link>
+                                            <Link to="" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Online Results </Link>
+                                            <Link to="" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Payment Information </Link>
+                                            <Link to="" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">IGCSM Sample Marksheet </Link>
+                                            <Link to="" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">IGCSM Sample Certificate </Link>
+                                            <Link to="" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">IGCSM Sample Verification </Link>
                                         </div>
                                     )}
                                 </div>

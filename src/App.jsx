@@ -5,13 +5,15 @@ import { useEffect } from 'react';
 import Aos from 'aos';
 import "aos/dist/aos.css";
 import StudentRegistrationForm from './components/StudentRegistrationForm';
-import OnlineAdmission from './pages/OnlineAdmission';
+import OnlineAdmission from './pages/admission/OnlineAdmission';
 import About from './pages/about/About';
 import Chariman from './pages/about/Chariman';
 import Team from './pages/about/Team';
 import MissionVisionPage from './pages/about/MissionVisionPage';
 import AwardsandRecognition from './pages/about/AwardsandRecognition';
 import InternationalStudentSupport from './pages/about/InternationalStudentSupport';
+import Courses from './pages/Courses';
+import NoticeBoard from './pages/admission/NoticeBoard';
 
 // Import Swiper styles
 
@@ -32,9 +34,12 @@ const App = () => {
           <Route path='/team' element={<Team />} />
           <Route path='/international-student-support' element={<InternationalStudentSupport />} />
 
+          {/* courses */}
+          <Route path='/courses/:slug' element={<Courses />} />
 
-          {/*  */}
+          {/* admission   */}
           <Route path='/online-admission' element={<OnlineAdmission />} />
+          <Route path='/notice-board' element={<NoticeBoard />} />
 
         </Route>
       </Routes>
