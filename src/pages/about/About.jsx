@@ -12,7 +12,7 @@ const About = () => {
             <Breadcrumb Heading={"About IGCSM"} bg={about} path={"About IGCSM"} />
             <Aboutus />
             <MissionVision />
-            <Partners/>
+            <Partners />
         </>
     )
 }

@@ -9,6 +9,7 @@ import OnlineAdmission from './pages/OnlineAdmission';
 import About from './pages/about/About';
 import Chariman from './pages/about/Chariman';
 import Team from './pages/about/Team';
+import MissionVisionPage from './pages/about/MissionVisionPage';
  
 // Import Swiper styles
 
@@ -21,9 +22,14 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          {/* about pages */}
           <Route path='/about' element={<About />} />
+          <Route path='/mission-vision' element={<MissionVisionPage />} />
           <Route path='/chairman-mesage' element={<Chariman />} />
           <Route path='/team' element={<Team />} />
+
+
+          {/*  */}
           <Route path='/online-admission' element={<OnlineAdmission />} />
           
         </Route>

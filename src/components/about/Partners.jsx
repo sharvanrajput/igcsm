@@ -25,7 +25,7 @@ const Partners = () => {
     return (
         <section className='pt-10 relative'>
             <div className="container">
-                <div className="mb-4">
+                <div className="mb-2">
                     <div className="flex items-center gap-2 mb-2  ">
                         <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
                         <span className="text-orange-500 font-semibold text-sm md:text-base">
@@ -42,7 +42,7 @@ const Partners = () => {
                         {[...logos, ...logos].map((logo, i) => (
                             <div
                                 key={`logo-${i}`}
-                                className="w-[200px] h-[200px] p-3 shrink-0 flex items-center justify-center  rounded-xl bg-white"
+                                className="w-[200px] h-[150px] p-3 shrink-0 flex items-center justify-center  rounded-xl bg-white"
                             >
                                 <img
                                     src={logo}

@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from "react";
 
 const tabs = [
@@ -63,6 +61,8 @@ const tabs = [
 export default function MissionVision() {
     const [active, setActive] = useState("history");
     const [animating, setAnimating] = useState(false);
+    // ✅ NEW: track if user is hovering to pause auto-switch
+    const [paused, setPaused] = useState(false);
 
     const current = tabs.find((t) => t.id === active);
 
@@ -75,9 +75,25 @@ export default function MissionVision() {
         }, 250);
     };
 
+    // ✅ NEW: auto-switch tabs every 3 seconds, pauses on hover
+    useEffect(() => {
+        if (paused) return;
+        const interval = setInterval(() => {
+            setAnimating(true);
+            setTimeout(() => {
+                setActive((prev) => {
+                    const currentIndex = tabs.findIndex((t) => t.id === prev);
+                    const nextIndex = (currentIndex + 1) % tabs.length;
+                    return tabs[nextIndex].id;
+                });
+                setAnimating(false);
+            }, 250);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [paused]);
+
     return (
         <section
-        
             className="min-h-screen    flex items-center justify-center p-4 sm:p-8"
         >
             <style>{`
@@ -136,14 +152,8 @@ export default function MissionVision() {
         }
       `}</style>
 
-            <div className=" container   ">
-                {/* Heading */}
-                {/* <div className="mb-8 text-center">
-                    <p className="text-xs tracking-[0.3em] uppercase text-gray-500 mb-2">About us</p>
-                    <h2 className="text-3xl sm:text-4xl   font-bold">
-                        Who We <span style={{ color: "#f97316" }}>Are</span>
-                    </h2>
-                </div> */}
+            {/* ✅ NEW: onMouseEnter/Leave on the container to pause/resume auto-switch */}
+            <div className=" container   " onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
 
                 <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-stretch">
                     {/* LEFT: Image + Tabs */}
@@ -206,14 +216,7 @@ export default function MissionVision() {
                         >
                             {/* Title */}
                             <div className="flex items-center gap-3 mb-5">
-                                {/* <span
-                                    className="w-10 h-10 rounded-xl flex items-center justify-center   flex-shrink-0"
-                                    style={{ background: current.accent }}
-                                >
-                                    {current.icon}
-                                </span> */}
                                 <h2
-                                    
                                     className="text-2xl sm:text-3xl font-bold"
                                 >
                                     {current.title}
@@ -238,7 +241,6 @@ export default function MissionVision() {
                                     >
                                         <div
                                             className="text-2xl sm:text-3xl font-bold mb-1"
-                                            
                                         >
                                             {s.value}
                                         </div>
