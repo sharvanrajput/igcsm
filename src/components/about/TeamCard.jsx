@@ -68,7 +68,7 @@ const TeamCard = () => {
                                         <div className="absolute inset-0 bg-linear-to-t from-orange-600/70 via-orange-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                                         {/* Social icons — spring up from center on hover */}
-                                        <div className="absolute inset-0 flex items-center justify-center">
+                                        {/* <div className="absolute inset-0 flex items-center justify-center">
                                             <div className="flex gap-2.5 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
                                                 {socials.map(({ icon: Icon, label, hoverClass }) => (
                                                     <a
@@ -82,7 +82,7 @@ const TeamCard = () => {
                                                     </a>
                                                 ))}
                                             </div>
-                                        </div>
+                                        </div> */}
 
                                         {/* Orange sweep bar at image bottom */}
                                         <div className="absolute bottom-0 left-0 right-0 h-0.75 bg-linear-to-r from-orange-500 via-orange-400 to-amber-300 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out" />

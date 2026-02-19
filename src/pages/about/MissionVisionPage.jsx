@@ -5,7 +5,7 @@ import Partners from "@/components/about/Partners"
 const MissionVisionPage = () => {
   return (
     <>
-      <Breadcrumb Heading={"Our Mission & Vision "} bg={about} path={"About IGCSM"} />
+      <Breadcrumb Heading={"Our Mission & Vision "} bg={about} path={"Our Mission & Vision"} />
       <MissionVision />
       <Partners  />
     </>

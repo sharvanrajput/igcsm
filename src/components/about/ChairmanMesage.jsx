@@ -77,9 +77,9 @@ export default function ChairmanMessage() {
             className={`fade-up ${headerInView ? "visible" : ""}`}
           >
            
-            <h1 className="main-title">
+            <h2 className="main-title">
              Message from the  <em>Chairman</em>
-            </h1>
+            </h2>
             <div className="ornamental-divider">
               <div className="ornamental-diamond" />
               <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />

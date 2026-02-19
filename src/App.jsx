@@ -10,7 +10,9 @@ import About from './pages/about/About';
 import Chariman from './pages/about/Chariman';
 import Team from './pages/about/Team';
 import MissionVisionPage from './pages/about/MissionVisionPage';
- 
+import AwardsandRecognition from './pages/about/AwardsandRecognition';
+import InternationalStudentSupport from './pages/about/InternationalStudentSupport';
+
 // Import Swiper styles
 
 const App = () => {
@@ -26,12 +28,14 @@ const App = () => {
           <Route path='/about' element={<About />} />
           <Route path='/mission-vision' element={<MissionVisionPage />} />
           <Route path='/chairman-mesage' element={<Chariman />} />
+          <Route path='/awards-and-recognition' element={<AwardsandRecognition />} />
           <Route path='/team' element={<Team />} />
+          <Route path='/international-student-support' element={<InternationalStudentSupport />} />
 
 
           {/*  */}
           <Route path='/online-admission' element={<OnlineAdmission />} />
-          
+
         </Route>
       </Routes>
 

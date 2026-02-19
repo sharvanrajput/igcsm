@@ -494,7 +494,7 @@ const Navbar = () => {
                 setanimatenav(false)
             }
         }
-        
+
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
@@ -625,21 +625,20 @@ const Navbar = () => {
                                         </Link>
                                         <Link to="/mission-vision" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
 
-                                            Our  Mission   &   Vision
+                                            Our Mission &  Vision
                                         </Link>
                                         <Link to="/chairman-mesage" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
 
-                                            From   Founder's   Desk
+                                            From Founder's Desk
                                         </Link>
-                                        <Link to="/about" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-
-                                            Awards  and   Recognition
+                                        <Link to="/awards-and-recognition" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Awards and Recognition
                                         </Link>
                                         <Link to="/team" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                            Team  IGCSM
+                                            Team IGCSM
                                         </Link>
-                                        <Link to="/about" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                            International   Student  Suport
+                                        <Link to="/international-student-support" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            International Student Suport
                                         </Link>
 
                                     </div>
@@ -949,9 +948,9 @@ const Navbar = () => {
                                             <Link to="/about" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">About IGCSM</Link>
                                             <Link to="/mission-vision" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Our Mission & Vision</Link>
                                             <Link to="/chairman-mesage" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">From Founder's Desk</Link>
-                                            <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Awords and Recognition</Link>
+                                            <Link to="/awards-and-recognition" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Awords and Recognition</Link>
                                             <Link to="/team" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">Team IGCSM</Link>
-                                            <Link to="/" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">International Student Suport </Link>
+                                            <Link to="/international-student-support" className="block px-4 py-2 text-gray-600 hover:text-orange-600 text-sm">International Student Suport </Link>
                                         </div>
                                     )}
                                 </div>
