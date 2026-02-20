@@ -14,6 +14,8 @@ import AwardsandRecognition from './pages/about/AwardsandRecognition';
 import InternationalStudentSupport from './pages/about/InternationalStudentSupport';
 import Courses from './pages/Courses';
 import NoticeBoard from './pages/admission/NoticeBoard';
+import Contact from './pages/Contact';
+ 
 
 // Import Swiper styles
 
@@ -40,6 +42,9 @@ const App = () => {
           {/* admission   */}
           <Route path='/online-admission' element={<OnlineAdmission />} />
           <Route path='/notice-board' element={<NoticeBoard />} />
+
+          {/* contact */}
+          <Route path='/contact' element={<Contact />} />
 
         </Route>
       </Routes>

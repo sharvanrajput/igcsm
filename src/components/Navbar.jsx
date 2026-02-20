@@ -848,22 +848,22 @@ const Navbar = () => {
 
 
 
-                                <a
-                                    href="/career"
+                                <Link
+                                    to="/career"
                                     className={`ps-4 py-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 relative group`}
                                 >
                                     Job Updates
                                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
-                                </a>
+                                </Link>
 
                                 {/* Contact */}
-                                <a
-                                    href="/contact"
+                                <Link
+                                    to="/contact"
                                     className={`ps-4 py-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 relative group`}
                                 >
                                     Contact
                                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
-                                </a>
+                                </Link>
                                 {/* Get Started Button */}
 
                             </div>
@@ -1023,7 +1023,7 @@ const Navbar = () => {
                                 <Link to="/career" className="px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all">
                                     JOB UPDATES
                                 </Link>
-                                <Link to="/career" className="px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all">
+                                <Link to="/contact" className="px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all">
                                     CONTACT US
                                 </Link>
 
