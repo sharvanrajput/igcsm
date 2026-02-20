@@ -122,15 +122,14 @@ const AwardsSlider = () => {
                                 <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-1 sm:mb-2">
                                     <Counter end={stat.value} suffix={stat.suffix} />
                                 </h3>
-                                <p className="text-xs sm:text-sm md:text-base font-medium opacity-90">
+                                <p className="text-xs sm:text-sm md:text-base text-white font-medium opacity-90">
                                     {stat.label}
                                 </p>
                             </div>
                         ))}
-                        {/* <Counter number={100} title="check" /> */}
-                        {/* <CountUp end={100} /> */}
+                        
                     </div>
-                </div>
+                </div> 
             </div>
 
             {/* Awards Section */}

@@ -20,6 +20,11 @@ import PrivacyPolicy from './pages/Terms/PrivacyPolicy';
 import TermsAndCo from './pages/Terms/TermsAndCo';
 import Faq from './pages/Faq';
 import Rti from './pages/Terms/Rti';
+import Enquiry from './pages/OldPages/Enquiry';
+import HowToGetAffiliation from './pages/OldPages/HowToGetAffiliation';
+import Download from './pages/OldPages/Download';
+import OurApproval from './pages/OldPages/OurApproval';
+import SSCPartnership from './pages/OldPages/SSCPartnership';
 
 
 // Import Swiper styles
@@ -69,6 +74,12 @@ const App = () => {
           <Route path='/rti' element={<Rti />} />
           <Route path='/faq' element={<Faq />} />
 
+          {/* old pages path */}
+          <Route path='/enquiry' element={<Enquiry />} />
+          <Route path='/how-to-get-affiliation' element={<HowToGetAffiliation />} />
+          <Route path='/download' element={<Download />} />
+          <Route path='/our-approval' element={<OurApproval />} />
+          <Route path='/ssc-partnership' element={<SSCPartnership />} />
 
         </Route>
       </Routes>
