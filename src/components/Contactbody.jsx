@@ -155,7 +155,7 @@ export default function ContactBody() {
                             <div className="p-4 space-y-2">
                                 {card.items.map((item, j) => (
                                     <div key={j} className="info-row flex items-center gap-2 text-gray-600 text-sm cursor-pointer">
-                                        <span className="text-orange-500 flex-shrink-0">
+                                        <span className="text-orange-500 shrink-0">
                                             {item.type === "phone" ? <PhoneIcon /> : <EmailIcon />}
                                         </span>
                                         <span className="font-medium">{item.value}</span>
@@ -182,7 +182,7 @@ export default function ContactBody() {
                                 <span className="text-lg font-medium">+91-9990-617-617, +91-8860-094-657</span>
                             </div>
                             <div className="info-row flex items-start gap-3 text-gray-600 cursor-pointer">
-                                <span className="text-orange-500 mt-0.5 flex-shrink-0"><MapPinIcon /></span>
+                                <span className="text-orange-500 mt-0.5 shrink-0"><MapPinIcon /></span>
                                 <span className="text-lg font-medium">424, 4th Floor, DLF Prime Tower, Okhla Industrial Area, Phase 1, New Delhi 110020</span>
                             </div>
                         </div>

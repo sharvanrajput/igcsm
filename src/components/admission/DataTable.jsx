@@ -62,7 +62,7 @@ export function DataTable({
              focus:border-transparent 
              focus-visible:ring-0 
              focus-visible:outline-none"
-                    placeholder="Filter emails..."
+                    placeholder="Search Announcements"
                     value={(table.getColumn("announcements")?.getFilterValue()) ?? ""}
                     onChange={(event) =>
                         table.getColumn("announcements")?.setFilterValue(event.target.value)

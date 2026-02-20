@@ -15,6 +15,9 @@ import InternationalStudentSupport from './pages/about/InternationalStudentSuppo
 import Courses from './pages/Courses';
 import NoticeBoard from './pages/admission/NoticeBoard';
 import Contact from './pages/Contact';
+import JobUpdate from './pages/JobUpdate';
+import PrivacyPolicy from './pages/Terms/PrivacyPolicy';
+import TermsAndCo from './pages/Terms/TermsAndCo';
  
 
 // Import Swiper styles
@@ -45,6 +48,15 @@ const App = () => {
 
           {/* contact */}
           <Route path='/contact' element={<Contact />} />
+          {/* job updates */}
+          <Route path='/job-updates' element={<JobUpdate />} />
+
+
+
+          {/* popicies*/}
+          <Route path='/privacy-policy' element={<PrivacyPolicy/>} />
+          <Route path='/terms-and-condition' element={<TermsAndCo />} />
+
 
         </Route>
       </Routes>

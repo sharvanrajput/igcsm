@@ -4,12 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import about from "@/assets/images/aboutbg.webp"
 import Breadcrumb from "@/components/about/Breadcrumb";
 
+import ec from "@/assets/images/ec.webp"
+
 
 const TITP_CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,700&family=Outfit:wght@300;400;500;600&display=swap');
-
-  .titp-font-display { font-family: 'Cormorant Garamond', serif; }
-  .titp-font-body    { font-family: 'Outfit', sans-serif; }
 
   @keyframes titpFadeUp {
     from { opacity: 0; transform: translateY(36px); }
@@ -187,7 +185,7 @@ export default function InternationalStudentSupport() {
             <style>{TITP_CSS}</style>
 
 
-            <Breadcrumb Heading={"About IGCSM"} bg={IMGS.hero} path={"About IGCSM"} />
+            <Breadcrumb Heading={"International Student Suport "} bg={IMGS.hero} path={"International Student Suport"} />
 
 
             <section className="  relative overflow-hidden" style={{ background: "#FAF7F2" }} id="titp">
@@ -198,7 +196,7 @@ export default function InternationalStudentSupport() {
                 <div className="absolute rounded-full pointer-events-none blur-3xl"
                     style={{ width: 500, height: 500, bottom: 0, left: -150, background: "radial-gradient(circle, rgba(212,175,55,0.07) 0%, transparent 70%)" }} />
 
-                 
+
                 {/* ══ MAIN CONTENT ══ */}
                 <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 pb-20 sm:pb-28 pt-10">
 
@@ -226,10 +224,7 @@ export default function InternationalStudentSupport() {
                                     style={{ background: "radial-gradient(circle at top right, rgba(249,115,22,0.18), transparent 70%)" }} />
 
                                 <div className="flex items-start gap-4 mb-5">
-                                    <div className="shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-xl"
-                                        style={{ background: "rgba(249,115,22,0.1)" }}>
-                                        🤝
-                                    </div>
+                                   
                                     <div>
                                         <h2 className="text-2xl lg:text-3xl font-semibold leading-tight">Memorandum of Cooperation</h2>
                                         <p  >India – Japan · October 2017</p>
@@ -285,7 +280,7 @@ export default function InternationalStudentSupport() {
                     <div className="mb-20">
                         <Reveal className="mb-8">
                             <div className="flex items-center gap-3.5">
-                                <div className="w-8 h-px bg-orange-500" />
+                              
                                 <h2
                                     className="text-2xl sm:text-3xl font-semibold"
                                 >
@@ -333,10 +328,10 @@ export default function InternationalStudentSupport() {
                                     className="titp-card-hover rounded-xl p-6 text-center"
                                     style={{ background: "#fff", border: "1px solid rgba(249,115,22,0.12)", boxShadow: "0 2px 16px rgba(0,0,0,0.04)" }}
                                 >
-                                    <div className="titp-font-display text-4xl font-bold text-orange-500 leading-none mb-2">
+                                    <div className=" text-4xl font-bold text-orange-500 leading-none mb-2">
                                         <CountUp target={value} suffix={suffix} />
                                     </div>
-                                    <p className="titp-font-body text-[10px] uppercase tracking-widest text-stone-400 mt-1">{label}</p>
+                                    <p className="text-[10px] uppercase tracking-widest text-stone-400 mt-1">{label}</p>
                                 </div>
                             </Reveal>
                         ))}
@@ -363,8 +358,8 @@ export default function InternationalStudentSupport() {
                     <div className="mb-4">
                         <Reveal className="mb-8">
                             <div className="flex items-center gap-3.5">
-                                <div className="w-8 h-px bg-orange-500" />
-                                <h3 className="titp-font-display text-2xl sm:text-3xl font-bold text-stone-800">
+                                
+                                <h3 className=" text-2xl sm:text-3xl font-bold text-stone-800">
                                     Participating <em className="text-orange-500 not-italic">Countries</em>
                                 </h3>
                             </div>
@@ -404,18 +399,14 @@ export default function InternationalStudentSupport() {
 
                             {/* Map / globe visual */}
                             <Reveal dir="right" delay={100}>
-                                <div className="titp-img-zoom rounded-2xl overflow-hidden shadow-lg" style={{ height: 360, border: "1px solid rgba(249,115,22,0.12)" }}>
+                                <div className=" p-5 border border-orange-500 " >
                                     <img
-                                        src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=800&q=80"
+                                        src={ec}
                                         alt="World map globe"
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-contain"
                                         style={{ filter: "brightness(0.7) saturate(0.7)" }}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 pointer-events-none" style={{ position: "relative", marginTop: -360 }}>
-                                        <p className="titp-font-display text-2xl font-bold text-white leading-snug">
-                                            Including Japan some of the countries commonly associated with participating in the TITP program
-                                        </p>
-                                    </div>
+                                    
                                 </div>
                             </Reveal>
                         </div>

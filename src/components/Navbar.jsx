@@ -849,7 +849,7 @@ const Navbar = () => {
 
 
                                 <Link
-                                    to="/career"
+                                    to="/job-updates"
                                     className={`ps-4 py-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 relative group`}
                                 >
                                     Job Updates
@@ -1020,7 +1020,7 @@ const Navbar = () => {
                                 <Link to="/career" className="px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all">
                                     GALLERY
                                 </Link>
-                                <Link to="/career" className="px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all">
+                                <Link to="/job-updates" className="px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all">
                                     JOB UPDATES
                                 </Link>
                                 <Link to="/contact" className="px-4 py-3   hover:bg-orange-50 hover:text-orange-600 font-medium text-sm rounded-lg transition-all">
@@ -1040,24 +1040,6 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <style jsx>{`
-    
-
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-slideDown {
-          animation: slideDown 0.3s ease-out;
-        }
-      `}</style>
         </nav >
     )
 }
