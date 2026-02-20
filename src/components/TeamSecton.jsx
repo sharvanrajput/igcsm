@@ -123,7 +123,7 @@ export default function TeamSection() {
 
     return (
         <>
-            <section className="py-12 sm:py-16 relative" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            <section className="py-12 sm:py-16 relative" >
 
      
 
