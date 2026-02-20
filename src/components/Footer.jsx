@@ -61,22 +61,22 @@ const Footer = () => {
                         <nav className="list-none mb-10">
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
 
-                                <Link className="text-white   hover:text-gray-300"> RTI</Link>
+                                <Link to="/rti" className="text-white   hover:text-gray-300"> RTI</Link>
                             </li>
 
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
 
-                                <Link className="text-white   hover:text-gray-300"> Disclaimer</Link>
+                                <Link to="/" className="text-white   hover:text-gray-300"> Disclaimer</Link>
                             </li>
 
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
 
-                                <Link className="text-white   hover:text-gray-300"> Privacy Policy</Link>
+                                <Link to="/privacy-policy" className="text-white   hover:text-gray-300"> Privacy Policy</Link>
                             </li>
 
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
 
-                                <Link className="text-white   hover:text-gray-300">Terms & Conditions</Link>
+                                <Link to="/terms-and-condition" className="text-white   hover:text-gray-300">Terms & Conditions</Link>
                             </li>
                         </nav>
                     </div>
@@ -87,11 +87,11 @@ const Footer = () => {
 
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
 
-                                <Link className="text-white   hover:text-gray-300">Coursese</Link>
+                                <Link to={"/courses/software-programs"} className="text-white   hover:text-gray-300">Coursese</Link>
                             </li>
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
 
-                                <Link className="text-white   hover:text-gray-300"> FAQ</Link>
+                                <Link to={"/faq"} className="text-white   hover:text-gray-300"> FAQ</Link>
                             </li>
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
 

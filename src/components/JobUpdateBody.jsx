@@ -555,90 +555,9 @@ export default function JobUpdateBody() {
 
             <div className="    text-gray-900">
 
-                {/* ════════════════════════════════
-            HERO
-        ════════════════════════════════ */}
-                <section className="relative overflow-hidden bg-white border-b border-gray-100">
-                    {/* decorative blobs */}
-                    <div className="absolute top-0 right-0 w-96 h-96 dot-bg opacity-[0.035] pointer-events-none" />
-                    <div className="absolute -bottom-16 -left-16 w-72 h-72 bg-orange-100 rounded-full blur-3xl opacity-40 pointer-events-none" />
-                    <div className="absolute top-10 right-24 w-44 h-44 bg-amber-100 rounded-full blur-2xl opacity-50 pointer-events-none" />
+            
 
-                    <div className="max-w-6xl mx-auto px-6 py-20 md:py-28 flex flex-col md:flex-row items-center gap-14">
-
-                        {/* text */}
-                        <div className="flex-1">
-                            <div style={{ opacity: heroVis ? 1 : 0, transform: heroVis ? "translateY(0)" : "translateY(20px)", transition: "opacity .7s ease .1s,transform .7s ease .1s" }}>
-                                <span className="inline-flex items-center gap-2 text-orange-500 font-semibold text-sm bg-orange-50 border border-orange-100 px-4 py-1.5 rounded-full mb-5">
-                                    <BsPeopleFill size={13} /> We're Hiring — {JOBS.length} Open Roles
-                                </span>
-                            </div>
-
-                            <div style={{ opacity: heroVis ? 1 : 0, transform: heroVis ? "translateY(0)" : "translateY(20px)", transition: "opacity .7s ease .25s,transform .7s ease .25s" }}>
-                                <h1 className="font-display text-5xl md:text-[3.6rem] font-bold text-gray-900 leading-tight mb-5">
-                                    Build the Future<br />
-                                    <em className="text-orange-500 not-italic">With Us.</em>
-                                </h1>
-                            </div>
-
-                            <div style={{ opacity: heroVis ? 1 : 0, transform: heroVis ? "translateY(0)" : "translateY(20px)", transition: "opacity .7s ease .4s,transform .7s ease .4s" }}>
-                                <p className="text-gray-500 text-lg leading-relaxed max-w-lg mb-9">
-                                    Join a passionate team crafting products people love. We value curiosity, ownership, and bold thinking over titles.
-                                </p>
-                                <div className="flex items-center gap-4 flex-wrap">
-                                    <button
-                                        onClick={() => document.getElementById("openings")?.scrollIntoView({ behavior: "smooth" })}
-                                        className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-7 h-12 rounded-2xl font-semibold shadow-lg shadow-orange-200 transition-all duration-200 hover:-translate-y-0.5"
-                                    >
-                                        View Open Roles <BsArrowRight />
-                                    </button>
-                                    <span className="text-sm text-gray-400">6 positions · 4 cities</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* illustration */}
-                        <div
-                            className="hidden md:block float-anim  shrink-0"
-                            style={{ opacity: heroVis ? 1 : 0, transition: "opacity .7s ease .55s" }}
-                        >
-                            <div className="relative w-72 h-72">
-                                <div className="absolute inset-0 bg-linear-to-br from-orange-100 to-amber-50 rounded-3xl rotate-6 shadow-xl" />
-                                <div className="absolute inset-0 bg-linear-to-br from-orange-500 to-amber-400 rounded-3xl flex flex-col items-center justify-center gap-5 shadow-2xl shadow-orange-300">
-                                    <div className="grid grid-cols-2 gap-3">
-                                        {["🚀", "💡", "🎨", "🔧"].map((e, i) => (
-                                            <div key={i} className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-2xl">
-                                                {e}
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <p className="text-white font-bold text-xl tracking-wide">Dream Team</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* ════════════════════════════════
-            STATS BAR
-        ════════════════════════════════ */}
-
-
-                {/* ════════════════════════════════
-            PERKS
-        ════════════════════════════════ */}
-                <section className="max-w-6xl mx-auto px-6 py-20">
-                    <Reveal>
-                        <div className="text-center mb-12">
-                            <p className="text-orange-500 font-semibold text-sm tracking-widest uppercase mb-2">Why Join Us</p>
-                            <h2 className="font-display text-4xl font-bold text-gray-900">Life at Our Company</h2>
-                        </div>
-                    </Reveal>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {PERKS.map((p, i) => <PerkCard key={p.title} {...p} delay={i * 70} />)}
-                    </div>
-                </section>
-
+  
                 {/* ════════════════════════════════
             JOB LISTINGS
         ════════════════════════════════ */}
@@ -646,7 +565,6 @@ export default function JobUpdateBody() {
                     <div className="max-w-6xl mx-auto px-6">
                         <Reveal>
                             <div className="text-center mb-10">
-                                <p className="text-orange-500 font-semibold text-sm tracking-widest uppercase mb-2">Opportunities</p>
                                 <h2 className="font-display text-4xl font-bold text-gray-900">Open Positions</h2>
                                 <p className="text-gray-500 mt-3 max-w-md mx-auto">Find the role where you'll do your best work.</p>
                             </div>

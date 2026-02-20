@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation, useRoutes } from 'react-router-dom'
 import Layout from './layout/Layout'
 import Home from './pages/Home'
 import { useEffect } from 'react';
@@ -20,14 +20,22 @@ import PrivacyPolicy from './pages/Terms/PrivacyPolicy';
 import TermsAndCo from './pages/Terms/TermsAndCo';
 import Faq from './pages/Faq';
 import Rti from './pages/Terms/Rti';
- 
+
 
 // Import Swiper styles
 
 const App = () => {
+  const location = useLocation()
   useEffect(() => {
     Aos.init();
+
   }, []);
+  useEffect(() => {
+    window.scroll(0, 0)
+
+  }, [location.pathname]);
+
+
   return (
     <>
       <Routes>
@@ -56,7 +64,7 @@ const App = () => {
 
 
           {/* popicies*/}
-          <Route path='/privacy-policy' element={<PrivacyPolicy/>} />
+          <Route path='/privacy-policy' element={<PrivacyPolicy />} />
           <Route path='/terms-and-condition' element={<TermsAndCo />} />
           <Route path='/rti' element={<Rti />} />
           <Route path='/faq' element={<Faq />} />
