@@ -15,7 +15,7 @@ const Footer = () => {
 
                     <div className=" md:ps-10 lg:col-span-2  shrink-0 md:mx-0 mx-auto text-center md:text-left">
                         <div className="logo flex  flex-col gap-3 justifycenter md:items-start items-center">
-                            <img src={logo} alt="Logo" className="w-[250px] h-auto" />
+                            <img src={logo} alt="Logo" className="w-62.5 h-auto" />
                         </div>
 
 
@@ -35,19 +35,19 @@ const Footer = () => {
                     <div className="md:ps-10 ">
                         <h2 className="title-font font-medium text-orange-500 tracking-widest text-2xl mb-3">Our Glance</h2>
                         <nav className="list-none mb-10">
-                            <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2 '> 
+                            <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2 '>
                                 <Link className="text-white   hover:text-gray-300 ">Radio Ad  </Link>
                             </li>
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2 '>
-                                
+
                                 <Link className="text-white     hover:text-gray-300">Tv News </Link>
                             </li>
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
-                                
+
                                 <Link className="text-white    hover:text-gray-300"> Newspaper Ad</Link>
                             </li>
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
-                                
+
                                 <Link className="text-white     hover:text-gray-300">
                                     Video Ad</Link>
                             </li>
@@ -60,22 +60,22 @@ const Footer = () => {
                         <h2 className="title-font font-medium text-orange-500 tracking-widest text-2xl mb-3">Useful Link</h2>
                         <nav className="list-none mb-10">
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
-                                
+
                                 <Link className="text-white   hover:text-gray-300"> RTI</Link>
                             </li>
 
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
-                                
+
                                 <Link className="text-white   hover:text-gray-300"> Disclaimer</Link>
                             </li>
 
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
-                                
+
                                 <Link className="text-white   hover:text-gray-300"> Privacy Policy</Link>
                             </li>
 
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
-                                
+
                                 <Link className="text-white   hover:text-gray-300">Terms & Conditions</Link>
                             </li>
                         </nav>
@@ -86,19 +86,19 @@ const Footer = () => {
                         <nav className="list-none mb-10">
 
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
-                                
+
                                 <Link className="text-white   hover:text-gray-300">Coursese</Link>
                             </li>
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
-                                
+
                                 <Link className="text-white   hover:text-gray-300"> FAQ</Link>
                             </li>
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
-                                
+
                                 <Link className="text-white  hover:text-gray-300">Download </Link>
                             </li>
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
-                                
+
                                 <Link className="text-white  hover:text-gray-300">Support Us </Link>
                             </li>
 
@@ -110,7 +110,7 @@ const Footer = () => {
 
             <div className="bg-gray-900">
                 <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-                    <p className="text-white text-sm text-center sm:text-left">© {new Date().getFullYear()}  Desert Talent Finders  || All Rights Reserved
+                    <p className="text-white text-sm text-center sm:text-left">© {new Date().getFullYear()} indira gandhi computer saksharta mission  || All Rights Reserved
 
                     </p>
                     <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">

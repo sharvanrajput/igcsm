@@ -106,7 +106,7 @@ export default function About() {
                                     className="flex items-start gap-3 sm:gap-4 group"
                                 >
                                     {/* Icon */}
-                                    <div className="flex-shrink-0 w-7 h-7 sm:w-10 sm:h-10 bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <div className=" shrink-0 w-7 h-7 sm:w-10 sm:h-10 bg-linear-to-br from-orange-100 to-orange-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                                         <span className="text-sm sm:text-xl">{benefit.icon}</span>
                                     </div>
 

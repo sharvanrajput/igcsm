@@ -163,7 +163,7 @@ const CourseTable = ({ courses }) => {
                                     </span>
                                 </td>
                                 <td className="px-4 py-3">
-                                    <div className="flex flex-wrap gap-1 max-w-[200px]">
+                                    <div className="flex flex-wrap gap-1 max-w-50">
                                         {course.subjects.split(',').map((s, i) => (
                                             <span key={i} className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-500 whitespace-nowrap">
                                                 {s.trim()}

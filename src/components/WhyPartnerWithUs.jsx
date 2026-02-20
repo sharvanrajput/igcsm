@@ -74,7 +74,7 @@ const WhyPartnerWithUs = ({
                                         data-aos="fade-up"
                                         data-aos-delay={index * 100}
                                     >
-                                        <div className="flex-shrink-0 w-7 h-7 sm:w-10 sm:h-10 bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <div className=" shrink-0 w-7 h-7 sm:w-10 sm:h-10 bg-linear-to-br from-orange-100 to-orange-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                                             <span className="text-xl sm:text-xl">{benefit.icon}</span>
                                         </div>
                                         <div className="flex-1 pt-1">
@@ -93,15 +93,15 @@ const WhyPartnerWithUs = ({
                                 className="relative rounded-2xl  overflow-hidden shadow-2xl group cursor-pointer"
                                 onClick={() => setIsVideoOpen(true)}
                             >
-                                {/* Image with Gradient Overlay */}
-                                <div className="aspect-[4/3] relative bg-gradient-to-br from-teal-500 to-blue-700">
+                                {/* Image with linear Overlay */}
+                                <div className="aspect-4/3 relative bg-linear-to-br from-teal-500 to-blue-700">
                                     <img
                                         src={thumbnailImage}
                                         alt="Franchise Partner"
                                         className="w-full h-full object-cover"
                                     />
                                     {/* Dark Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent"></div>
 
                                     {/* Play Button with Ripple */}
                                     <div className="absolute inset-0 flex items-center justify-center">

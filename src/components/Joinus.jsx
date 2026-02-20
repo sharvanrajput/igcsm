@@ -43,7 +43,7 @@ const Joinus = () => {
     ];
 
     return (
-        <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 bg-linear-to-b from-gray-50 to-white overflow-hidden">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
                     {/* Left Side - Content */}
@@ -78,7 +78,7 @@ const Joinus = () => {
                                     className="flex items-start gap-3 sm:gap-4 group"
                                 >
                                     {/* Icon */}
-                                    <div className="flex-shrink-0 w-7 h-7 sm:w-10 sm:h-10 bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <div className="flex-shrink-0 w-7 h-7 sm:w-10 sm:h-10 bg-linear-to-br from-orange-100 to-orange-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                                         <span className="text-sm sm:text-xl">{benefit.icon}</span>
                                     </div>
 
@@ -97,8 +97,8 @@ const Joinus = () => {
                     <div className="relative mt-8 lg:mt-0">
                         {/* Main Image Container */}
                         <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
-                            {/* Background Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-teal-500 via-teal-600 to-blue-700 opacity-90"></div>
+                            {/* Background linear */}
+                            <div className="absolute inset-0 bg-linear-to-br from-teal-500 via-teal-600 to-blue-700 opacity-90"></div>
 
                             {/* Person Image Placeholder */}
                             <div className="relative  flex items-end justify-center">

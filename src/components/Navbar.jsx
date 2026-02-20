@@ -573,7 +573,7 @@ const Navbar = () => {
             {/* Desktop Navigation */}
 
             <div
-                className={`sticky top-0 z-50  ${isMobileMenuOpen && "bg-white"}  ${animatenav ? "bg-white rounded-bl-2xl rounded-br-2xl" : "trainsparent "} bg-trainparent transition-all duration-300  duration-100 transition-all    `}
+                className={`sticky top-0 z-50  ${isMobileMenuOpen && "bg-white"}  ${animatenav ? "bg-white rounded-bl-2xl rounded-br-2xl" : "trainsparent "} bg-trainparent transition-all duration-300       `}
             >
                 <div className="container">
                     <div className={` `}>

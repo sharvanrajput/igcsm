@@ -19,6 +19,7 @@ import JobUpdate from './pages/JobUpdate';
 import PrivacyPolicy from './pages/Terms/PrivacyPolicy';
 import TermsAndCo from './pages/Terms/TermsAndCo';
 import Faq from './pages/Faq';
+import Rti from './pages/Terms/Rti';
  
 
 // Import Swiper styles
@@ -57,6 +58,7 @@ const App = () => {
           {/* popicies*/}
           <Route path='/privacy-policy' element={<PrivacyPolicy/>} />
           <Route path='/terms-and-condition' element={<TermsAndCo />} />
+          <Route path='/rti' element={<Rti />} />
           <Route path='/faq' element={<Faq />} />
 
 

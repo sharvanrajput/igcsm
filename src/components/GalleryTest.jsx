@@ -28,8 +28,8 @@ const GalleryTest = () => {
 
       <div className='relative'>
         {/* gradient edges */}
-        <div className="absolute h-full w-[200px] left-0 top-0 bg-linear-to-r from-white/70 z-10 to-orange-50/0"></div>
-        <div className="absolute h-full w-[200px] right-0 top-0 bg-linear-to-l from-white/70 z-10 to-orange-50/0"></div>
+        <div className="absolute h-full w-50 left-0 top-0 bg-linear-to-r from-white/70 z-10 to-orange-50/0"></div>
+        <div className="absolute h-full w-50 right-0 top-0 bg-linear-to-l from-white/70 z-10 to-orange-50/0"></div>
 
         <div className="overflow-hidden py-3">
           <div className="flex w-max mx-auto items-center gap-5 animate-[scroll_20s_linear_infinite]">

@@ -309,7 +309,7 @@ function ApplyModal({ job, open, onClose }) {
             <DialogContent className="sm:max-w-lg rounded-3xl p-0 overflow-hidden border-0 shadow-2xl gap-0">
 
                 {/* ── Modal Header ── */}
-                <div className="bg-gradient-to-br from-orange-500 to-amber-500 px-7 pt-7 pb-6 relative">
+                <div className="bg-linear-to-br from-orange-500 to-amber-500 px-7 pt-7 pb-6 relative">
                     
 
                     <div className="flex items-center gap-2 mb-1">
@@ -548,7 +548,7 @@ export default function JobUpdateBody() {
         .float-anim { animation: floatY 4s ease-in-out infinite; }
 
         .dot-bg {
-          background-image: radial-gradient(circle, #f97316 1.2px, transparent 1.2px);
+          background-image: radial-linear(circle, #f97316 1.2px, transparent 1.2px);
           background-size: 28px 28px;
         }
       `}</style>
@@ -599,12 +599,12 @@ export default function JobUpdateBody() {
 
                         {/* illustration */}
                         <div
-                            className="hidden md:block float-anim flex-shrink-0"
+                            className="hidden md:block float-anim  shrink-0"
                             style={{ opacity: heroVis ? 1 : 0, transition: "opacity .7s ease .55s" }}
                         >
                             <div className="relative w-72 h-72">
-                                <div className="absolute inset-0 bg-gradient-to-br from-orange-100 to-amber-50 rounded-3xl rotate-6 shadow-xl" />
-                                <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-amber-400 rounded-3xl flex flex-col items-center justify-center gap-5 shadow-2xl shadow-orange-300">
+                                <div className="absolute inset-0 bg-linear-to-br from-orange-100 to-amber-50 rounded-3xl rotate-6 shadow-xl" />
+                                <div className="absolute inset-0 bg-linear-to-br from-orange-500 to-amber-400 rounded-3xl flex flex-col items-center justify-center gap-5 shadow-2xl shadow-orange-300">
                                     <div className="grid grid-cols-2 gap-3">
                                         {["🚀", "💡", "🎨", "🔧"].map((e, i) => (
                                             <div key={i} className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-2xl">
@@ -655,7 +655,7 @@ export default function JobUpdateBody() {
                         {/* search + filter */}
                         <Reveal delay={100}>
                             <div className="flex flex-col sm:flex-row gap-3 mb-8 flex-wrap">
-                                <div className="relative flex-1 min-w-[200px]">
+                                <div className="relative flex-1 min-w-50">
                                     <HiOutlineSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" size={17} />
                                     <Input
                                         placeholder="Search roles or teams…"
@@ -705,7 +705,7 @@ export default function JobUpdateBody() {
         ════════════════════════════════ */}
                 <section className="container  pb-20">
                     <Reveal>
-                        <div className="relative bg-gradient-to-br from-orange-500 to-amber-500 rounded-3xl overflow-hidden px-10 py-16 text-center">
+                        <div className="relative bg-linear-to-br from-orange-500 to-amber-500 rounded-3xl overflow-hidden px-10 py-16 text-center">
                             {/* decorative circles */}
                             <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none" />
                             <div className="absolute bottom-0 left-0 w-56 h-56 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/3 pointer-events-none" />
