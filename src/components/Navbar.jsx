@@ -588,7 +588,7 @@ const Navbar = () => {
                         {/* Logo */}
                         <div className="flex items-center gap-3 group pb-3">
                             <Link to={"/"} >
-                                <img src={logo} alt="" width={270} />
+                                <img src={logo} alt="" width={250} />
                             </Link>
 
                         </div>
@@ -848,6 +848,13 @@ const Navbar = () => {
 
 
 
+                                <Link
+                                    to="/gallery"
+                                    className={`ps-4 py-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 relative group`}
+                                >
+                                   Gallery
+                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
+                                </Link>
                                 <Link
                                     to="/job-updates"
                                     className={`ps-4 py-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 relative group`}

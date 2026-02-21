@@ -25,6 +25,8 @@ import HowToGetAffiliation from './pages/OldPages/HowToGetAffiliation';
 import Download from './pages/OldPages/Download';
 import OurApproval from './pages/OldPages/OurApproval';
 import SSCPartnership from './pages/OldPages/SSCPartnership';
+import NSDCPartnership from './pages/OldPages/NSDCPartnership';
+import Gallery from './pages/Gallery';
 
 
 // Import Swiper styles
@@ -63,6 +65,7 @@ const App = () => {
 
           {/* contact */}
           <Route path='/contact' element={<Contact />} />
+          <Route path='/gallery' element={<Gallery />} />
           {/* job updates */}
           <Route path='/job-updates' element={<JobUpdate />} />
 
@@ -80,6 +83,7 @@ const App = () => {
           <Route path='/download' element={<Download />} />
           <Route path='/our-approval' element={<OurApproval />} />
           <Route path='/ssc-partnership' element={<SSCPartnership />} />
+          <Route path='/nsdc-partnership' element={<NSDCPartnership />} />
 
         </Route>
       </Routes>
