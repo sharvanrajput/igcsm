@@ -27,6 +27,9 @@ import OurApproval from './pages/OldPages/OurApproval';
 import SSCPartnership from './pages/OldPages/SSCPartnership';
 import NSDCPartnership from './pages/OldPages/NSDCPartnership';
 import Gallery from './pages/Gallery';
+import School from './pages/OldPages/School';
+import VocationalStudies from './pages/OldPages/VocationalStudies';
+import TechnicalEducation from './pages/OldPages/TechnicalEducation';
 
 
 // Import Swiper styles
@@ -84,6 +87,11 @@ const App = () => {
           <Route path='/our-approval' element={<OurApproval />} />
           <Route path='/ssc-partnership' element={<SSCPartnership />} />
           <Route path='/nsdc-partnership' element={<NSDCPartnership />} />
+
+          <Route path='/igcsm-school' element={<School />} />
+          <Route path='/vocational-studies' element={<VocationalStudies />} />
+          <Route path='/technical-education' element={<TechnicalEducation />} />
+
 
         </Route>
       </Routes>
