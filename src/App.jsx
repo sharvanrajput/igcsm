@@ -30,6 +30,8 @@ import Gallery from './pages/Gallery';
 import School from './pages/OldPages/School';
 import VocationalStudies from './pages/OldPages/VocationalStudies';
 import TechnicalEducation from './pages/OldPages/TechnicalEducation';
+import HigherEducation from './pages/OldPages/HigherEducation';
+import GovernmentPartnership from './pages/OldPages/GovernmentPartnership';
 
 
 // Import Swiper styles
@@ -91,6 +93,8 @@ const App = () => {
           <Route path='/igcsm-school' element={<School />} />
           <Route path='/vocational-studies' element={<VocationalStudies />} />
           <Route path='/technical-education' element={<TechnicalEducation />} />
+          <Route path='/higher-education' element={<HigherEducation />} />
+          <Route path='/government-partnership' element={<GovernmentPartnership />} />
 
 
         </Route>
