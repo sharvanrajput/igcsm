@@ -62,8 +62,8 @@ const AwardsSlider = () => {
     // Sample awards data
 
     const statistics = [
-        { value: 30,  suffix:"+" , label: 'Years of Legacy' },
-        { value: 99,  suffix:"%" , label: 'Placement Success' },
+        { value: 17,  suffix:"+" , label: 'Years of Legacy' },
+        { value: 4500,  suffix:"+" , label: 'Placement Success' },
         { value: 100, suffix:"+" ,  label: 'Centers Across India' },
         { value: 500, suffix:"+" ,  label: 'Placement Partners' },
     ];
@@ -127,7 +127,6 @@ const AwardsSlider = () => {
                                 </p>
                             </div>
                         ))}
-                        
                     </div>
                 </div> 
             </div>
@@ -136,7 +135,7 @@ const AwardsSlider = () => {
             <div className=" py-12 sm:py-16 md:pt-15 ">
                 <div className="container mx-auto px-4 sm:px-6 md:px-8">
                     {/* Section Title */}
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl  font-bold mb-3 sm:mb-4 md:mb-6 text-center leading-tight">               Awards & Achievements
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl  font-bold mb-3 sm:mb-4 md:mb-6 text-center leading-tight">               Awards & <span className='text-orange-500'> Achievements </span>
                     </h2>
 
                     <Swiper

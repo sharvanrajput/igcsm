@@ -237,10 +237,10 @@ export default function TestimonialsSection() {
                     >
                         {/* Left: label + heading */}
                         <div>
-                            <p style={{ fontSize: "13px", fontWeight: 700, color: "#f59e0b", letterSpacing: "0.08em", textTransform: "uppercase", margin: "0 0 6px" }}>
+                            {/* <p className="text-orange-500" style={{ fontSize: "13px", fontWeight: 700,   letterSpacing: "0.08em", textTransform: "uppercase", margin: "0 0 6px" }}>
                                 Testimonials
-                            </p>
-                            <h2 data-aos="fade-right" data-aos-duration="600" className="text-2xl sm:text-3xl md:text-4xl  font-bold mb-3 sm:mb-2 md:mb-3  "> Voices of Achievers!</h2>
+                            </p> */}
+                            <h2 data-aos="fade-right" data-aos-duration="600" className="text-2xl sm:text-3xl md:text-4xl  font-bold mb-3 sm:mb-2 md:mb-3  "> Voices of  <span className="text-orange-500">Achievers!</span> </h2>
                         </div>
 
                         {/* Right: nav arrows only */}

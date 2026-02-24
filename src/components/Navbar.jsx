@@ -464,6 +464,7 @@ import MegaDropdown from './MegaDropdown'
 import { Button } from './ui/button'
 import { ScrollArea } from './ui/scroll-area'
 import { courseData } from "./data/courseData "
+import { courses } from "./data/courses"
 
 const data = ["Students can now take direct admission in the skill course of their choice. Go to Apply Now for instant enrollment. "]
 
@@ -481,44 +482,33 @@ const Navbar = () => {
     const location = useLocation()
     const animatedPaths = ["/online-admission"];
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrollY(window.scrollY);
-        };
+ 
 
+    useEffect(() => {
+        const handleScroll = () => setScrollY(window.scrollY);
         window.addEventListener("scroll", handleScroll);
-        if (animatedPaths.includes(location.pathname)) {
-            setanimatenav(true)
+
+        const isAnimatedRoute = animatedPaths.some(path =>
+            location.pathname.startsWith(path)
+        );
+
+        if (isAnimatedRoute) {
+            setanimatenav(true);
         } else {
-            if (scrollY > 70) {
-                setanimatenav(true)
-            } else {
-                setanimatenav(false)
-            }
+            setanimatenav(scrollY > 70);
         }
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
+        return () => window.removeEventListener("scroll", handleScroll);
     }, [scrollY, location.pathname]);
     const toggleDropdown = (menu) => {
         setActiveDropdown(activeDropdown === menu ? null : menu)
     }
 
 
-
     useEffect(() => {
-
-        const categories = [];
-
-        courseData.forEach(item => {
-            categories.push(item.category);
-        });
-
-        setCourseCategory(categories)
-
-    }, [])
-
+        const uniqueCategories = [...new Set(courses.map(item => item.category))];
+        setCourseCategory(uniqueCategories);
+    }, []);
 
 
     return (
@@ -677,21 +667,21 @@ const Navbar = () => {
                                             <div className="">
                                                 {courseCategory?.slice(0, 8).map((data, i) => (
                                                     <Link key={i} to={`/courses/${data.toLowerCase().replace(/\s+/g, "-")}`} className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                        {data}
+                                                        {data} Program
                                                     </Link>
                                                 ))}
                                             </div>
                                             <div className="">
                                                 {courseCategory?.slice(8, 16).map((data, i) => (
                                                     <Link key={i} to={`/courses/${data.toLowerCase().replace(/\s+/g, "-")}`} className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                        {data}
+                                                        {data} Program
                                                     </Link>
                                                 ))}
                                             </div>
                                             <div className="">
                                                 {courseCategory?.slice(16).map((data, i) => (
                                                     <Link key={i} to={`/courses/${data.toLowerCase().replace(/\s+/g, "-")}`} className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                                        {data}
+                                                        {data} Program
                                                     </Link>
                                                 ))}
                                             </div>
@@ -852,7 +842,7 @@ const Navbar = () => {
                                     to="/gallery"
                                     className={`ps-4 py-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 relative group`}
                                 >
-                                   Gallery
+                                    Gallery
                                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
                                 </Link>
                                 <Link

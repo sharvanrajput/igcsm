@@ -65,7 +65,7 @@ const App = () => {
           <Route path='/courses/:slug' element={<Courses />} />
 
           {/* admission   */}
-          <Route path='/online-admission' element={<OnlineAdmission />} />
+          <Route path='/online-admission/:id?' element={<OnlineAdmission />} />
           <Route path='/notice-board' element={<NoticeBoard />} />
 
           {/* contact */}

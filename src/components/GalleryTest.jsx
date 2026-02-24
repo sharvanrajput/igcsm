@@ -1,22 +1,42 @@
-import React from 'react'
-import gallery1 from "@/assets/images/gallery1.webp"
-import gallery2 from "@/assets/images/gallery2.webp"
-import gallery3 from "@/assets/images/gallery3.webp"
-import gallery4 from "@/assets/images/gallery4.jpeg"
-import gallery5 from "@/assets/images/gallery5.jpeg"
-import gallery6 from "@/assets/images/gallery6.jpeg"
-import gallery7 from "@/assets/images/gallery7.jpeg"
+import member1 from "@/assets/images/abhay-pratap-singh.jpg";
+import member2 from "@/assets/images/avinash-yadav.webp";
+import member3 from "@/assets/images/inderjeet.webp";
+import member4 from "@/assets/images/naval-chaudhary.jpg";
+import member5 from "@/assets/images/sanjeev.webp";
+import member6 from "@/assets/images/shivani-singh.webp";
+import member7 from "@/assets/images/kapil-dev.webp";
+import member8 from "@/assets/images/arvind-pandey.webp";
+import member9 from "@/assets/images/prince-kumar-soni.webp";
+import member10 from "@/assets/images/Sabir-Sir.jpeg";
+import member11 from "@/assets/images/jitender.png";
+ 
+const logos = [
+    { id: "1", name: "Mr. Abhay Pratap Singh", image: member1, post: "Project Manager" },
+    { id: "2", name: "Mr. Avinash Yadav", image: member2, post: "Sr. Project Manager" },
+    { id: "3", name: "Mr. Inderjeet", image: member3, post: "Finance Head" },
+    { id: "4", name: "Mr. Naval Chaudhary", image: member4, post: "Project Manager" },
+    { id: "5", name: "Mr. Sanjeev Prajapati", image: member5, post: "Director (Project)" },
+    { id: "6", name: "Ms. Shivani Singh", image: member6, post: "Project manager" },
+    { id: "7", name: "Mr. Kapil Dev", image: member7, post: "Project manager" },
+    { id: "8", name: "Mr. Arvind Pandey", image: member8, post: "Project manager" },
+    { id: "9", name: "Mr. Prince Kumar Soni", image: member9, post: "Project manager" },
+    { id: "10", name: "Mr. Sabir", image: member10, post: "Project manager" },
+    { id: "11", name: "Mr. Jitender", image: member11, post: "Project manager" },
+
+  
+];
+ 
 
 const GalleryTest = () => {
-  const logos = [
-    gallery1,
-    gallery2,
-    gallery3,
-    gallery4,
-    gallery5,
-    gallery6,
-    gallery7,
-  ];
+  // const logos = [
+  //   gallery1,
+  //   gallery2,
+  //   gallery3,
+  //   gallery4,
+  //   gallery5,
+  //   gallery6,
+  //   gallery7,
+  // ];
 
   return (
     <section className='pt-10'>
@@ -36,7 +56,7 @@ const GalleryTest = () => {
             {[...logos, ...logos].map((logo, i) => (
               <img
                 key={i}
-                src={logo}
+                src={logo.image}
                 alt="gallery"
                 className="h-50 md:h-70 rounded-md object-cover"
               />

@@ -1,9 +1,17 @@
 import FranchiseRegistrationForm from '@/components/FranchiseRegistrationForm'
 import LoginForm from '@/components/LoginForm'
 import StudentRegistrationForm from '@/components/StudentRegistrationForm'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useParams } from 'react-router-dom'
 const OnlineAdmission = () => {
+
+    const { id } = useParams()
+
+    useEffect(() => {
+        console.log(id)
+    }, [])
+
     return (
         <section className='pt-35'>
             <div className="container">
@@ -30,7 +38,7 @@ const OnlineAdmission = () => {
                         </TabsTrigger>
                     </TabsList>
                     <TabsContent value="one">
-                        <StudentRegistrationForm />
+                      { id &&  <StudentRegistrationForm slug={id} />}
                     </TabsContent>
                     <TabsContent value="two">
                         <FranchiseRegistrationForm />

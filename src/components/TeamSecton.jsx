@@ -14,31 +14,30 @@ import member3 from "@/assets/images/inderjeet.webp";
 import member4 from "@/assets/images/naval-chaudhary.jpg";
 import member5 from "@/assets/images/sanjeev.webp";
 import member6 from "@/assets/images/shivani-singh.webp";
-import member7 from "@/assets/images/team.webp";
+import member7 from "@/assets/images/kapil-dev.webp";
+import member8 from "@/assets/images/arvind-pandey.webp";
+import member9 from "@/assets/images/prince-kumar-soni.webp";
+import member10 from "@/assets/images/Sabir-Sir.jpeg";
+import member11 from "@/assets/images/jitender.png";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const teamData = [
-    { id: "1", name: "Abhay Pratap Singh", image: member1, post: "Project Manager" },
-    { id: "2", name: "Avinash Yadav", image: member2, post: "Sr. Project Manager" },
-    { id: "3", name: "Inderjeet", image: member3, post: "Finance Head" },
-    { id: "4", name: "Naval Chaudhary", image: member4, post: "Project Manager" },
-    { id: "5", name: "Sanjeev Prajapati", image: member5, post: "Director (Project)" },
-    { id: "6", name: "Shivani Singh", image: member6, post: "Project manager" },
-    { id: "7", name: "Abhay Pratap Singh", image: member1, post: "Project Manager" },
-    { id: "8", name: "Avinash Yadav", image: member2, post: "Sr. Project Manager" },
-    { id: "9", name: "Inderjeet", image: member3, post: "Finance Head" },
-    { id: "10", name: "Naval Chaudhary", image: member4, post: "Project Manager" },
-    { id: "11", name: "Sanjeev Prajapati", image: member5, post: "Director (Project)" },
-    { id: "12", name: "Shivani Singh", image: member6, post: "Project manager" },
+    { id: "1", name: "Mr. Abhay Pratap Singh", image: member1, post: "Project Manager" },
+    { id: "2", name: "Mr. Avinash Yadav", image: member2, post: "Sr. Project Manager" },
+    { id: "3", name: "Mr. Inderjeet", image: member3, post: "Finance Head" },
+    { id: "4", name: "Mr. Naval Chaudhary", image: member4, post: "Project Manager" },
+    { id: "5", name: "Mr. Sanjeev Prajapati", image: member5, post: "Director (Project)" },
+    { id: "6", name: "Ms. Shivani Singh", image: member6, post: "Project manager" },
+    { id: "7", name: "Mr. Kapil Dev", image: member7, post: "Project manager" },
+    { id: "8", name: "Mr. Arvind Pandey", image: member8, post: "Project manager" },
+    { id: "9", name: "Mr. Prince Kumar Soni", image: member9, post: "Project manager" },
+    { id: "10", name: "Mr. Sabir", image: member10, post: "Project manager" },
+    { id: "11", name: "Mr. Jitender", image: member11, post: "Project manager" },
+
     // { id: "7", name: "Team", image: member7, post: "" },
 ];
 
-const socials = [
-    { icon: FaInstagram, label: "Instagram", hoverClass: "hover:bg-linear-to-br hover:from-purple-500 hover:via-pink-500 hover:to-orange-400 hover:text-white" },
-    { icon: FaTwitter, label: "Twitter", hoverClass: "hover:bg-sky-500 hover:text-white" },
-    { icon: FaLinkedinIn, label: "LinkedIn", hoverClass: "hover:bg-blue-600 hover:text-white" },
-    { icon: FaWhatsapp, label: "WhatsApp", hoverClass: "hover:bg-green-500 hover:text-white" },
-];
+ 
 
 // ── Member Card ──
 function MemberCard({ member, isCenter }) {
@@ -66,21 +65,7 @@ function MemberCard({ member, isCenter }) {
                     <div className="absolute inset-0 bg-linear-to-t from-orange-600/70 via-orange-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                     {/* Social icons — spring up from center on hover */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="flex gap-2.5 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
-                            {socials.map(({ icon: Icon, label, hoverClass }) => (
-                                <a
-                                    key={label}
-                                    href="#"
-                                    title={label}
-                                    rel="noopener noreferrer"
-                                    className={`w-8 h-8 rounded-full bg-white text-gray-700 flex items-center justify-center shadow-lg hover:scale-110 hover:-translate-y-1 ${hoverClass} transition-all duration-200`}
-                                >
-                                    <Icon size={13} />
-                                </a>
-                            ))}
-                        </div>
-                    </div>
+                     
 
                     {/* Orange sweep bar at image bottom */}
                     <div className="absolute bottom-0 left-0 right-0 h-0.75 bg-linear-to-r from-orange-500 via-orange-400 to-amber-300 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out" />
@@ -125,7 +110,7 @@ export default function TeamSection() {
         <>
             <section className="py-12 sm:py-16 relative" >
 
-     
+
 
                 <div className="container overflow-hidden!">
 

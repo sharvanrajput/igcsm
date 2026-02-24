@@ -13,6 +13,7 @@ import gallery4 from "@/assets/images/gallery4.jpeg";
 import gallery5 from "@/assets/images/gallery5.jpeg";
 import gallery6 from "@/assets/images/gallery6.jpeg";
 import gallery7 from "@/assets/images/gallery7.jpeg";
+
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
 
 export default function SimpleGallery() {
@@ -124,13 +125,7 @@ export default function SimpleGallery() {
             <div className="container  relative ">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <div className="flex items-center justify-center gap-3 mb-3">
-                        <div className="h-px w-10 bg-gradient-to-r from-transparent to-orange-400" />
-                        <span className="text-xs font-bold tracking-widest text-orange-400 uppercase">
-                            Visual Collection
-                        </span>
-                        <div className="h-px w-10 bg-gradient-to-l from-transparent to-orange-400" />
-                    </div>
+                     
                     <h2 className="text-3xl lg:text-4xl font-bold text-orange-500">
                         Gallery
                     </h2>
