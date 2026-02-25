@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 // import chairman from "@/assets/images/chairman.webp"
 // import chairman from "@/assets/images/chairman1.jpg"
-import chairman from "../../assets/images/chairman3.jpg"
+import chairman from "@/assets/images/chairman3.jpg"
 
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
+
   useEffect(() => {
     const obs = new IntersectionObserver(
       ([entry]) => {
