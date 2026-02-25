@@ -16,7 +16,7 @@ const Cta = () => {
                   Your Growth, Our Commitment
                 </span>
               </div>
-              <h2 data-aos="fade-right" data-aos-duration="600" className="text-2xl lg:text-4xl  font-bold   ">
+              <h2 data-aos="fade-right" data-aos-duration="600" className="text-2xl mb-5 lg:text-4xl  font-bold   ">
                 Join India’s leading education & skill-development network.
               </h2>
               <Button className={"bg-white text-black hover:bg-green-500"}>Enquire Now</Button>

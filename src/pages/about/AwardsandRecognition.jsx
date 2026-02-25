@@ -1,4 +1,4 @@
-import about from "@/assets/images/aboutbg.webp"
+import about from "@/assets/images/award.jpg"
 import AwardsGallery from '@/components/about/AwardsGallery'
 import Breadcrumb from '@/components/about/Breadcrumb'
 const AwardsandRecognition = () => {

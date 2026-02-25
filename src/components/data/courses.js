@@ -3851,42 +3851,42 @@ export const courses = [
     subcategoryslug: "pg-diploma-course",
     duration: "12 month"
   },
-  {
-    id: 429,
-    category: "Fire & Safety",
-    categoryslug: "fire-safety",
-    major: "Fire & Safety",
-    subcategory: "Certification",
-    subcategoryslug: "certification",
-    duration: "3 month"
-  },
-  {
-    id: 430,
-    category: "Fire & Safety",
-    categoryslug: "fire-safety",
-    major: "Fire & Safety",
-    subcategory: "Diploma",
-    subcategoryslug: "diploma",
-    duration: "6 month"
-  },
-  {
-    id: 431,
-    category: "Fire & Safety",
-    categoryslug: "fire-safety",
-    major: "Fire & Safety",
-    subcategory: "Advance Diploma",
-    subcategoryslug: "advance-diploma",
-    duration: "9 month"
-  },
-  {
-    id: 432,
-    category: "Fire & Safety",
-    categoryslug: "fire-safety",
-    major: "Fire & Safety",
-    subcategory: "P. G. Diploma Course",
-    subcategoryslug: "pg-diploma-course",
-    duration: "12 month"
-  },
+  // {
+  //   id: 429,
+  //   category: "Fire & Safety",
+  //   categoryslug: "fire-safety",
+  //   major: "Fire & Safety",
+  //   subcategory: "Certification",
+  //   subcategoryslug: "certification",
+  //   duration: "3 month"
+  // },
+  // {
+  //   id: 430,
+  //   category: "Fire & Safety",
+  //   categoryslug: "fire-safety",
+  //   major: "Fire & Safety",
+  //   subcategory: "Diploma",
+  //   subcategoryslug: "diploma",
+  //   duration: "6 month"
+  // },
+  // {
+  //   id: 431,
+  //   category: "Fire & Safety",
+  //   categoryslug: "fire-safety",
+  //   major: "Fire & Safety",
+  //   subcategory: "Advance Diploma",
+  //   subcategoryslug: "advance-diploma",
+  //   duration: "9 month"
+  // },
+  // {
+  //   id: 432,
+  //   category: "Fire & Safety",
+  //   categoryslug: "fire-safety",
+  //   major: "Fire & Safety",
+  //   subcategory: "P. G. Diploma Course",
+  //   subcategoryslug: "pg-diploma-course",
+  //   duration: "12 month"
+  // },
   {
     id: 433,
     category: "Software",

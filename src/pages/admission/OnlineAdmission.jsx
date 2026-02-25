@@ -38,7 +38,7 @@ const OnlineAdmission = () => {
                         </TabsTrigger>
                     </TabsList>
                     <TabsContent value="one">
-                      { id &&  <StudentRegistrationForm slug={id} />}
+                   <StudentRegistrationForm slug={id} /> 
                     </TabsContent>
                     <TabsContent value="two">
                         <FranchiseRegistrationForm />
