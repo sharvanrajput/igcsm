@@ -30,7 +30,8 @@ const stats = [
   { value: "11", label: "Awards" },
   { value: "2", label: "International" },
   { value: "15+", label: "Years" },
-];
+]; 
+
 
 function AnimPara({ text, delay = 0, highlight = false }) {
   const [ref, inView] = useInView();
