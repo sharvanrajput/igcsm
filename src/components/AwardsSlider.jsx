@@ -63,9 +63,10 @@ const AwardsSlider = () => {
 
     const statistics = [
         { value: 17,  suffix:"+" , label: 'Years of Legacy' },
-        { value: 4500,  suffix:"+" , label: 'Placement Success' },
-        { value: 100, suffix:"+" ,  label: 'Centers Across India' },
+        { value: 5,  suffix:"L+" , label: 'Learners' },
+        { value: 600, suffix:"+" ,  label: 'Centers Across India' },
         { value: 500, suffix:"+" ,  label: 'Placement Partners' },
+        { value: 20, suffix:"+" ,  label: 'State ' },
     ];
 
     // Awards logos data
@@ -113,7 +114,7 @@ const AwardsSlider = () => {
             {/* Statistics Bar */}
             <div className="bg-gradient-to-r from-orange-500 via-orange-700 to-orange-800">
                 <div className="container mx-auto px-4 sm:px-6 md:px-8">
-                    <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/20">
+                    <div className="grid grid-cols-2 md:grid-cols-5 divide-x divide-white/20">
                         {statistics.map((stat, index) => (
                             <div
                                 key={index}

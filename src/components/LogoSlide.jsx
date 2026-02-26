@@ -8,17 +8,31 @@ import eight from "@/assets/images/4.webp"
 import nine from "@/assets/images/5.webp"
 import msme from "@/assets/images/five.png"
 import iso from "@/assets/images/iso.png"
-// import one from "@/assets/images/1.png"
-// import one from "@/assets/images/1.png"
-// import one from "@/assets/images/1.png"
-// import one from "@/assets/images/1.png"
-// import one from "@/assets/images/1.png"
+
+import partner1 from "@/assets/images/partner-1.webp"
+import partner2 from "@/assets/images/partner-2.webp"
+import partner3 from "@/assets/images/partner-3.webp"
+import partner4 from "@/assets/images/partner-4.webp"
+import partner5 from "@/assets/images/partner-5.webp"
+import partner6 from "@/assets/images/partner-6.webp"
+import partner7 from "@/assets/images/partner-7.webp"
+import partner8 from "@/assets/images/partner-9.webp"
+import partner9 from "@/assets/images/partner-10.webp"
+
 
 
 
 export default function LogoSlider() {
     const logos = [
-        // one,
+        partner1,
+        partner2,
+        partner3,
+        partner4,
+        partner5,
+        partner6,
+        partner7,
+        partner8,
+        partner9,
         two,
         three,
         four,
@@ -36,7 +50,7 @@ export default function LogoSlider() {
 
 
                     {/* Duplicate Set (for infinite effect) */}
-                    {[...logos, ...logos].map((logo, i) => (
+                    {[...logos].map((logo, i) => (
                         <img
                             key={`second-${i}`}
                             src={logo}

@@ -1,4 +1,6 @@
 import About from '@/components/About'
+import AnnouncementBoard from '@/components/Announcementboard'
+import AppreciationSlicer from '@/components/AppreciationSlicer'
 import AwardsSlider from '@/components/AwardsSlider'
 import Banner from '@/components/Banner'
 import CoursesSection from '@/components/CoursesSection'
@@ -22,6 +24,8 @@ const Home = () => {
             {/* <TeamSecton /> */}
             <ImageGallery />
             {/* <GalleryTest/> */}
+            <AnnouncementBoard />
+            <AppreciationSlicer />
             <Reviews />
 
             <Cta />

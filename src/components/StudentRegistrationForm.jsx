@@ -1074,12 +1074,18 @@ import { Link } from "react-router-dom";
 
 
 // ================= SCHEMAS =================
-const registerSchema = z.object({
-    studentName: z.string().trim().min(5, "Student name must be more than 5 characters"),
-    mobile: z.string().min(10, "Mobile number must be 10 digits").max(10, "Mobile number must be 10 digits"),
-    email: z.string().email("Invalid email address"),
-    password: z.string().min(6, "Password must be at least 6 characters"),
-});
+const registerSchema = z
+    .object({
+        studentName: z.string().trim().min(5, "Student name must be more than 5 characters"),
+        mobile: z.string().min(10, "Mobile number must be 10 digits").max(10, "Mobile number must be 10 digits"),
+        email: z.string().email("Invalid email address"),
+        password: z.string().min(6, "Password must be at least 6 characters"),
+        confirmPassword: z.string().min(6, "Confirm password must be at least 6 characters"),
+    })
+    .refine((data) => data.password === data.confirmPassword, {
+        path: ["confirmPassword"],
+        message: "Passwords do not match",
+    });
 
 const otpSchema = z.object({
     otp: z
@@ -1130,6 +1136,7 @@ const StudentRegistrationForm = () => {
         mobile: '',
         email: '',
         password: '',
+        confirmPassword: '',
     });
 
     // ================= COMBINED FORM STATE =================
@@ -1223,7 +1230,14 @@ const StudentRegistrationForm = () => {
         try {
             setLoading(true);
             setErrors({});
-            const res = await api.post("/student/register", studentRegister);
+            // send only the fields needed by the API (exclude confirmPassword)
+            const payload = {
+                studentName: result.data.studentName,
+                mobile: result.data.mobile,
+                email: result.data.email,
+                password: result.data.password,
+            };
+            const res = await api.post("/student/register", payload);
 
             if (!res.data.success) {
                 toast.error(res.data.message);
@@ -1300,7 +1314,7 @@ const StudentRegistrationForm = () => {
 
         if (!result.success) {
             const fieldErrors = {};
-            result?.error?.issue?.forEach(err => {
+            result?.error?.issues?.forEach(err => {
                 const field = err.path?.[0];
                 if (field) fieldErrors[field] = err.message;
             });
@@ -1413,7 +1427,7 @@ const StudentRegistrationForm = () => {
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                                    <label className="block text-sm font-medium text-gray-700 mb-2"> New Password</label>
                                     <input
                                         type="password"
                                         name="password"
@@ -1424,6 +1438,20 @@ const StudentRegistrationForm = () => {
                                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                                     />
                                     {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password}</p>}
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
+                                    <input
+                                        type="password"
+                                        name="confirmPassword"
+                                        disabled={loading}
+                                        value={studentRegister.confirmPassword}
+                                        onChange={handleInputRegister}
+                                        placeholder="Re-enter Password"
+                                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                    />
+                                    {errors.confirmPassword && <p className="text-red-500 text-xs mt-1">{errors.confirmPassword}</p>}
                                 </div>
 
                                 <button

@@ -23,6 +23,17 @@ import g17 from "@/assets/images/gallery9.jpg"
 import g18 from "@/assets/images/gallery10.jpg"
 import g19 from "@/assets/images/gallery11.jpeg"
 import g20 from "@/assets/images/gallery12.jpeg"
+import g21 from "@/assets/images/gallery13.jpeg"
+import g22 from "@/assets/images/gallery14.jpeg"
+import g23 from "@/assets/images/gallery15.jpeg"
+import g24 from "@/assets/images/gallery16.jpg"
+import g25 from "@/assets/images/gallery17.jpg"
+import g26 from "@/assets/images/gallery18.jpg"
+import g27 from "@/assets/images/gallery19.jpg"
+
+
+
+
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const galleryImages = [
@@ -30,6 +41,12 @@ const galleryImages = [
         id: 1,
         src: g1,
         thumb: g1,
+        title: "",
+    },
+    {
+        id: 21,
+        src: g21,
+        thumb: g21,
         title: "",
     },
     {
@@ -110,12 +127,12 @@ const galleryImages = [
         thumb: g14,
         title: "",
     },
-    {
-        id: 15,
-        src: g15,
-        thumb: g15,
-        title: "",
-    },
+    // {
+    //     id: 15,
+    //     src: g15,
+    //     thumb: g15,
+    //     title: "",
+    // },
     {
         id: 16,
         src: g16,
@@ -129,9 +146,33 @@ const galleryImages = [
         title: "",
     },
     {
+        id: 26,
+        src: g26,
+        thumb: g26,
+        title: "",
+    },
+    {
+        id: 27,
+        src: g27,
+        thumb: g27,
+        title: "",
+    },
+    {
         id: 18,
         src: g18,
         thumb: g18,
+        title: "",
+    },
+    {
+        id: 24,
+        src: g24,
+        thumb: g24,
+        title: "",
+    },
+    {
+        id: 25,
+        src: g25,
+        thumb: g25,
         title: "",
     },
     {
@@ -146,6 +187,21 @@ const galleryImages = [
         thumb: g20,
         title: "",
     },
+
+    {
+        id: 22,
+        src: g22,
+        thumb: g22,
+        title: "",
+    },
+    {
+        id: 23,
+        src: g23,
+        thumb: g23,
+        title: "",
+    },
+
+
 ];
 
 function Lightbox({ images, startIndex, onClose }) {
@@ -381,9 +437,9 @@ export default function GalleryBody() {
       `}</style>
 
             <section style={{ background: "#fafaf8", padding: "64px 0" }}>
-                <div  className="container">
+                <div className="container">
 
-                  
+
 
                     {/* Grid */}
                     <div style={{

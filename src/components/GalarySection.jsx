@@ -13,8 +13,37 @@ import gallery4 from "@/assets/images/gallery4.jpeg";
 import gallery5 from "@/assets/images/gallery5.jpeg";
 import gallery6 from "@/assets/images/gallery6.jpeg";
 import gallery7 from "@/assets/images/gallery7.jpeg";
+import g1 from "@/assets/images/award1.jpeg"
+import g2 from "@/assets/images/award2.png"
+import g3 from "@/assets/images/award3.jpg"
+import g4 from "@/assets/images/award4.jpg"
+import g5 from "@/assets/images/award5.jpg"
+import g6 from "@/assets/images/award6.jpg"
+import g7 from "@/assets/images/award7.jpg"
+import g8 from "@/assets/images/award8.jpg"
+import g9 from "@/assets/images/award9.jpeg"
+import g10 from "@/assets/images/award10.jpg"
+import g11 from "@/assets/images/gallery1.webp"
+import g12 from "@/assets/images/gallery2.webp"
+import g13 from "@/assets/images/gallery3.webp"
+import g14 from "@/assets/images/gallery4.jpeg"
+import g15 from "@/assets/images/gallery7.jpeg"
+import g16 from "@/assets/images/gallery8.webp"
+import g17 from "@/assets/images/gallery9.jpg"
+import g18 from "@/assets/images/gallery10.jpg"
+import g19 from "@/assets/images/gallery11.jpeg"
+import g20 from "@/assets/images/gallery12.jpeg"
+import g21 from "@/assets/images/gallery13.jpeg"
+import g22 from "@/assets/images/gallery14.jpeg"
+import g23 from "@/assets/images/gallery15.jpeg"
+import g24 from "@/assets/images/gallery16.jpg"
+import g25 from "@/assets/images/gallery17.jpg"
+import g26 from "@/assets/images/gallery18.jpg"
+import g27 from "@/assets/images/gallery19.jpg"
 
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
+import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 export default function SimpleGallery() {
     const prevRef = useRef(null);
@@ -42,6 +71,33 @@ export default function SimpleGallery() {
         gallery5,
         gallery6,
         gallery7,
+        g1,
+        g2,
+        g3,
+        g4,
+        g5,
+        g6,
+        g7,
+        g8,
+        g9,
+        g10,
+        g11,
+        g12,
+        g13,
+        g14,
+        g15,
+        g16,
+        g17,
+        g18,
+        g19,
+        g20,
+        g21,
+        g22,
+        g23,
+        g24,
+        g25,
+        g26,
+        g27,
     ];
 
     return (
@@ -125,7 +181,7 @@ export default function SimpleGallery() {
             <div className="container  relative ">
                 {/* Header */}
                 <div className="text-center mb-12">
-                     
+
                     <h2 className="text-3xl lg:text-4xl font-bold text-orange-500">
                         Gallery
                     </h2>
@@ -231,101 +287,109 @@ export default function SimpleGallery() {
                         ))}
                     </Swiper>
                 </div>
+
+
+            </div>
+            <div className="w-full flex justify-center">
+                <Button asChild className={"mx-auto bg-orange-500 hover:bg-orange-600 "}>
+                    <Link to="/gallery"   >
+                        See More
+                    </Link>
+                </Button>
             </div>
 
-            {/* ── Lightbox Modal ──────────────────────────────────────────────────────────
-                Opens when any gallery image is clicked.
-                Click outside the image OR press Escape to close.
-            ─────────────────────────────────────────────────────────────────────────── */}
-            {modalImage && (
-                <div
-                    onClick={closeModal}
-                    style={{
-                        position: "fixed",
-                        inset: 0,
-                        zIndex: 1000,
-                        background: "rgba(0,0,0,0.85)",
-                        backdropFilter: "blur(10px)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        padding: "24px",
-                        animation: "modalFadeIn 0.3s ease",
-                    }}
-                >
-                    {/* Card — stopPropagation so clicking the image doesn't close the modal */}
+
+            {
+                modalImage && (
                     <div
-                        onClick={(e) => e.stopPropagation()}
+                        onClick={closeModal}
                         style={{
-                            position: "relative",
-                            borderRadius: "20px",
-                            overflow: "hidden",
-                            border: "2px solid rgba(249,115,22,0.4)",
-                            boxShadow: "0 40px 100px rgba(249,115,22,0.2), 0 8px 40px rgba(0,0,0,0.4)",
-                            maxWidth: "90vw",
-                            maxHeight: "85vh",
-                            animation: "modalScaleIn 0.4s cubic-bezier(0.34,1.56,0.64,1)",
+                            position: "fixed",
+                            inset: 0,
+                            zIndex: 1000,
+                            background: "rgba(0,0,0,0.85)",
+                            backdropFilter: "blur(10px)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            padding: "24px",
+                            animation: "modalFadeIn 0.3s ease",
                         }}
                     >
-                        {/* Orange top accent bar */}
+                        {/* Card — stopPropagation so clicking the image doesn't close the modal */}
                         <div
+                            onClick={(e) => e.stopPropagation()}
                             style={{
-                                position: "absolute",
-                                top: 0,
-                                left: 0,
-                                right: 0,
-                                height: "3px",
-                                background: "linear-gradient(90deg, #f97316, #fb923c, #fdba74)",
-                                zIndex: 10,
-                            }}
-                        />
-
-                        <img
-                            src={modalImage}
-                            alt="preview"
-                            style={{
-                                display: "block",
+                                position: "relative",
+                                borderRadius: "20px",
+                                overflow: "hidden",
+                                border: "2px solid rgba(249,115,22,0.4)",
+                                boxShadow: "0 40px 100px rgba(249,115,22,0.2), 0 8px 40px rgba(0,0,0,0.4)",
                                 maxWidth: "90vw",
                                 maxHeight: "85vh",
-                                objectFit: "contain",
-                            }}
-                        />
-
-                        {/* ✕ Close button */}
-                        <button
-                            onClick={closeModal}
-                            style={{
-                                position: "absolute",
-                                top: "12px",
-                                right: "12px",
-                                zIndex: 20,
-                                width: "38px",
-                                height: "38px",
-                                borderRadius: "50%",
-                                background: "rgba(255,255,255,0.95)",
-                                border: "1.5px solid rgba(249,115,22,0.4)",
-                                color: "#f97316",
-                                cursor: "pointer",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                boxShadow: "0 2px 12px rgba(249,115,22,0.25)",
-                                transition: "all 0.2s ease",
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.background = "#f97316";
-                                e.currentTarget.style.color = "#fff";
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.background = "rgba(255,255,255,0.95)";
-                                e.currentTarget.style.color = "#f97316";
+                                animation: "modalScaleIn 0.4s cubic-bezier(0.34,1.56,0.64,1)",
                             }}
                         >
-                            <X size={18} />
-                        </button>
+                            {/* Orange top accent bar */}
+                            <div
+                                style={{
+                                    position: "absolute",
+                                    top: 0,
+                                    left: 0,
+                                    right: 0,
+                                    height: "3px",
+                                    background: "linear-gradient(90deg, #f97316, #fb923c, #fdba74)",
+                                    zIndex: 10,
+                                }}
+                            />
+
+                            <img
+                                src={modalImage}
+                                alt="preview"
+                                style={{
+                                    display: "block",
+                                    maxWidth: "90vw",
+                                    maxHeight: "85vh",
+                                    objectFit: "contain",
+                                }}
+                            />
+
+                            {/* ✕ Close button */}
+                            <button
+                                onClick={closeModal}
+                                style={{
+                                    position: "absolute",
+                                    top: "12px",
+                                    right: "12px",
+                                    zIndex: 20,
+                                    width: "38px",
+                                    height: "38px",
+                                    borderRadius: "50%",
+                                    background: "rgba(255,255,255,0.95)",
+                                    border: "1.5px solid rgba(249,115,22,0.4)",
+                                    color: "#f97316",
+                                    cursor: "pointer",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    boxShadow: "0 2px 12px rgba(249,115,22,0.25)",
+                                    transition: "all 0.2s ease",
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.background = "#f97316";
+                                    e.currentTarget.style.color = "#fff";
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.background = "rgba(255,255,255,0.95)";
+                                    e.currentTarget.style.color = "#f97316";
+                                }}
+                            >
+                                <X size={18} />
+                            </button>
+                        </div>
                     </div>
-                </div>
-            )}
+                )
+            }
             {/* ─────────────────────────────────────────────────────────────────────── */}
 
             <style>{`
@@ -346,6 +410,6 @@ export default function SimpleGallery() {
                     transform: scale(1.3);
                 }
             `}</style>
-        </section>
+        </section >
     );
 }
