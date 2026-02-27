@@ -1065,12 +1065,15 @@ import {
 import { api } from '@/services/api';
 import { REGEXP_ONLY_DIGITS } from "input-otp";
 import { ArrowLeft, Image as ImageIcon } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { toast } from 'react-toastify';
 import { z } from "zod";
 import success from "@/assets/images/thankyou.svg"
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+
+// bring course metadata for dynamic dropdowns
+import { courses as courseData } from '@/components/data/courses';
 
 
 // ================= SCHEMAS =================
@@ -1112,7 +1115,8 @@ const academicPersonalSchema = z.object({
 
     // Academic fields
     instituteName: z.string().min(1, "Institute name is required"),
-    course: z.string().min(1, "Course is required").refine(v => v !== "Select Course", "Please select a valid course"),
+    duration: z.string().min(1, "Duration is required").refine(v => v !== "", "Please select a duration"),
+    course: z.string().min(1, "Course is required").refine(v => v !== "", "Please select a course"),
     qualification: z.string().optional(),
     acceptTerms: z.boolean().refine(v => v === true, "You must accept the terms and conditions"),
 
@@ -1122,7 +1126,7 @@ const academicPersonalSchema = z.object({
 });
 
 
-const StudentRegistrationForm = () => {
+const StudentRegistrationForm = (props) => {
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
     const [step, setStep] = useState("register");
@@ -1153,10 +1157,10 @@ const StudentRegistrationForm = () => {
         state: '',
         pin: '',
 
-
         // Academic
         instituteName: 'NCTA Expert Pvt Ltd',
-        course: '',
+        duration: props?.duration || '',  // will be duration (Certification, Diploma, etc.)
+        course: props?.coursename || '',
         qualification: '',
         qualificationCert: null,
         photo: null,
@@ -1169,14 +1173,73 @@ const StudentRegistrationForm = () => {
         certificateLanguage: 'english',
     });
 
-    const courses = [
-        'Select Course',
-        'Diploma in Computer Application',
-        'Advanced Excel',
-        'Web Development',
-        'Digital Marketing',
-        'Graphic Design',
-    ];
+    // derive list of unique durations from courses data
+    const ALL_DURATIONS = useMemo(() => {
+        const seen = new Set();
+        const list = [];
+        courseData.forEach(c => {
+            if (!seen.has(c.subcategory)) {
+                seen.add(c.subcategory);
+                list.push(c.subcategory);
+            }
+        });
+        return list.sort();
+    }, []);
+
+    const coursesByDuration = useMemo(() => {
+        const map = new Map();
+        courseData.forEach(c => {
+            if (!map.has(c.subcategory)) map.set(c.subcategory, []);
+            // push unique course names only
+            const arr = map.get(c.subcategory);
+            if (!arr.includes(c.major)) arr.push(c.major);
+        });
+        return map;
+    }, []);
+
+    // helper for options shown in course dropdown
+    const availableCourses = useMemo(() => {
+        return coursesByDuration.get(formData.duration) || [];
+    }, [formData.duration, coursesByDuration]);
+
+    // if incoming props change (may come from URL) or user data is available, update formData
+    useEffect(() => {
+        setFormData(prev => ({
+            ...prev,
+            duration: props?.duration || prev.duration,
+            course: props?.coursename || prev.course,
+        }));
+    }, [props?.duration, props?.coursename]);
+
+    // fetch current authenticated user and prefill duration/course if available
+    useEffect(() => {
+        let mounted = true;
+        const loadMe = async () => {
+            try {
+                const res = await api.get('/student/me');
+                if (!mounted) return;
+                if (res?.data?.success && res.data.user) {
+                    const u = res.data.user;
+                    setFormData(prev => ({
+                        ...prev,
+                        duration: u.duration || prev.duration,
+                        course: u.course || prev.course,
+                        instituteName: u.instituteName || prev.instituteName,
+                    }));
+                    setStudentRegister(prev => ({
+                        ...prev,
+                        studentName: u.studentName || prev.studentName,
+                        email: u.email || prev.email,
+                        mobile: u.mobile || prev.mobile,
+                    }));
+                }
+            } catch (err) {
+                // ignore if not authenticated
+            }
+        };
+        loadMe();
+        return () => { mounted = false };
+    }, []);
 
     const states = [
         'Select State',
@@ -1191,10 +1254,17 @@ const StudentRegistrationForm = () => {
     // ================= UNIFIED HANDLERS =================
     const handleInputChange = (e) => {
         const { name, value, type, checked } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: type === 'checkbox' ? checked : value,
-        }));
+        setFormData(prev => {
+            const next = {
+                ...prev,
+                [name]: type === 'checkbox' ? checked : value,
+            };
+            // if duration changes, reset course value
+            if (name === 'duration') {
+                next.course = '';
+            }
+            return next;
+        });
         setErrors(prev => ({ ...prev, [name]: "" }));
     };
 
@@ -1288,6 +1358,25 @@ const StudentRegistrationForm = () => {
     // ================= PERSONAL + ACADEMIC SUBMIT =================
     const handlePersonalAcademicSubmit = async (e) => {
         e.preventDefault();
+
+        // Validate that all required files are uploaded
+        if (!formData.photo) {
+            setErrors(prev => ({ ...prev, photo: "Photo is required" }));
+            return;
+        }
+        if (!formData.signature) {
+            setErrors(prev => ({ ...prev, signature: "Signature is required" }));
+            return;
+        }
+        if (!formData.aadhaarDoc) {
+            setErrors(prev => ({ ...prev, aadhaarDoc: "Aadhaar document is required" }));
+            return;
+        }
+        if (!formData.qualificationCert) {
+            setErrors(prev => ({ ...prev, qualificationCert: "Qualification certificate is required" }));
+            return;
+        }
+
         // Extract only the fields that zod schema validates (exclude File objects)
         const dataToValidate = {
             fatherName: formData.fatherName,
@@ -1301,6 +1390,7 @@ const StudentRegistrationForm = () => {
             state: formData.state,
             pin: formData.pin,
             instituteName: formData.instituteName,
+            duration: formData.duration,
             course: formData.course,
             qualification: formData.qualification,
             acceptTerms: formData.acceptTerms,
@@ -1674,10 +1764,22 @@ const StudentRegistrationForm = () => {
                                             className="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-100 focus:outline-none" />
                                     </div>
                                     <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">Course Duration <span className="text-red-500">*</span></label>
+                                        <select name="duration" value={formData.duration} onChange={handleInputChange}
+                                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                            <option value="">Select Duration</option>
+                                            {ALL_DURATIONS.map((dur, idx) => (
+                                                <option key={idx} value={dur}>{dur}</option>
+                                            ))}
+                                        </select>
+                                        {errors.duration && <p className="text-red-500 text-xs mt-1">{errors.duration}</p>}
+                                    </div>
+                                    <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-2">Course <span className="text-red-500">*</span></label>
                                         <select name="course" value={formData.course} onChange={handleInputChange}
                                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
-                                            {courses.map((c, i) => <option key={i} value={c}>{c}</option>)}
+                                            <option value="">Select Course</option>
+                                            {availableCourses.map((c, i) => <option key={i} value={c}>{c}</option>)}
                                         </select>
                                         {errors.course && <p className="text-red-500 text-xs mt-1">{errors.course}</p>}
                                     </div>
@@ -1695,13 +1797,17 @@ const StudentRegistrationForm = () => {
                                     <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-2">Educational Qualification</label>
                                         <input type="text" name="qualification" value={formData.qualification} onChange={handleInputChange}
-                                            placeholder="Enter Educational Qualification"
+                                            placeholder="e.g., Bachelor of Science, 12th Pass"
                                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">Qualification Certificate</label>
-                                        <input type="file" onChange={(e) => handleFileChange(e, 'qualificationCert')} accept=".pdf,.jpg,.jpeg,.png"
-                                            className="w-full px-4 py-2 border border-gray-300 rounded-md file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-teal-50 file:text-teal-700 hover:file:bg-teal-100" />
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">Qualification Certificate <span className="text-red-500">*</span></label>
+                                        <div className="relative">
+                                            <input type="file" onChange={(e) => { handleFileChange(e, 'qualificationCert'); setErrors(prev => ({ ...prev, qualificationCert: '' })); }} accept=".pdf,.jpg,.jpeg,.png"
+                                                className="w-full px-4 py-2 border border-gray-300 rounded-md file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-orange-100 file:text-orange-700 hover:file:bg-orange-200" />
+                                        </div>
+                                        {formData.qualificationCert && <p className="text-green-600 text-xs mt-2">✓ {formData.qualificationCert.name}</p>}
+                                        {errors.qualificationCert && <p className="text-red-500 text-xs mt-2">{errors.qualificationCert}</p>}
                                     </div>
                                 </div>
                             </div>
@@ -1710,27 +1816,34 @@ const StudentRegistrationForm = () => {
                         {/* Upload Documents */}
                         <div className="bg-white rounded-lg shadow-sm mb-6 overflow-hidden">
                             <div className="bg-orange-500 text-white px-4 sm:px-6 py-3">
-                                <h2 className="font-semibold uppercase tracking-wide">Upload Documents</h2>
+                                <h2 className="font-semibold uppercase tracking-wide">Upload Documents (All fields are required)</h2>
                             </div>
                             <div className="p-4 sm:p-6">
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                     {[
                                         { label: 'Photo', field: 'photo', accept: 'image/*', hint: 'Upload a clear passport size photo (JPG/PNG)' },
                                         { label: 'Signature', field: 'signature', accept: 'image/*', hint: 'Upload your signature on white background (JPG/PNG)' },
-                                        { label: 'Aadhaar', field: 'aadhaarDoc', accept: 'image/*,.pdf', hint: 'Upload Aadhaar front side (JPG/PNG)' },
+                                        { label: 'Aadhaar', field: 'aadhaarDoc', accept: 'image/*,.pdf', hint: 'Upload Aadhaar front side (JPG/PNG/PDF)' },
                                     ].map(({ label, field, accept, hint }) => (
-                                        <div key={field} className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
-                                            <div className="mb-4 flex justify-center">
-                                                <div className="w-20 h-20 bg-gray-100 rounded flex items-center justify-center">
-                                                    <ImageIcon className="w-10 h-10 text-gray-400" />
+                                        <div key={field}>
+                                            <div className={`border-2 border-dashed rounded-lg p-6 text-center transition-colors ${formData[field] ? 'border-green-400 bg-green-50' : 'border-gray-300'}`}>
+                                                <div className="mb-4 flex justify-center">
+                                                    <div className={`w-20 h-20 rounded flex items-center justify-center ${formData[field] ? 'bg-green-100' : 'bg-gray-100'}`}>
+                                                        <ImageIcon className={`w-10 h-10 ${formData[field] ? 'text-green-600' : 'text-gray-400'}`} />
+                                                    </div>
                                                 </div>
+                                                <h3 className="font-semibold text-gray-900 mb-2">{label} {formData[field] ? '✓' : '*'}</h3>
+                                                <p className="text-xs text-gray-600 mb-4">{hint}</p>
+                                                <input type="file" onChange={(e) => { handleFileChange(e, field); setErrors(prev => ({ ...prev, [field]: '' })); }} accept={accept}
+                                                    className="w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-orange-100 file:text-orange-700 hover:file:bg-orange-200" />
+                                                {formData[field] && <p className="text-green-600 text-xs mt-2">✓ {formData[field].name}</p>}
+                                                {errors[field] && <p className="text-red-500 text-xs mt-2">{errors[field]}</p>}
                                             </div>
-                                            <h3 className="font-semibold text-gray-900 mb-2">{label}</h3>
-                                            <p className="text-xs text-gray-600 mb-4">{hint}</p>
-                                            <input type="file" onChange={(e) => handleFileChange(e, field)} accept={accept}
-                                                className="w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200" />
                                         </div>
                                     ))}
+                                </div>
+                                <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                                    <p className="text-xs text-blue-700"><strong>Note:</strong> All documents are mandatory. Please ensure clear, readable copies for processing.</p>
                                 </div>
                             </div>
                         </div>
@@ -1755,14 +1868,15 @@ const StudentRegistrationForm = () => {
 
                     </form>
                 )}
+
                 {step === "success" && (
                     <div className="w-fit mx-auto text-center">
                         <img src={success} className="h-[300px] mx-auto w-auto" alt="" />
                         <h2 className="text-2xl font-bold text-orange-500">Your Form Has Been Submitted Successfully!</h2>
-                        <p className="font-bold">We’ll Contact You Soon</p>
+                        <p className="font-bold">to See you details to to dashboard</p>
                         <Button className={"bg-orange-500 hover:bg-orange-600"} asChild>
-                            <Link to="/" className=" hover:underline text-blue-500" >
-                                back to home
+                            <Link to="http://localhost:5174/login" target="_blank" className=" hover:underline text-blue-500" >
+                                Dashboard
                             </Link>
                         </Button>
                     </div>

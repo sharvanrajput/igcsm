@@ -396,11 +396,11 @@ function AwardCard({ award, index, onPreview }) {
         {/* Gradient overlay */}
         <div
           className="absolute inset-0 transition-all duration-500"
-          style={{
-            background: hovered
-              ? "linear-gradient(to top, rgba(14,9,2,0.97) 0%, rgba(14,9,2,0.72) 50%, rgba(14,9,2,0.18) 100%)"
-              : "linear-gradient(to top, rgba(14,9,2,0.9) 0%, rgba(14,9,2,0.3) 45%, rgba(14,9,2,0.04) 100%)",
-          }}
+          // style={{
+          //   background: hovered
+          //     ? "linear-gradient(to top, rgba(14,9,2,0.5) 0%, rgba(14,9,2,0.50) 50%, rgba(14,9,2,0.5) 100%)"
+          //     : "linear-gradient(to top, rgba(14,9,2,0.1) 0%, rgba(14,9,2,0.1) 45%, rgba(14,9,2,0.1) 100%)",
+          // }}
         />
       </div>
 

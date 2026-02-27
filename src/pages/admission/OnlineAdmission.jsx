@@ -6,11 +6,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useParams } from 'react-router-dom'
 const OnlineAdmission = () => {
 
-    const { id } = useParams()
+    const { id, cate } = useParams()
 
     useEffect(() => {
-        console.log(id)
-    }, [])
+        console.log('category slug:', id, 'course:', cate);
+    }, [id, cate])
 
     return (
         <section className='pt-35'>
@@ -38,7 +38,7 @@ const OnlineAdmission = () => {
                         </TabsTrigger>
                     </TabsList>
                     <TabsContent value="one">
-                   <StudentRegistrationForm slug={id} /> 
+                        <StudentRegistrationForm coursename={id} duration={cate} />
                     </TabsContent>
                     <TabsContent value="two">
                         <FranchiseRegistrationForm />

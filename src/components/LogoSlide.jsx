@@ -13,7 +13,7 @@ import partner1 from "@/assets/images/partner-1.webp"
 import partner2 from "@/assets/images/partner-2.webp"
 import partner3 from "@/assets/images/partner-3.webp"
 import partner4 from "@/assets/images/partner-4.webp"
-import partner5 from "@/assets/images/partner-5.webp"
+import partner5 from "@/assets/images/partner-5.jpg"
 import partner6 from "@/assets/images/partner-6.webp"
 import partner7 from "@/assets/images/partner-7.webp"
 import partner8 from "@/assets/images/partner-9.webp"
@@ -25,14 +25,14 @@ import partner9 from "@/assets/images/partner-10.webp"
 export default function LogoSlider() {
     const logos = [
         partner1,
+        partner8,
         partner2,
-        partner3,
-        partner4,
+        // partner3,
+        // partner4,
         partner5,
         partner6,
         partner7,
-        partner8,
-        partner9,
+        // partner9,
         two,
         three,
         four,
@@ -46,11 +46,11 @@ export default function LogoSlider() {
         <div className=" bg-white! ">
 
             <div className="overflow-hidden py-3 ">
-                <div className="flex items-center gap-10 whitespace-nowrap  animate-[scroll_25s_linear_infinite] ">
+                <div className="flex items-center gap-10 whitespace-nowrap  animate-[scroll_15s_linear_infinite] ">
 
 
                     {/* Duplicate Set (for infinite effect) */}
-                    {[...logos].map((logo, i) => (
+                    {[...logos , ...logos , ...logos  ].map((logo, i) => (
                         <img
                             key={`second-${i}`}
                             src={logo}

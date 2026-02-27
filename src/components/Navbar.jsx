@@ -465,6 +465,17 @@ import { Button } from './ui/button'
 import { ScrollArea } from './ui/scroll-area'
 import { courseData } from "./data/courseData "
 import { courses } from "./data/courses"
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
+import { Input } from "./ui/input"
+import { Textarea } from "./ui/textarea"
+import { Label } from "./ui/label"
 
 const data = ["Students can now take direct admission in the skill course of their choice. Go to Apply Now for instant enrollment. "]
 
@@ -476,13 +487,25 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
     const [scrollY, setScrollY] = useState(0);
     const [courseCategory, setCourseCategory] = useState(null);
+    const [enquiryData, setEnquiryData] = useState({
+        name: "",
+        email: "",
+        mobile: null,
+        message: ""
+    })
+    const handleEnquiryInput = (e) => {
+        const { name, value } = e.target;
+        setEnquiryData(prev => ({ ...prev, [name]: value }));
+
+    };
+
 
     const [animatenav, setanimatenav] = useState(false);
 
     const location = useLocation()
-    const animatedPaths = ["/online-admission"];
+    const animatedPaths = ["/online-admission", "/student"];
 
- 
+
 
     useEffect(() => {
         const handleScroll = () => setScrollY(window.scrollY);
@@ -500,6 +523,7 @@ const Navbar = () => {
 
         return () => window.removeEventListener("scroll", handleScroll);
     }, [scrollY, location.pathname]);
+
     const toggleDropdown = (menu) => {
         setActiveDropdown(activeDropdown === menu ? null : menu)
     }
@@ -509,6 +533,16 @@ const Navbar = () => {
         const uniqueCategories = [...new Set(courses.map(item => item.category))];
         setCourseCategory(uniqueCategories);
     }, []);
+
+
+    const handleEnquiry = (e) => {
+        e.preventDefault()
+
+
+
+    }
+
+
 
 
     return (
@@ -545,18 +579,57 @@ const Navbar = () => {
 
                         {/* Right Section */}
                         <div className="shrink-0">
-                            <Button
-                                variant="bordered"
-                                className="text-xs bg-white text-black"
-                                size="xs"
-                            >
-                                Enquire Now
-                            </Button>
+
+                            <Dialog>
+                                <DialogTrigger >
+                                    <Button
+                                        variant="bordered"
+                                        className="text-xs bg-white text-black"
+                                        size="xs"
+                                    >
+                                        Enquire Now
+                                    </Button>
+                                </DialogTrigger>
+                                <DialogContent>
+                                    <DialogHeader>
+                                        <DialogTitle>Enquiry Now</DialogTitle>
+                                    </DialogHeader>
+                                    <form onSubmit={handleEnquiry}>
+                                        <div className="space-y-3">
+                                            <div>
+
+                                                <Label className={"mb-2"} >Name <span className="text-red-500">*</span></Label>
+                                                <Input type={"name"} value={enquiryData.name} onChange={handleEnquiryInput} name="name" placeholder="Enter Name" />
+                                            </div>
+                                            <div>
+
+                                                <Label className={"mb-2"} >Email <span className="text-red-500">*</span></Label>
+                                                <Input type={"email"} value={enquiryData.email} onChange={handleEnquiryInput} name="email" placeholder="Enter Email" />
+                                            </div>
+                                            <div>
+                                                <Label className={"mb-2"} >Mobile <span className="text-red-500">*</span></Label>
+                                                <Input type={"number"} value={enquiryData.mobile} onChange={handleEnquiryInput} name="number" placeholder="Enter Mobile" />
+                                            </div>
+                                            <div>
+
+                                                <Label className={"mb-2"} >Message <span className="text-red-500">*</span></Label>
+                                                <Textarea id="textarea-message" value={enquiryData.message} onChange={handleEnquiryInput} name="message" placeholder="Type your message here." />
+                                            </div>
+                                            <Button type="submit" className={"bg-orange-500 hover:bg-orange-500 w-full rounded-full"} >Submit</Button>
+                                        </div>
+
+                                    </form>
+
+                                </DialogContent>
+                            </Dialog>
+
                         </div>
 
                     </div>
                 </div>
             </div>
+
+
 
 
             {/* Main Navbar */}
@@ -587,7 +660,7 @@ const Navbar = () => {
                         <div className=" ">
                             {/* Home */}
                             <div className='hidden lg:flex items-center justify-end '>
-                                <Link to="/"
+                                <Link to="http://localhost:5174/login" target="_blank"
                                     className={`ps-4 py-1 ${animatenav ? "text-black" : "text-white"}  hover:text-orange-600 font-medium text-[12px] transition-all duration-200 relative group`}
                                 >
                                     Student Login

@@ -32,6 +32,9 @@ import VocationalStudies from './pages/OldPages/VocationalStudies';
 import TechnicalEducation from './pages/OldPages/TechnicalEducation';
 import HigherEducation from './pages/OldPages/HigherEducation';
 import GovernmentPartnership from './pages/OldPages/GovernmentPartnership';
+import Student from './pages/registers/Student';
+import RegisterLayout from './layout/RegisterLayout';
+import FranchiseRegister from './pages/registers/FranchiseRegister';
 
 
 // Import Swiper styles
@@ -62,10 +65,10 @@ const App = () => {
           <Route path='/international-student-support' element={<InternationalStudentSupport />} />
 
           {/* courses */}
-          <Route path='/courses/:slug' element={<Courses />} />
+          <Route path='/courses/:slug/' element={<Courses />} />
 
           {/* admission   */}
-          <Route path='/online-admission/:id?' element={<OnlineAdmission />} />
+          <Route path='/online-admission/:id?/:cate?' element={<OnlineAdmission />} />
           <Route path='/notice-board' element={<NoticeBoard />} />
 
           {/* contact */}
@@ -73,6 +76,10 @@ const App = () => {
           <Route path='/gallery' element={<Gallery />} />
           {/* job updates */}
           <Route path='/job-updates' element={<JobUpdate />} />
+
+
+
+
 
 
 
@@ -98,6 +105,12 @@ const App = () => {
 
 
         </Route>
+
+        <Route path="/" element={<RegisterLayout />}>
+          <Route path='/student' element={<Student />} />
+          <Route path='/franchise' element={<FranchiseRegister />} />
+        </Route>
+
       </Routes>
 
     </>

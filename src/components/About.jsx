@@ -3,6 +3,7 @@ import student1 from "@/assets/images/student1.png"
 import student2 from "@/assets/images/student2.png"
 import student3 from "@/assets/images/student3.png"
 import student4 from "@/assets/images/student4.png"
+import { Link } from "react-router-dom";
 export default function About() {
 
     const benefits = [
@@ -121,9 +122,11 @@ export default function About() {
                         </div>
 
                         <div className="flex flex-col justify-center sm:flex-row gap-4 pt-4">
-                            <button className="bg-orange-500 hover:bg-amber-600 text-white font-semibold px-6 py-1.5 rounded-lg transition-all duration-300 transform active:scale-97 shadow-lg hover:shadow-xl">
-                                Enquire Now
-                            </button>
+                            <Link to="/franchise" >
+                                <button className="bg-orange-500 hover:bg-amber-600 text-white font-semibold px-6 py-1.5 rounded-lg transition-all duration-300 transform active:scale-97 shadow-lg hover:shadow-xl">
+                                    Enquire Now
+                                </button>
+                            </Link>
 
                             <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-1.5 rounded-lg transition-all duration-300 transform active:scale-97 shadow-lg hover:shadow-xl">
                                 Call Us

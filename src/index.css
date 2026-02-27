@@ -26,8 +26,6 @@
 
   }
 
-
-
   @layer utilites {
     .container {
       @apply mx-auto px-2 md:px-15;
@@ -361,14 +359,6 @@
     /* font-family: "'Playfair Display', serif"  */
   }
 
-
-
-
-
-
-
-
-
   /* navbar animation s */
   @keyframes slideDown {
     from {
@@ -385,12 +375,6 @@
   .animate-slideDown {
     animation: slideDown 0.3s ease-out;
   }
-
-
-
-
-
-
 
   .chairman-wrapper * {
     box-sizing: border-box;
@@ -414,7 +398,6 @@
     pointer-events: none;
     z-index: 0;
   }
-
 
   /* Decorative header row */
   .section-header {

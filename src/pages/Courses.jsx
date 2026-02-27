@@ -257,7 +257,7 @@ const CourseTable = ({ subcatCourse, searchQuery, activeTab, slug }) => {
                                         </td>
                                         <td className="px-5 py-3.5 text-gray-700 font-medium group-hover:text-orange-700 transition-colors">
                                             <Button asChild className={"bg-orange-500 hover:bg-orange-600"}>
-                                                <Link to={`/online-admission/${slug}`}  >
+                                                <Link to={`/student`}  >
                                                     Apply now
                                                 </Link>
                                             </Button>
