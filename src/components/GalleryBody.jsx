@@ -50,9 +50,9 @@ const galleryImages = [
         title: "",
     },
     {
-        id: 2,
-        src: g2,
-        thumb: g2,
+        id: 12,
+        src: g12,
+        thumb: g12,
         title: "",
     },
     {
@@ -61,6 +61,13 @@ const galleryImages = [
         thumb: g3,
         title: "",
     },
+    {
+        id: 2,
+        src: g2,
+        thumb: g2,
+        title: "",
+    },
+
     {
         id: 4,
         src: g4,
@@ -109,12 +116,7 @@ const galleryImages = [
         thumb: g11,
         title: "",
     },
-    {
-        id: 12,
-        src: g12,
-        thumb: g12,
-        title: "",
-    },
+
     {
         id: 13,
         src: g13,

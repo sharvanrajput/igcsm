@@ -9,13 +9,14 @@ import politician2 from "@/assets/images/politician2.jpg";
 import politician3 from "@/assets/images/politician3.jpg";
 import politician4 from "@/assets/images/politician4.jpg";
 import politician5 from "@/assets/images/politician5.jpg";
+import charaka from "@/assets/images/ashok_chakra.png";
 
 const appreciationData = [
-    { id: "1", name: "shri yogi adityanath", post: "hon'ble chief minister of up", image: politician2 },
     { id: "2", name: "shri Kunga Nima Lepcha", post: "member of the sikkim legislative assembly", image: politician3 },
     { id: "3", name: "shri giriraj singh", post: "minister of rural development and panchayati raj", image: politician4 },
-    { id: "4", name: "shri Prem singh tamang", post: "hon'ble chief minister of sikkim", image: politician5 },
+    { id: "1", name: "shri yogi adityanath", post: "hon'ble chief minister of up", image: politician2 },
     { id: "5", name: "shri Narendra modi", post: "hon'ble prime minister of india", image: politician1 },
+    { id: "4", name: "shri Prem singh tamang", post: "hon'ble chief minister of sikkim", image: politician5 },
 ];
 
 // ── Profile Card ──
@@ -27,8 +28,8 @@ function ProfileCard({ politician, isCenter }) {
     return (
         <div
             className={`
-                group relative transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
-                ${isCenter ? "scale-105 opacity-100 z-10" : "scale-95 opacity-70"}
+                group relative w-[300px] h-full transition-all duration-500 opacity-100 ease-[cubic-bezier(0.16,1,0.3,1)]
+                // ${isCenter ? "scale-105 opacity-100 z-10" : "scale-95 opacity-70"}
             `}
         >
             {/* Pulsing glow ring on center card */}
@@ -47,7 +48,7 @@ function ProfileCard({ politician, isCenter }) {
                 </div>
 
                 {/* Header gradient bg */}
-                <div className="relative bg-gradient-to-br from-orange-50 to-green-50 flex flex-col items-center pt-7 pb-5 px-5 overflow-hidden">
+                <div className="relative bg-orange-300/40 flex flex-col items-center pt-7 pb-5 px-5 overflow-hidden">
 
                     {/* Decorative blobs */}
                     <div className="absolute -top-5 -right-5 w-24 h-24 bg-orange-100 opacity-50 rounded-full pointer-events-none" />
@@ -120,90 +121,59 @@ const AppreciationSlicer = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <>
-            <section className="py-12 sm:py-16 relative bg-gradient-to-br from-orange-50 via-white to-green-50">
-                <div className="container overflow-hidden!">
+        <section className="py-12 sm:py-16 relative  bg-gray-200/50 overflow-hidden">
 
-                    {/* Header */}
-                    <div className="text-center mb-8 sm:mb-10">
-                        
-                        <h2
-                            data-aos="fade-right"
-                            data-aos-duration="600"
-                            className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800"
-                        >
-                            Our <span className="text-orange-500">Appreciation</span>
-                        </h2>
-                        <p className="text-sm text-gray-400 mt-2 font-medium">
-                            Honoured by distinguished leaders of the nation
-                        </p>
-                    </div>
+            <img src={charaka} className="absolute opacity-5 size-125 left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]  " alt="" />
 
-                    {/* Prev Button */}
-                    <button
-                        onClick={() => swiperRef.current?.slidePrev()}
-                        className="absolute left-0 sm:left-5 top-[50%] -translate-y-1/2 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white shadow-lg text-orange-500 flex items-center justify-center border border-orange-100 hover:bg-orange-500 hover:text-white hover:border-orange-500 hover:shadow-orange-200/60 hover:shadow-xl transition-all duration-250"
-                    >
-                        <ArrowLeft size={14} />
-                    </button>
+            <div className="container relative ">
 
-                    {/* Next Button */}
-                    <button
-                        onClick={() => swiperRef.current?.slideNext()}
-                        className="absolute right-0 sm:right-5 top-[50%] -translate-y-1/2 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white shadow-lg text-orange-500 flex items-center justify-center border border-orange-100 hover:bg-orange-500 hover:text-white hover:border-orange-500 hover:shadow-orange-200/60 hover:shadow-xl transition-all duration-250"
-                    >
-                        <ArrowRight size={14} />
-                    </button>
+                {/* Header */}
+                <div className="text-center mb-8 sm:mb-10">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
+                        Our <span className="text-orange-500">Appreciation</span>
+                    </h2>
+                    <p className="text-sm text-gray-400 mt-2 font-medium">
+                        Honoured by distinguished leaders of the nation
+                    </p>
+                </div>
 
-                    {/* Swiper */}
-                    <Swiper
-                        onSwiper={(s) => (swiperRef.current = s)}
-                        onSlideChange={(s) => setActiveIndex(s.realIndex)}
-                        modules={[Autoplay]}
-                        centeredSlides
-                        loop={true}
-                        autoplay={{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }}
-                        slidesPerView={1.2}
-                        spaceBetween={16}
-                        breakpoints={{
-                            480: { slidesPerView: 1.8, spaceBetween: 16 },
-                            640: { slidesPerView: 2.2, spaceBetween: 20 },
-                            768: { slidesPerView: 3, spaceBetween: 20 },
-                            1024: { slidesPerView: 4, spaceBetween: 24 },
-                        }}
-                        className="py-6!"
-                    >
-                        {[...appreciationData,...appreciationData].map((politician) => (
-                            <SwiperSlide key={politician.id}>
-                                {({ isActive }) => (
-                                    <ProfileCard politician={politician} isCenter={isActive} />
-                                )}
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-
-                    {/* Dot indicators */}
-                    <div className="flex justify-center gap-2 mt-4">
-                        {appreciationData.map((_, i) => (
-                            <button
+                {/* Continuous Slider */}
+                <div className="relative overflow-hidden">
+                    <div className="marquee flex gap-6">
+                        {[...appreciationData, ...appreciationData].map((politician, i) => (
+                            <div
                                 key={i}
-                                onClick={() => swiperRef.current?.slideToLoop(i)}
-                                className={`h-2 rounded-full transition-all duration-300 ${
-                                    activeIndex === i ? "w-6 bg-orange-500" : "w-2 bg-orange-200"
-                                }`}
-                            />
+                                className="min-w-[260px] sm:min-w-[300px] md:min-w-[320px]"
+                            >
+                                <ProfileCard politician={politician} />
+                            </div>
                         ))}
                     </div>
                 </div>
-            </section>
 
+            </div>
+
+            {/* Styles */}
             <style>{`
-                @keyframes spin {
-                    from { transform: rotate(0deg); }
-                    to { transform: rotate(360deg); }
-                }
-            `}</style>
-        </>
+        .marquee {
+          width: max-content;
+          animation: scroll 15s linear infinite;
+        }
+
+        .marquee:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
+        </section>
     );
 };
 

@@ -1,5 +1,5 @@
 // import one from "@/assets/images/1.png"
-import two from "@/assets/images/2.png"
+import two from "@/assets/images/upsdm.png"
 import three from "@/assets/images/3.webp"
 import four from "@/assets/images/1.webp"
 import six from "@/assets/images/2.jpg"

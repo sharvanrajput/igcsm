@@ -171,7 +171,7 @@
 //                                 <div className="relative group">
 //                                     <button className={`"px-4 py-2 me-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
 //                                         About Us
-//                                         <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+//                                         <ChevronDown className="w-4 h-4 mt-1.5 group-hover:rotate-180 transition-transform duration-300" />
 //                                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
 //                                     </button>
 
@@ -208,7 +208,7 @@
 //                                 <div className="relative group">
 //                                     <button className={`"px-4 py-2 me-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
 //                                         Courses
-//                                         <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+//                                         <ChevronDown className="w-4 h-4 mt-1.5 group-hover:rotate-180 transition-transform duration-300" />
 //                                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
 //                                     </button>
 
@@ -236,7 +236,7 @@
 //                                 <div className="relative group">
 //                                     <button className={`"px-4 py-2  ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
 //                                         Admission
-//                                         <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+//                                         <ChevronDown className="w-4 h-4 mt-1.5 group-hover:rotate-180 transition-transform duration-300" />
 //                                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
 //                                     </button>
 
@@ -690,9 +690,9 @@ const Navbar = () => {
                             <div className='hidden lg:flex  items-center'>
                                 {/* About Dropdown */}
                                 <div className="relative group">
-                                    <button className={`"px-4 py-2 me-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
+                                    <button className={`"px-4 flex  py-2 me-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
                                         About Us
-                                        <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+                                        <ChevronDown className="w-4 h-4   mt-1.5 group-hover:rotate-180 transition-transform duration-300" />
                                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
                                     </button>
 
@@ -728,7 +728,7 @@ const Navbar = () => {
                                 <div className="relative group">
                                     <button className={`"px-4 py-2 me-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
                                         Courses Category
-                                        <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+                                        <ChevronDown className="w-4 h-4 mt-1.5 group-hover:rotate-180 transition-transform duration-300" />
                                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
                                     </button>
 
@@ -767,7 +767,7 @@ const Navbar = () => {
                                 <div className="relative group">
                                     <button className={`"pl-4 py-2  ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
                                         Admission
-                                        <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+                                        <ChevronDown className="w-4 h-4 mt-1.5 group-hover:rotate-180 transition-transform duration-300" />
                                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
                                     </button>
 
@@ -812,7 +812,7 @@ const Navbar = () => {
                                 <div className="relative group">
                                     <button className={`pl-4 py-2  ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
                                         Verification
-                                        <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+                                        <ChevronDown className="w-4 h-4 mt-1.5 group-hover:rotate-180 transition-transform duration-300" />
                                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
                                     </button>
 
@@ -836,7 +836,7 @@ const Navbar = () => {
                                 <div className="relative group">
                                     <button className={`pl-4 py-2  ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
                                         Franchise
-                                        <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+                                        <ChevronDown className="w-4 h-4 mt-1.5 group-hover:rotate-180 transition-transform duration-300" />
                                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
                                     </button>
 
@@ -864,7 +864,7 @@ const Navbar = () => {
                                 <div className="relative group">
                                     <button className={`pl-4 py-2  ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 flex items-center gap-1 relative`}>
                                         Downloads
-                                        <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+                                        <ChevronDown className="w-4 h-4 mt-1.5 group-hover:rotate-180 transition-transform duration-300" />
                                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
                                     </button>
 

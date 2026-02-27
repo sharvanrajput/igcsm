@@ -24,7 +24,7 @@ const Home = () => {
             {/* <TeamSecton /> */}
             <ImageGallery />
             {/* <GalleryTest/> */}
-            <AnnouncementBoard />
+            {/* <AnnouncementBoard /> */}
             <AppreciationSlicer />
             <Reviews />
 
