@@ -1,6 +1,7 @@
 
 
 import { useState, useEffect } from "react";
+import { useInView } from "./about/ChairmanMesage";
 
 const contactCards = [
     {
@@ -77,10 +78,11 @@ export default function ContactBody() {
         setForm({ name: "", email: "", phone: "", subject: "", message: "" });
     };
 
+    const [headerRef, headerInView] = useInView();
     return (
-        <div
+        <section
             style={{ fontFamily: "'DM Sans', sans-serif" }}
-            className="min-h-screen bg-gray-50"
+            className="min-h-screen pt-10 bg-gray-50"
         >
             <style>{`
       
@@ -139,7 +141,23 @@ export default function ContactBody() {
 
 
 
-            <div className="max-w-6xl mx-auto px-4 py-14">
+            <div className="container py-14">
+                <div className="section-header">
+                    <div
+                        ref={headerRef}
+                        className={`fade-up ${headerInView ? "visible" : ""}`}
+                    >
+
+                        <h2 className="main-title">
+                            Contact<em> Us</em>
+                        </h2>
+                        <div className="ornamental-divider">
+                            <div className="ornamental-diamond" />
+                            <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />
+                            <div className="ornamental-diamond" />
+                        </div>
+                    </div>
+                </div>
 
                 {/* Contact Cards */}
                 <div className={`fade-up ${visible ? "visible" : ""} stagger-2 grid grid-cols-2 md:grid-cols-4 gap-4 mb-14`}>
@@ -269,6 +287,6 @@ export default function ContactBody() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

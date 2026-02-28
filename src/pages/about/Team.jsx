@@ -8,10 +8,11 @@ import TeamSection from '@/components/TeamSecton'
 const Team = () => {
     return (
         <>
-            <Breadcrumb Heading={"Team"} bg={team} path={"Team"} />
+            {/* <Breadcrumb Heading={"Team"} bg={team} path={"Team"} /> */}
             {/* <TeamCard /> */}
-            <TeamSection />
-
+            <div className="pt-20">
+                <TeamSection />
+            </div>
 
         </>
     )

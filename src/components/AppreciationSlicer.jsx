@@ -28,7 +28,7 @@ function ProfileCard({ politician, isCenter }) {
     return (
         <div
             className={`
-                group relative w-[300px] h-full transition-all duration-500 opacity-100 ease-[cubic-bezier(0.16,1,0.3,1)]
+                group relative w-[300px] h-full! transition-all duration-500 opacity-100 ease-[cubic-bezier(0.16,1,0.3,1)]
                 // ${isCenter ? "scale-105 opacity-100 z-10" : "scale-95 opacity-70"}
             `}
         >
@@ -38,7 +38,7 @@ function ProfileCard({ politician, isCenter }) {
             )}
 
             {/* Card */}
-            <div className="relative bg-white rounded-3xl overflow-hidden shadow-md group-hover:shadow-2xl group-hover:shadow-orange-200/60 transition-shadow duration-500">
+            <div className="relative bg-white h-[300px] rounded-3xl overflow-hidden shadow-md group-hover:shadow-2xl group-hover:shadow-orange-200/60 transition-shadow duration-500">
 
                 {/* Top tricolor strip */}
                 <div className="h-1 w-full flex">
@@ -48,7 +48,7 @@ function ProfileCard({ politician, isCenter }) {
                 </div>
 
                 {/* Header gradient bg */}
-                <div className="relative bg-orange-300/40 flex flex-col items-center pt-7 pb-5 px-5 overflow-hidden">
+                <div className="relative   bg-gray-200/50  h-full flex flex-col items-center pt-7 pb-5 px-5 overflow-hidden">
 
                     {/* Decorative blobs */}
                     <div className="absolute -top-5 -right-5 w-24 h-24 bg-orange-100 opacity-50 rounded-full pointer-events-none" />
@@ -58,10 +58,10 @@ function ProfileCard({ politician, isCenter }) {
                     <div className="relative w-28 h-28 mb-4">
                         {/* Spinning conic ring */}
                         <div
-                            className="absolute -inset-2 rounded-full"
+                            className="absolute -inset-2 rounded-full animation-[spin_4s_linear_infinite]"
                             style={{
                                 background: "conic-gradient(#FF9933 0deg 100deg, transparent 100deg 180deg, #138808 180deg 280deg, transparent 280deg 360deg)",
-                                animation: isCenter ? "spin 4s linear infinite" : "spin 7s linear infinite",
+                                // animation: "spin 4s linear infinite"
                             }}
                         />
                         {/* White separator */}
@@ -98,7 +98,7 @@ function ProfileCard({ politician, isCenter }) {
 
                     {/* Post badge */}
                     <div className="bg-white border border-orange-100 rounded-xl px-4 py-2 text-center shadow-sm w-full">
-                        <p className="text-xs font-bold uppercase tracking-widest text-gray-400 leading-relaxed capitalize">
+                        <p className="text-xs font-bold uppercase tracking-widest text-gray-700 leading-relaxed capitalize">
                             {politician.post}
                         </p>
                     </div>
@@ -121,7 +121,7 @@ const AppreciationSlicer = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <section className="py-12 sm:py-16 relative  bg-gray-200/50 overflow-hidden">
+        <section className="py-12 sm:py-16 relative bg-orange-300/40 overflow-hidden">
 
             <img src={charaka} className="absolute opacity-5 size-125 left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]  " alt="" />
 
@@ -143,7 +143,7 @@ const AppreciationSlicer = () => {
                         {[...appreciationData, ...appreciationData].map((politician, i) => (
                             <div
                                 key={i}
-                                className="min-w-[260px] sm:min-w-[300px] md:min-w-[320px]"
+                                className="min-w-[260px] h-[300px] sm:min-w-[300px] md:min-w-[320px]"
                             >
                                 <ProfileCard politician={politician} />
                             </div>

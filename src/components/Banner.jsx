@@ -20,7 +20,7 @@ const Banner = () => {
                 <div className=" w-full  h-screen lg:h-[50vh] xl:h-screen overflow-hidden">
                     {/* Background Video */}
 
-                    <div className="absolute top-0 left-0 w-full h-full bg-black/55" />
+                    <div className="absolute top-0 left-0 w-full h-full bg-black/70" />
 
 
                     {/* Content */}

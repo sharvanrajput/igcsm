@@ -20,6 +20,7 @@ import member9 from "@/assets/images/prince-kumar-soni.webp";
 import member10 from "@/assets/images/Sabir-Sir.jpeg";
 import member11 from "@/assets/images/jitender.png";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useInView } from "./about/ChairmanMesage";
 
 const teamData = [
     { id: "1", name: "Mr. Abhay Pratap Singh", image: member1, post: "Project Manager" },
@@ -37,7 +38,7 @@ const teamData = [
     // { id: "7", name: "Team", image: member7, post: "" },
 ];
 
- 
+
 
 // ── Member Card ──
 function MemberCard({ member, isCenter }) {
@@ -65,7 +66,7 @@ function MemberCard({ member, isCenter }) {
                     <div className="absolute inset-0 bg-linear-to-t from-orange-600/70 via-orange-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                     {/* Social icons — spring up from center on hover */}
-                     
+
 
                     {/* Orange sweep bar at image bottom */}
                     <div className="absolute bottom-0 left-0 right-0 h-0.75 bg-linear-to-r from-orange-500 via-orange-400 to-amber-300 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out" />
@@ -105,33 +106,33 @@ export default function TeamSection() {
     const swiperRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const total = teamData.length;
+    const [headerRef, headerInView] = useInView();
 
     return (
         <>
-            <section className="py-12 sm:py-16 relative" >
+            <section className="py-12  relative" >
 
 
 
                 <div className="container overflow-hidden!">
 
-                    {/* ── Header ── */}
-                    <div className="text-center mb-8 sm:mb-10">
-                        <div className="flex items-center justify-center gap-3 mb-3">
-                            <div className="w-8 h-px bg-linear-to-r from-transparent to-orange-400" />
-                            <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.3em] text-orange-500 uppercase">
-                                Our People
-                            </span>
-                            <div className="w-8 h-px bg-linear-to-l from-transparent to-orange-400" />
-                        </div>
-                        <h2
-                            data-aos="fade-right"
-                            data-aos-duration="600"
-                            className="text-2xl sm:text-3xl md:text-4xl font-bold"
+                    <div className="section-header">
+                        <div
+                            ref={headerRef}
+                            className={`fade-up ${headerInView ? "visible" : ""}`}
                         >
-                            Meet Our <span className="text-orange-500">Team</span>
-                        </h2>
-                    </div>
 
+                            <h2 className="main-title">
+                              Meet Our <em> Team</em>
+                            </h2>
+                            <div className="ornamental-divider">
+                                <div className="ornamental-diamond" />
+                                <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />
+                                <div className="ornamental-diamond" />
+                            </div>
+                        </div>
+                    </div>
+                 
                     <button
                         onClick={() => swiperRef.current?.slidePrev()}
                         className="absolute left-0 sm:left-5 top-[45%] -translate-y-1/2 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white shadow-lg text-orange-500 flex items-center justify-center border border-orange-100 hover:bg-orange-500 hover:text-white hover:border-orange-500 hover:shadow-orange-200/60 hover:shadow-xl transition-all duration-250"

@@ -1,12 +1,12 @@
 
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 // ─── Zod Schema ────────────────────────────────────────────────────────────────
 const schema = z.object({
@@ -133,13 +133,20 @@ export default function Student() {
     const [savedFormData, setSavedFormData] = useState(null); // Store full form for later finalization
     const [otpVerified, setOtpVerified] = useState(false); // Track if OTP step passed
 
+    const { cat } = useParams()
+    useEffect(() => {
+        console.log(cat)
+    }, [])
+
+
+
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm({
         resolver: zodResolver(schema),
-        defaultValues: { instituteName: "NCTA Expert Pvt Ltd", country: "India" },
+        defaultValues: { instituteName: "IGCSM", country: "India", course: `${cat ? cat.toUpperCase()  : ""}` },
     });
 
     // Step 1: Send OTP (extract only email, mobile, studentName)
@@ -442,7 +449,14 @@ export default function Student() {
                                 error={errors.instituteName?.message}
                                 {...register("instituteName")}
                             />
-                            <SelectInput
+                            <TextInput
+                                label="Course"
+                                placeholder="select course"
+                                required
+                                error={errors.course?.message}
+                                {...register("course")}
+                            />
+                            {/* <SelectInput
                                 label="Course"
                                 required
                                 error={errors.course?.message}
@@ -450,7 +464,7 @@ export default function Student() {
                             >
                                 <option value="">--Please Select Course--</option>
                                 {COURSES.map((c) => <option key={c} value={c}>{c}</option>)}
-                            </SelectInput>
+                            </SelectInput> */}
                         </div>
                     </div>
 

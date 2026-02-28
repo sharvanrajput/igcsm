@@ -5,6 +5,7 @@ import about from "@/assets/images/aboutbg.webp"
 import Breadcrumb from "@/components/about/Breadcrumb";
 
 import ec from "@/assets/images/ec.webp"
+import { useInView } from "@/components/about/ChairmanMesage";
 
 
 const TITP_CSS = `
@@ -179,166 +180,180 @@ export default function InternationalStudentSupport() {
         "Laos", "Pakistan", "Peru", "The Philippines", "Myanmar",
         "Mongolia", "Nepal", "Sri Lanka", "Thailand", "Uzbekistan", "Vietnam",
     ];
-
+    const [headerRef, headerInView] = useInView();
     return (
         <>
             <style>{TITP_CSS}</style>
 
 
-            <Breadcrumb Heading={"International Student Suport "} bg={IMGS.hero} path={"International Student Suport"} />
+            {/* <Breadcrumb Heading={"International Student Suport "} bg={IMGS.hero} path={"International Student Suport"} /> */}
+            <div className="pt-20">
+
+                <section className="  relative overflow-hidden" style={{ background: "#FAF7F2" }} id="titp">
+
+                    {/* Ambient glows */}
+                    <div className="absolute rounded-full pointer-events-none blur-3xl"
+                        style={{ width: 700, height: 700, top: -200, right: -200, background: "radial-gradient(circle, rgba(249,115,22,0.07) 0%, transparent 70%)" }} />
+                    <div className="absolute rounded-full pointer-events-none blur-3xl"
+                        style={{ width: 500, height: 500, bottom: 0, left: -150, background: "radial-gradient(circle, rgba(212,175,55,0.07) 0%, transparent 70%)" }} />
 
 
-            <section className="  relative overflow-hidden" style={{ background: "#FAF7F2" }} id="titp">
-
-                {/* Ambient glows */}
-                <div className="absolute rounded-full pointer-events-none blur-3xl"
-                    style={{ width: 700, height: 700, top: -200, right: -200, background: "radial-gradient(circle, rgba(249,115,22,0.07) 0%, transparent 70%)" }} />
-                <div className="absolute rounded-full pointer-events-none blur-3xl"
-                    style={{ width: 500, height: 500, bottom: 0, left: -150, background: "radial-gradient(circle, rgba(212,175,55,0.07) 0%, transparent 70%)" }} />
-
-
-                {/* ══ MAIN CONTENT ══ */}
-                <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 pb-20 sm:pb-28 pt-10">
-
-                    {/* Intro paragraph + decorative line */}
-                    <Reveal delay={60} className="mb-16">
-                        <p  >
-                            The program promotes international collaboration through the transfer of skills, technology, and knowledge among the participating countries thereby, contributing towards the human resource development. It offers training to the workers for a specific period (3 – 5 years) in other country's industrial society.
-                        </p>
-                        <div
-                            ref={lineRef}
-                            className={`titp-line h-px w-20 mt-7 ${lineVisible ? "visible" : ""}`}
-                            style={{ background: "#f97316", animationDelay: "300ms" }}
-                        />
-                    </Reveal>
-
-                    {/* ══ MoC — split layout: text left, image right ══ */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20 items-center">
-                        {/* Text side */}
-                        <Reveal dir="left" delay={0}>
+                    {/* ══ MAIN CONTENT ══ */}
+                    <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 pb-20 sm:pb-28 pt-10">
+                        <div className="section-header">
                             <div
-                                className="   h-full relative overflow-hidden"
-
+                                ref={headerRef}
+                                className={`fade-up ${headerInView ? "visible" : ""}`}
                             >
-                                <div className="absolute top-0 right-0 w-28 h-28 opacity-30 rounded-bl-full"
-                                    style={{ background: "radial-gradient(circle at top right, rgba(249,115,22,0.18), transparent 70%)" }} />
-
-                                <div className="flex items-start gap-4 mb-5">
-                                   
-                                    <div>
-                                        <h2 className="text-2xl lg:text-3xl font-semibold leading-tight">Memorandum of Cooperation</h2>
-                                        <p  >India – Japan · October 2017</p>
-                                    </div>
-                                </div>
-
-                                <p  >
-                                    To allow the participation of Indian youths in TITP, the ministry of skill Development and Entrepreneurship (MSDE), Government of India and the Ministry of Justice, the Ministry of Foreign Affairs and the Ministry Of Health, Labour and Welfare, Government of Japan, signed a Memorandum of Cooperation (MoC) in Japan on October, 2017.
-                                </p>
-
-                                <div className="pt-5 border-t border-orange-100">
-                                    <p  >
-                                        <span className="font-semibold text-stone-700">Indira Gandhi Computer Shaksharta Mission</span> is collaborated with{" "}
-                                        <span className="font-semibold text-stone-700">New Delhi Institute of Management (NDIM)</span> and{" "}
-                                        <span className="font-semibold text-stone-700">Team Tensai</span> to formed a new company with name of{" "}
-                                        <span className="font-semibold text-orange-600">International Skills Centre India (ISCI)</span> for the implementation of "INDO – JAPAN Technical Intern Training Programme"
-                                    </p>
+                                <h2 className="main-title">
+                                    International Student <em> Suport</em>
+                                </h2>
+                                <div className="ornamental-divider">
+                                    <div className="ornamental-diamond" />
+                                    <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />
+                                    <div className="ornamental-diamond" />
                                 </div>
                             </div>
+                        </div>
+                        {/* Intro paragraph + decorative line */}
+                        <Reveal delay={60} className="mb-16">
+                            <p  >
+                                The program promotes international collaboration through the transfer of skills, technology, and knowledge among the participating countries thereby, contributing towards the human resource development. It offers training to the workers for a specific period (3 – 5 years) in other country's industrial society.
+                            </p>
+                            <div
+                                ref={lineRef}
+                                className={`titp-line h-px w-20 mt-7 ${lineVisible ? "visible" : ""}`}
+                                style={{ background: "#f97316", animationDelay: "300ms" }}
+                            />
                         </Reveal>
 
-                        {/* Image side */}
-                        <Reveal dir="right" delay={80}>
-                            <div className="titp-img-zoom rounded-2xl overflow-hidden shadow-xl" style={{ height: 380, border: "1px solid rgba(249,115,22,0.12)" }}>
-                                <img src={IMGS.handshake} alt="India Japan Cooperation" className="w-full h-full object-cover" />
-                            </div>
-                        </Reveal>
-                    </div>
-
-                    {/* ══ Highlights strip ══ */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-20">
-                        {[
-                            { icon: "🏅", img: null, text: "Empanelled as a SENDING ORGANIZATION in TITP Programme", delay: 0 },
-                            { icon: "✈️", img: null, text: "Placement Opportunities in JAPAN for Foreign Placement", delay: 100 },
-                            { icon: "🎓", img: null, text: "Already provide placement in JAPAN to approx 105 nos. of Students", delay: 200 },
-                        ].map(({ icon, text, delay }) => (
-                            <Reveal key={text} delay={delay}>
+                        {/* ══ MoC — split layout: text left, image right ══ */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20 items-center">
+                            {/* Text side */}
+                            <Reveal dir="left" delay={0}>
                                 <div
-                                    className="titp-card-hover flex items-start gap-3 p-5 rounded-xl h-full"
-                                    style={{ background: "#fff", border: "1px solid rgba(249,115,22,0.15)", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}
+                                    className="   h-full relative overflow-hidden"
+
                                 >
-                                    <div className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-xl"
-                                        style={{ background: "rgba(249,115,22,0.08)" }}>
-                                        {icon}
+                                    <div className="absolute top-0 right-0 w-28 h-28 opacity-30 rounded-bl-full"
+                                        style={{ background: "radial-gradient(circle at top right, rgba(249,115,22,0.18), transparent 70%)" }} />
+
+                                    <div className="flex items-start gap-4 mb-5">
+
+                                        <div>
+                                            <h2 className="text-2xl lg:text-3xl font-semibold leading-tight">Memorandum of Cooperation</h2>
+                                            <p  >India – Japan · October 2017</p>
+                                        </div>
                                     </div>
-                                    <p className="text-sm font-medium text-stone-700 leading-snug pt-1.5">{text}</p>
+
+                                    <p  >
+                                        To allow the participation of Indian youths in TITP, the ministry of skill Development and Entrepreneurship (MSDE), Government of India and the Ministry of Justice, the Ministry of Foreign Affairs and the Ministry Of Health, Labour and Welfare, Government of Japan, signed a Memorandum of Cooperation (MoC) in Japan on October, 2017.
+                                    </p>
+
+                                    <div className="pt-5 border-t border-orange-100">
+                                        <p  >
+                                            <span className="font-semibold text-stone-700">Indira Gandhi Computer Shaksharta Mission</span> is collaborated with{" "}
+                                            <span className="font-semibold text-stone-700">New Delhi Institute of Management (NDIM)</span> and{" "}
+                                            <span className="font-semibold text-stone-700">Team Tensai</span> to formed a new company with name of{" "}
+                                            <span className="font-semibold text-orange-600">International Skills Centre India (ISCI)</span> for the implementation of "INDO – JAPAN Technical Intern Training Programme"
+                                        </p>
+                                    </div>
                                 </div>
                             </Reveal>
-                        ))}
-                    </div>
 
-                    {/* ══ Benefits — image cards ══ */}
-                    <div className="mb-20">
-                        <Reveal className="mb-8">
-                            <div className="flex items-center gap-3.5">
-                              
-                                <h2
-                                    className="text-2xl sm:text-3xl font-semibold"
-                                >
-                                    Potential Benefits of <em className="text-orange-500 not-italic">TITP</em>
-                                </h2>
-                            </div>
-                        </Reveal>
+                            {/* Image side */}
+                            <Reveal dir="right" delay={80}>
+                                <div className="titp-img-zoom rounded-2xl overflow-hidden shadow-xl" style={{ height: 380, border: "1px solid rgba(249,115,22,0.12)" }}>
+                                    <img src={IMGS.handshake} alt="India Japan Cooperation" className="w-full h-full object-cover" />
+                                </div>
+                            </Reveal>
+                        </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            {benefits.map((b, i) => (
-                                <Reveal key={i} delay={i * 90}>
+                        {/* ══ Highlights strip ══ */}
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-20">
+                            {[
+                                { icon: "🏅", img: null, text: "Empanelled as a SENDING ORGANIZATION in TITP Programme", delay: 0 },
+                                { icon: "✈️", img: null, text: "Placement Opportunities in JAPAN for Foreign Placement", delay: 100 },
+                                { icon: "🎓", img: null, text: "Already provide placement in JAPAN to approx 105 nos. of Students", delay: 200 },
+                            ].map(({ icon, text, delay }) => (
+                                <Reveal key={text} delay={delay}>
                                     <div
-                                        className="titp-card-hover rounded-xl overflow-hidden"
-                                        style={{ background: "#fff", border: "1px solid rgba(249,115,22,0.12)", boxShadow: "0 2px 16px rgba(0,0,0,0.05)" }}
+                                        className="titp-card-hover flex items-start gap-3 p-5 rounded-xl h-full"
+                                        style={{ background: "#fff", border: "1px solid rgba(249,115,22,0.15)", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}
                                     >
-                                        {/* Image strip */}
-                                        <div className="titp-img-zoom relative overflow-hidden" style={{ height: 160 }}>
-                                            <img src={b.img} alt={b.label} className="w-full h-full object-cover" style={{ filter: "brightness(0.75) saturate(0.85)" }} />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                                            <div className="absolute bottom-3 left-4 flex items-center gap-2">
-                                                <span className="text-lg">{b.icon}</span>
-                                                <span className="text-xs font-semibold tracking-widest uppercase text-white/90">{b.label}</span>
-                                            </div>
+                                        <div className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-xl"
+                                            style={{ background: "rgba(249,115,22,0.08)" }}>
+                                            {icon}
                                         </div>
-                                        {/* Text */}
-                                        <div className="p-5">
-                                            <p className="text-sm leading-relaxed text-stone-600">{b.text}</p>
-                                        </div>
+                                        <p className="text-sm font-medium text-stone-700 leading-snug pt-1.5">{text}</p>
                                     </div>
                                 </Reveal>
                             ))}
                         </div>
-                    </div>
 
-                    {/* ══ Stats ══ */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-20">
-                        {[
-                            { value: 402356, suffix: "", label: "Beneficiaries in 2020", delay: 0 },
-                            { value: 17, suffix: "+", label: "Participating Countries", delay: 80 },
-                            { value: 105, suffix: "", label: "Students Placed in Japan", delay: 160 },
-                            { value: 1993, suffix: "", label: "Programme Est.", delay: 240 },
-                        ].map(({ value, suffix, label, delay }) => (
-                            <Reveal key={label} delay={delay}>
-                                <div
-                                    className="titp-card-hover rounded-xl p-6 text-center"
-                                    style={{ background: "#fff", border: "1px solid rgba(249,115,22,0.12)", boxShadow: "0 2px 16px rgba(0,0,0,0.04)" }}
-                                >
-                                    <div className=" text-4xl font-bold text-orange-500 leading-none mb-2">
-                                        <CountUp target={value} suffix={suffix} />
-                                    </div>
-                                    <p className="text-[10px] uppercase tracking-widest text-stone-400 mt-1">{label}</p>
+                        {/* ══ Benefits — image cards ══ */}
+                        <div className="mb-20">
+                            <Reveal className="mb-8">
+                                <div className="flex items-center gap-3.5">
+
+                                    <h2
+                                        className="text-2xl sm:text-3xl font-semibold"
+                                    >
+                                        Potential Benefits of <em className="text-orange-500 not-italic">TITP</em>
+                                    </h2>
                                 </div>
                             </Reveal>
-                        ))}
-                    </div>
 
-                    {/* ══ Japan imagery strip ══ */}
-                    {/* <Reveal className="mb-20">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                {benefits.map((b, i) => (
+                                    <Reveal key={i} delay={i * 90}>
+                                        <div
+                                            className="titp-card-hover rounded-xl overflow-hidden"
+                                            style={{ background: "#fff", border: "1px solid rgba(249,115,22,0.12)", boxShadow: "0 2px 16px rgba(0,0,0,0.05)" }}
+                                        >
+                                            {/* Image strip */}
+                                            <div className="titp-img-zoom relative overflow-hidden" style={{ height: 160 }}>
+                                                <img src={b.img} alt={b.label} className="w-full h-full object-cover" style={{ filter: "brightness(0.75) saturate(0.85)" }} />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                                                <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                                                    <span className="text-lg">{b.icon}</span>
+                                                    <span className="text-xs font-semibold tracking-widest uppercase text-white/90">{b.label}</span>
+                                                </div>
+                                            </div>
+                                            {/* Text */}
+                                            <div className="p-5">
+                                                <p className="text-sm leading-relaxed text-stone-600">{b.text}</p>
+                                            </div>
+                                        </div>
+                                    </Reveal>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* ══ Stats ══ */}
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-20">
+                            {[
+                                { value: 402356, suffix: "", label: "Beneficiaries in 2020", delay: 0 },
+                                { value: 17, suffix: "+", label: "Participating Countries", delay: 80 },
+                                { value: 105, suffix: "", label: "Students Placed in Japan", delay: 160 },
+                                { value: 1993, suffix: "", label: "Programme Est.", delay: 240 },
+                            ].map(({ value, suffix, label, delay }) => (
+                                <Reveal key={label} delay={delay}>
+                                    <div
+                                        className="titp-card-hover rounded-xl p-6 text-center"
+                                        style={{ background: "#fff", border: "1px solid rgba(249,115,22,0.12)", boxShadow: "0 2px 16px rgba(0,0,0,0.04)" }}
+                                    >
+                                        <div className=" text-4xl font-bold text-orange-500 leading-none mb-2">
+                                            <CountUp target={value} suffix={suffix} />
+                                        </div>
+                                        <p className="text-[10px] uppercase tracking-widest text-stone-400 mt-1">{label}</p>
+                                    </div>
+                                </Reveal>
+                            ))}
+                        </div>
+
+                        {/* ══ Japan imagery strip ══ */}
+                        {/* <Reveal className="mb-20">
                         <div className="grid grid-cols-2 gap-3 rounded-2xl overflow-hidden" style={{ height: 260 }}>
                             <div className="titp-img-zoom overflow-hidden rounded-xl">
                                 <img src={IMGS.japan1} alt="Japan" className="w-full h-full object-cover" style={{ filter: "brightness(0.8)" }} />
@@ -354,74 +369,76 @@ export default function InternationalStudentSupport() {
                         </div>
                     </Reveal> */}
 
-                    {/* ══ Countries ══ */}
-                    <div className="mb-4">
-                        <Reveal className="mb-8">
-                            <div className="flex items-center gap-3.5">
-                                
-                                <h3 className=" text-2xl sm:text-3xl font-bold text-stone-800">
-                                    Participating <em className="text-orange-500 not-italic">Countries</em>
-                                </h3>
-                            </div>
-                        </Reveal>
+                        {/* ══ Countries ══ */}
+                        <div className="mb-4">
+                            <Reveal className="mb-8">
+                                <div className="flex items-center gap-3.5">
 
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-                            {/* Countries card */}
-                            <Reveal dir="left" delay={0}>
-                                <div
-                                    className="rounded-2xl p-6 sm:p-8"
-                                    style={{ background: "#fff", border: "1px solid rgba(249,115,22,0.12)", boxShadow: "0 2px 16px rgba(0,0,0,0.04)" }}
-                                >
-                                    <div className="mb-6 pb-6 border-b border-stone-100">
-                                        <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-stone-400 mb-3">Country of Destination</p>
-                                        <CountryPill name="🇯🇵 Japan" isDestination />
-                                    </div>
-                                    <div className="mb-6 pb-6 border-b border-stone-100">
-                                        <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-stone-400 mb-3">Countries of Origin</p>
-                                        <div className="flex flex-wrap gap-2">
-                                            {originCountries.map((c) => <CountryPill key={c} name={c} />)}
+                                    <h3 className=" text-2xl sm:text-3xl font-bold text-stone-800">
+                                        Participating <em className="text-orange-500 not-italic">Countries</em>
+                                    </h3>
+                                </div>
+                            </Reveal>
+
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+                                {/* Countries card */}
+                                <Reveal dir="left" delay={0}>
+                                    <div
+                                        className="rounded-2xl p-6 sm:p-8"
+                                        style={{ background: "#fff", border: "1px solid rgba(249,115,22,0.12)", boxShadow: "0 2px 16px rgba(0,0,0,0.04)" }}
+                                    >
+                                        <div className="mb-6 pb-6 border-b border-stone-100">
+                                            <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-stone-400 mb-3">Country of Destination</p>
+                                            <CountryPill name="🇯🇵 Japan" isDestination />
+                                        </div>
+                                        <div className="mb-6 pb-6 border-b border-stone-100">
+                                            <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-stone-400 mb-3">Countries of Origin</p>
+                                            <div className="flex flex-wrap gap-2">
+                                                {originCountries.map((c) => <CountryPill key={c} name={c} />)}
+                                            </div>
+                                        </div>
+                                        <div className="grid grid-cols-3 gap-4">
+                                            {[
+                                                { label: "Skill Level", value: "Low" },
+                                                { label: "Timeline", value: "1993 – Ongoing" },
+                                                { label: "Beneficiaries (2020)", value: "402,356" },
+                                            ].map(({ label, value }) => (
+                                                <div key={label}>
+                                                    <p className="text-[10px] tracking-widest uppercase text-stone-400 mb-1">{label}</p>
+                                                    <p className="text-sm font-semibold text-stone-700">{value}</p>
+                                                </div>
+                                            ))}
                                         </div>
                                     </div>
-                                    <div className="grid grid-cols-3 gap-4">
-                                        {[
-                                            { label: "Skill Level", value: "Low" },
-                                            { label: "Timeline", value: "1993 – Ongoing" },
-                                            { label: "Beneficiaries (2020)", value: "402,356" },
-                                        ].map(({ label, value }) => (
-                                            <div key={label}>
-                                                <p className="text-[10px] tracking-widest uppercase text-stone-400 mb-1">{label}</p>
-                                                <p className="text-sm font-semibold text-stone-700">{value}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </Reveal>
+                                </Reveal>
 
-                            {/* Map / globe visual */}
-                            <Reveal dir="right" delay={100}>
-                                <div className=" p-5 border border-orange-500 " >
-                                    <img
-                                        src={ec}
-                                        alt="World map globe"
-                                        className="w-full h-full object-contain"
-                                        style={{ filter: "brightness(0.7) saturate(0.7)" }}
-                                    />
-                                    
-                                </div>
-                            </Reveal>
+                                {/* Map / globe visual */}
+                                <Reveal dir="right" delay={100}>
+                                    <div className=" p-5 border border-orange-500 " >
+                                        <img
+                                            src={ec}
+                                            alt="World map globe"
+                                            className="w-full h-full object-contain"
+                                            style={{ filter: "brightness(0.7) saturate(0.7)" }}
+                                        />
+
+                                    </div>
+                                </Reveal>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                {/* Bottom divider */}
-                <div className="flex items-center gap-6 pb-10 max-w-6xl mx-auto px-6 sm:px-10">
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
-                    <p className="text-[11px] tracking-widest uppercase whitespace-nowrap text-stone-400">
-                        <span className="text-orange-500">IGCSM</span> — Indo Japan TITP
-                    </p>
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
-                </div>
-            </section>
+                    {/* Bottom divider */}
+                    <div className="flex items-center gap-6 pb-10 max-w-6xl mx-auto px-6 sm:px-10">
+                        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
+                        <p className="text-[11px] tracking-widest uppercase whitespace-nowrap text-stone-400">
+                            <span className="text-orange-500">IGCSM</span> — Indo Japan TITP
+                        </p>
+                        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
+                    </div>
+                </section>
+
+            </div>
         </>
     );
 }

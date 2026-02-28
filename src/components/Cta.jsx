@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from './ui/button'
 import ctaimg from "@/assets/images/cta.png"
 import { Link } from 'react-router-dom'
+import { EnquiryNow } from './EnquiryNow'
 const Cta = () => {
   return (
     <section className='md:py-0  relative overflow-hidden'>
@@ -20,9 +21,11 @@ const Cta = () => {
               <h2 data-aos="fade-right" data-aos-duration="600" className="text-2xl mb-5 lg:text-4xl  font-bold   ">
                 Join India’s leading education & skill-development network.
               </h2>
-              <Link to="/franchise" >
+              <EnquiryNow >
+
                 <Button className={"bg-white text-black hover:bg-green-500"}>Enquire Now</Button>
-              </Link>
+              </EnquiryNow>
+
             </div>
             <div>
               <img src={ctaimg} data-aos="fade-left" data-aos-duration="1000" alt="" />
@@ -30,7 +33,7 @@ const Cta = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   )
 }
 

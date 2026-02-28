@@ -16,12 +16,20 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { MdFilterListAlt } from 'react-icons/md'
+import { useInView } from '@/components/about/ChairmanMesage'
 
 
 // ─── Derive unique ordered categories from flat data ─────────────────────────
+// The UI needs a special "All Courses" entry so that users can view every
+// course regardless of its category.  We inject that as the first item and
+// make sure it’s handled by the filter logic below.
 const buildCategories = () => {
     const seen = new Set()
     const list = []
+
+    // add default option at top
+    list.push({ name: 'All Courses', slug: 'all-courses' })
+
     courses.forEach(c => {
         if (!seen.has(c.categoryslug)) {
             seen.add(c.categoryslug)
@@ -43,7 +51,12 @@ const SUBCAT_LABELS = {
 
 // ─── Build subcatCourse structure ─────────────────────────────────────────────
 const buildSubcatCourse = (categorySlug) => {
-    const filtered = courses.filter(c => c.categoryslug === categorySlug)
+    // if user has selected the "all courses" pseudo‑category, we simply
+    // include every course.  Otherwise filter by the specific slug.
+    const filtered = categorySlug === 'all-courses'
+        ? courses
+        : courses.filter(c => c.categoryslug === categorySlug)
+
     const subcatMap = new Map()
     filtered.forEach(c => {
         if (!subcatMap.has(c.subcategoryslug)) {
@@ -176,7 +189,7 @@ const SubcatTabs = ({ available, activeTab, onChange }) => (
 )
 
 // ─── Course Table ─────────────────────────────────────────────────────────────
-const CourseTable = ({ subcatCourse, searchQuery, activeTab, slug }) => {
+const CourseTable = ({ subcatCourse, searchQuery, activeTab, slug, cat }) => {
     useEffect(() => {
         console.log("ceck for active slug", slug)
     }, [slug])
@@ -257,7 +270,7 @@ const CourseTable = ({ subcatCourse, searchQuery, activeTab, slug }) => {
                                         </td>
                                         <td className="px-5 py-3.5 text-gray-700 font-medium group-hover:text-orange-700 transition-colors">
                                             <Button asChild className={"bg-orange-500 hover:bg-orange-600"}>
-                                                <Link to={`/student`}  >
+                                                <Link to={`/student/${course?.name?.toLowerCase()}`} replace  >
                                                     Apply now
                                                 </Link>
                                             </Button>
@@ -275,12 +288,22 @@ const CourseTable = ({ subcatCourse, searchQuery, activeTab, slug }) => {
 
 // ─── Courses Page ─────────────────────────────────────────────────────────────
 const Courses = () => {
-    const { slug } = useParams()
+    const { slug, coursename } = useParams()
     const navigate = useNavigate()
 
     const [searchQuery, setSearchQuery] = useState('')
     const [activeTab, setActiveTab] = useState('all')
     const [mobileSubcatOpen, setMobileSubcatOpen] = useState(false)
+
+    // ensure that the URL always contains a slug for shareability; if the
+    // user lands on `/courses` we immediately push the default category so the
+    // address bar shows `/courses/all-courses` (replace so browser history
+    // doesn't get polluted).
+    useEffect(() => {
+        if (!slug) {
+            navigate(`/courses/${ALL_CATEGORIES[0]?.slug}`, { replace: true })
+        }
+    }, [slug, navigate])
 
     const activeSlug = slug || ALL_CATEGORIES[0]?.slug
 
@@ -300,18 +323,36 @@ const Courses = () => {
     const handleCategoryChange = (catSlug) => navigate(`/courses/${catSlug}`)
 
     const totalCourses = useMemo(() => subcatCourse.reduce((acc, s) => acc + s.courses.length, 0), [subcatCourse])
-
+    const [headerRef, headerInView] = useInView();
     return (
         <>
-            <Breadcrumb
+            {/* <Breadcrumb
+                // Heading={activeCategory?.name || 'Courses'}
                 Heading={activeCategory?.name || 'Courses'}
                 bg={about}
                 path={activeCategory?.name || 'Courses'}
-            />
+            /> */}
 
-            <div className="bg-gray-50 min-h-screen">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
+            <div className="bg-gray-50 min-h-screen pt-15" >
+                <div className="container mx-auto  py-8">
+
+                    <div className="section-header">
+                        <div
+                            ref={headerRef}
+                            className={`fade-up ${headerInView ? "visible" : ""}`}
+                        >
+
+                            <h2 className="main-title">
+                                Course<em> Category</em>
+                            </h2>
+                            <div className="ornamental-divider">
+                                <div className="ornamental-diamond" />
+                                <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />
+                                <div className="ornamental-diamond" />
+                            </div>
+                        </div>
+                    </div>
                     {/* ── Top Bar: Search + Mobile Category Dropdown ── */}
                     <div className="flex flex-col sm:flex-row gap-3 mb-6 lg:mb-8">
                         {/* Mobile category dropdown */}
@@ -332,7 +373,7 @@ const Courses = () => {
                                         <MdFilterListAlt />
 
                                         <p className="text-[11px] py-3 font-bold uppercase tracking-widest text-orange-500">
-                                            {activeSlug}
+                                            {activeCategory?.name || activeSlug}
                                         </p>
                                     </Button>
                                 </DropdownMenuTrigger>
@@ -436,7 +477,7 @@ const Courses = () => {
                                     searchQuery={searchQuery}
                                     activeTab={activeTab}
                                     slug={slug}
-
+                                    cat={activeCategory?.name}
                                 />
                             </div>
 

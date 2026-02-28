@@ -7,14 +7,14 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 
 import gallery1 from "@/assets/images/gallery1.webp";
-import gallery2 from "@/assets/images/gallery2.webp";
-import gallery3 from "@/assets/images/gallery3.webp";
-import gallery4 from "@/assets/images/gallery4.jpeg";
+ 
+ 
+
 import gallery5 from "@/assets/images/gallery5.jpeg";
 import gallery6 from "@/assets/images/gallery6.jpeg";
-import gallery7 from "@/assets/images/gallery7.jpeg";
-import g1 from "@/assets/images/award1.jpeg"
-import g2 from "@/assets/images/award2.png"
+// import gallery7 from "@/assets/images/gallery7.jpeg";
+// import g1 from "@/assets/images/award1.jpeg"
+ 
 import g3 from "@/assets/images/award3.jpg"
 import g4 from "@/assets/images/award4.jpg"
 import g5 from "@/assets/images/award5.jpg"
@@ -23,9 +23,9 @@ import g7 from "@/assets/images/award7.jpg"
 import g8 from "@/assets/images/award8.jpg"
 import g9 from "@/assets/images/award9.jpeg"
 import g10 from "@/assets/images/award10.jpg"
-import g11 from "@/assets/images/gallery1.webp"
+ 
 import g12 from "@/assets/images/gallery2.webp"
-import g13 from "@/assets/images/gallery3.webp"
+// import g13 from "@/assets/images/gallery3.webp"
 import g14 from "@/assets/images/gallery4.jpeg"
 import g15 from "@/assets/images/gallery7.jpeg"
 import g16 from "@/assets/images/gallery8.webp"
@@ -33,7 +33,7 @@ import g17 from "@/assets/images/gallery9.jpg"
 import g18 from "@/assets/images/gallery10.jpg"
 import g19 from "@/assets/images/gallery11.jpeg"
 import g20 from "@/assets/images/gallery12.jpeg"
-import g21 from "@/assets/images/gallery13.jpeg"
+// import g21 from "@/assets/images/gallery13.jpeg"
 import g22 from "@/assets/images/gallery14.jpeg"
 import g23 from "@/assets/images/gallery15.jpeg"
 import g24 from "@/assets/images/gallery16.jpg"
@@ -64,40 +64,39 @@ export default function SimpleGallery() {
     // ────────────────────────────────────────────────────────────────────────────
 
     const images = [
-        gallery1,
-        gallery2,
-        gallery3,
-        gallery4,
+        // gallery2,
+        g6,
+        g3,
+        g8,
+        // gallery1,
+        g22,
+        g25,
+       
+       
         gallery5,
         gallery6,
-        gallery7,
-        g1,
-        g2,
-        g3,
+        // g1,
+        
         g4,
         g5,
-        g6,
-        g7,
-        g8,
+        // g7,
         g9,
         g10,
-        g11,
-        g12,
-        g13,
-        g14,
-        g15,
-        g16,
+       
+        // g12,
+        // g13,
+        // g14,
+        // g15,
+        // g16,
         g17,
         g18,
         g19,
         g20,
-        g21,
-        g22,
+        // g21,
         g23,
         g24,
-        g25,
         g26,
-        g27,
+        // g27,
     ];
 
     return (

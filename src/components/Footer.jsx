@@ -5,6 +5,7 @@ import { FaAngleRight } from "react-icons/fa";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import { BiSolidPhoneCall } from "react-icons/bi";
+import { EnquiryNow } from './EnquiryNow';
 
 const Footer = () => {
     return (
@@ -36,20 +37,29 @@ const Footer = () => {
                         <h2 className="title-font font-medium text-orange-500 tracking-widest text-2xl mb-3">Our Glance</h2>
                         <nav className="list-none mb-10">
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2 '>
-                                <Link className="text-white   hover:text-gray-300 ">Radio Ad  </Link>
+                                <Link to="/notice-board" className="text-white   hover:text-gray-300 ">Notice Board</Link>
                             </li>
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2 '>
 
-                                <Link className="text-white     hover:text-gray-300">Tv News </Link>
+                                <Link to="/student" className="text-white     hover:text-gray-300">Apply Admission    </Link>
                             </li>
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
 
-                                <Link className="text-white    hover:text-gray-300"> Newspaper Ad</Link>
+                                <Link to="/franchise" className="text-white    hover:text-gray-300"> Apply Franchise</Link>
                             </li>
+                            {/* <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
+                                <EnquiryNow>
+
+                                    <Link className="text-white     hover:text-gray-300">
+                                        Enquire Now </Link>
+                                </EnquiryNow>
+                            </li> */}
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
 
-                                <Link className="text-white     hover:text-gray-300">
-                                    Video Ad</Link>
+                                <Link to="/awards-and-recognition" className="text-white     hover:text-gray-300">
+
+                                    Awards and Recognition
+                                </Link>
                             </li>
 
 
@@ -87,7 +97,7 @@ const Footer = () => {
 
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
 
-                                <Link to={"/courses/software-programs"} className="text-white   hover:text-gray-300">Coursese</Link>
+                                <Link to={"/courses/mobile-development"} className="text-white   hover:text-gray-300">Courses</Link>
                             </li>
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
 

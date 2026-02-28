@@ -35,6 +35,7 @@ import GovernmentPartnership from './pages/OldPages/GovernmentPartnership';
 import Student from './pages/registers/Student';
 import RegisterLayout from './layout/RegisterLayout';
 import FranchiseRegister from './pages/registers/FranchiseRegister';
+import Login from './pages/auth/Login';
 
 
 // Import Swiper styles
@@ -107,9 +108,15 @@ const App = () => {
         </Route>
 
         <Route path="/" element={<RegisterLayout />}>
-          <Route path='/student' element={<Student />} />
+          <Route path='/student/:cat?' element={<Student />} />
           <Route path='/franchise' element={<FranchiseRegister />} />
+
+
         </Route>
+
+        <Route path='/Student-login' element={<Login />} />
+        <Route path='/Franchise-career' element={<Login />} />
+
 
       </Routes>
 

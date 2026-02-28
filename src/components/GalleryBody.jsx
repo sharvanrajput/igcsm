@@ -35,6 +35,7 @@ import g27 from "@/assets/images/gallery19.jpg"
 
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useInView } from "./about/ChairmanMesage";
 
 const galleryImages = [
     {
@@ -49,12 +50,12 @@ const galleryImages = [
         thumb: g21,
         title: "",
     },
-    {
-        id: 12,
-        src: g12,
-        thumb: g12,
-        title: "",
-    },
+    // {
+    //     id: 12,
+    //     src: g12,
+    //     thumb: g12,
+    //     title: "",
+    // },
     {
         id: 3,
         src: g3,
@@ -389,7 +390,7 @@ function Lightbox({ images, startIndex, onClose }) {
 
 export default function GalleryBody() {
     const [lightboxIndex, setLightboxIndex] = useState(null);
-
+    const [headerRef, headerInView] = useInView();
     return (
         <>
             <style>{`
@@ -438,10 +439,25 @@ export default function GalleryBody() {
         .gal-card:hover .gal-zoom { opacity: 1; transform: scale(1); }
       `}</style>
 
-            <section style={{ background: "#fafaf8", padding: "64px 0" }}>
+            <section className="pt-20 pb-20" style={{ background: "#fafaf8"}}>
                 <div className="container">
 
+                    <div className="section-header">
+                        <div
+                            ref={headerRef}
+                            className={`fade-up ${headerInView ? "visible" : ""}`}
+                        >
 
+                            <h2 className="main-title">
+                                <em> Gellery</em>
+                            </h2>
+                            <div className="ornamental-divider">
+                                <div className="ornamental-diamond" />
+                                <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />
+                                <div className="ornamental-diamond" />
+                            </div>
+                        </div>
+                    </div>
 
                     {/* Grid */}
                     <div style={{

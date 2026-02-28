@@ -6,6 +6,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import faq from "@/assets/images/faq.webp"
+import { useInView } from './about/ChairmanMesage'
 
 const faqItems = [
     {
@@ -31,21 +32,29 @@ const faqItems = [
 ]
 
 const FaqBody = () => {
+    const [headerRef, headerInView] = useInView();
     return (
         <section className="py-14 sm:py-20 bg-gray-50">
             <div className="container max-w-6xl mx-auto px-4 sm:px-6">
 
                 {/* Section heading */}
-                <div className="text-center mb-10">
-                    <span className="inline-block text-orange-500 font-semibold text-xs tracking-widest uppercase mb-2">
-                        Got Questions?
-                    </span>
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-                        Frequently Asked Questions
-                    </h2>
-                    <div className="mx-auto mt-3 h-1 w-12 rounded-full bg-orange-500" />
-                </div>
 
+                <div className="section-header">
+                    <div
+                        ref={headerRef}
+                        className={`fade-up ${headerInView ? "visible" : ""}`}
+                    >
+
+                        <h2 className="main-title">
+                            <em> Faq</em>
+                        </h2>
+                        <div className="ornamental-divider">
+                            <div className="ornamental-diamond" />
+                            <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />
+                            <div className="ornamental-diamond" />
+                        </div>
+                    </div>
+                </div>
                 <div className="grid lg:grid-cols-2 gap-10 items-center">
 
                     {/* Accordion */}

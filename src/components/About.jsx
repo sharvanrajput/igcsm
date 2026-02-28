@@ -4,13 +4,14 @@ import student2 from "@/assets/images/student2.png"
 import student3 from "@/assets/images/student3.png"
 import student4 from "@/assets/images/student4.png"
 import { Link } from "react-router-dom";
+import { EnquiryNow } from "./EnquiryNow";
 export default function About() {
 
     const benefits = [
         {
             id: 1,
             icon: '🎓',
-            title: '30+ Years of Educational Excellence',
+            title: '17+ Years of Educational Excellence',
             color: 'text-blue-600'
         },
         {
@@ -28,7 +29,7 @@ export default function About() {
         {
             id: 4,
             icon: '🤝',
-            title: '80+ Franchise Network',
+            title: '600+ Franchise Network',
             color: 'text-purple-600'
         },
         {
@@ -40,7 +41,7 @@ export default function About() {
         {
             id: 6,
             icon: '🏥',
-            title: '30+ in-House Healthcare Education Provider',
+            title: '80+ in-House  Education Provider',
             color: 'text-teal-600'
         }
     ];
@@ -89,7 +90,7 @@ export default function About() {
                         </div>
                         <h2 className="text-3xl lg:text-4xl font-bold leading-tight">
 
-                            <span className="">Join our franchise opportunity</span>
+                            <span className="">Join our franchise network</span>
                             <br />
                             <span className="text-orange-500">to unlock entrepreneurial</span>
                             <br />
@@ -122,15 +123,17 @@ export default function About() {
                         </div>
 
                         <div className="flex flex-col justify-center sm:flex-row gap-4 pt-4">
-                            <Link to="/franchise" >
+                            <EnquiryNow >
                                 <button className="bg-orange-500 hover:bg-amber-600 text-white font-semibold px-6 py-1.5 rounded-lg transition-all duration-300 transform active:scale-97 shadow-lg hover:shadow-xl">
                                     Enquire Now
                                 </button>
-                            </Link>
+                            </EnquiryNow >
 
-                            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-1.5 rounded-lg transition-all duration-300 transform active:scale-97 shadow-lg hover:shadow-xl">
-                                Call Us
-                            </button>
+                            <Link to="/franchise" >
+                                <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-1.5 rounded-lg transition-all duration-300 transform active:scale-97 shadow-lg hover:shadow-xl">
+                                    Apply Now
+                                </button>
+                            </Link>
                         </div>
                     </div>
 
@@ -155,7 +158,7 @@ export default function About() {
                                 </div>
                                 <div>
                                     <p className="text-xs md:text-sm! text-gray-500">Enrolled Students</p>
-                                    <p className="text-lg md:text-xl! font-bold text-gray-900">5000+</p>
+                                    <p className="text-lg md:text-xl! font-bold text-gray-900">5 Lakh+</p>
                                 </div>
                             </div>
                         </div>
@@ -169,7 +172,7 @@ export default function About() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <p className="font-bold text-gray-900 text-base md:text-sm!">UPTO 20% OFF</p>
+                                    <p className="font-bold text-gray-900 text-base md:text-sm!">UPTO 90% OFF</p>
                                     <p className="text-xs md:text-sm! text-gray-500">For All Courses</p>
                                 </div>
                             </div>

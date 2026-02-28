@@ -108,7 +108,7 @@ function TestimonialCard({ item }) {
                 }}
             />
 
-            <SplitImage src={item.image} />
+            {/* <SplitImage src={item.image} /> */}
 
             <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between", minWidth: 0 }}>
                 <p
@@ -320,7 +320,7 @@ export default function TestimonialsSection() {
                         pagination={{ clickable: true }}
                         breakpoints={{
                             768: { slidesPerView: 1 },
-                            1024: { slidesPerView: 2 },
+                            1024: { slidesPerView: 3 },
                         }}
                         className="testimonial-swiper"
                         style={{ paddingBottom: "44px" }}

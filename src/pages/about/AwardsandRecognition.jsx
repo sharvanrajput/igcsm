@@ -4,8 +4,11 @@ import Breadcrumb from '@/components/about/Breadcrumb'
 const AwardsandRecognition = () => {
     return (
         <>
-            <Breadcrumb Heading={"Awards & Recognition"} bg={about} path={"Awards & Recognition"} />
-            <AwardsGallery />
+            {/* <Breadcrumb Heading={"Awards & Recognition"} bg={about} path={"Awards & Recognition"} /> */}
+            <div className="pt-30">
+
+                <AwardsGallery />
+            </div>
         </>
     )
 }

@@ -6,7 +6,7 @@ import JobUpdateBody from '@/components/JobUpdateBody'
 const JobUpdate = () => {
     return (
         <>
-            <Breadcrumb Heading={"Job Updates"} bg={about} path={"Job Updates"} />
+            {/* <Breadcrumb Heading={"Job Updates"} bg={about} path={"Job Updates"} /> */}
             <JobUpdateBody />
         </>
     )

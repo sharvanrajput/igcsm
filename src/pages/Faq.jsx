@@ -5,7 +5,7 @@ import FaqBody from '@/components/FaqBody'
 const Faq = () => {
     return (
         <>
-            <Breadcrumb Heading={"FAQ"} bg={about} path={"FAQ"} />
+            {/* <Breadcrumb Heading={"FAQ"} bg={about} path={"FAQ"} /> */}
             <FaqBody />
         </>
     )

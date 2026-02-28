@@ -5,7 +5,7 @@ import GalleryBody from '@/components/GalleryBody'
 const Gallery = () => {
     return (
         <>
-            <Breadcrumb Heading={"Gallery"} bg={about} path={"Gallery"} />
+            {/* <Breadcrumb Heading={"Gallery"} bg={about} path={"Gallery"} /> */}
              <GalleryBody />
         </>
     )

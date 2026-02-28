@@ -10,6 +10,7 @@ import award7 from "@/assets/images/award7.jpg"
 import award8 from "@/assets/images/award8.jpg"
 import award9 from "@/assets/images/award9.jpeg"
 import award10 from "@/assets/images/award10.jpg"
+import { useInView } from "./ChairmanMesage";
 
 const awards = [
   {
@@ -151,9 +152,9 @@ const GLOBAL_CSS = `
 `;
 
 const BADGE = {
-  Gold:     { border: "#f97316", text: "#f97316", glow: "rgba(249,115,22,0.45)", label: "✦ Gold" },
+  Gold: { border: "#f97316", text: "#f97316", glow: "rgba(249,115,22,0.45)", label: "✦ Gold" },
   Platinum: { border: "#6A90A8", text: "#6A90A8", glow: "rgba(106,144,168,0.42)", label: "✦ Platinum" },
-  Silver:   { border: "#909090", text: "#909090", glow: "rgba(144,144,144,0.38)", label: "✦ Silver" },
+  Silver: { border: "#909090", text: "#909090", glow: "rgba(144,144,144,0.38)", label: "✦ Silver" },
 };
 
 /* ── Icons ── */
@@ -228,8 +229,8 @@ function ImageModal({ initialIndex, onClose }) {
   const slideStyle = slideDir === "next"
     ? { animation: "slideOutLeft 0.26s ease forwards" }
     : slideDir === "prev"
-    ? { animation: "slideOutRight 0.26s ease forwards" }
-    : { animation: "slideInFade 0.3s ease forwards" };
+      ? { animation: "slideOutRight 0.26s ease forwards" }
+      : { animation: "slideInFade 0.3s ease forwards" };
 
   return (
     <div
@@ -396,11 +397,11 @@ function AwardCard({ award, index, onPreview }) {
         {/* Gradient overlay */}
         <div
           className="absolute inset-0 transition-all duration-500"
-          // style={{
-          //   background: hovered
-          //     ? "linear-gradient(to top, rgba(14,9,2,0.5) 0%, rgba(14,9,2,0.50) 50%, rgba(14,9,2,0.5) 100%)"
-          //     : "linear-gradient(to top, rgba(14,9,2,0.1) 0%, rgba(14,9,2,0.1) 45%, rgba(14,9,2,0.1) 100%)",
-          // }}
+        // style={{
+        //   background: hovered
+        //     ? "linear-gradient(to top, rgba(14,9,2,0.5) 0%, rgba(14,9,2,0.50) 50%, rgba(14,9,2,0.5) 100%)"
+        //     : "linear-gradient(to top, rgba(14,9,2,0.1) 0%, rgba(14,9,2,0.1) 45%, rgba(14,9,2,0.1) 100%)",
+        // }}
         />
       </div>
 
@@ -462,6 +463,7 @@ function AwardCard({ award, index, onPreview }) {
 /* ── Page ── */
 export default function AwardGallery() {
   const [previewIndex, setPreviewIndex] = useState(null); // index or null
+  const [headerRef, headerInView] = useInView();
 
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -479,28 +481,24 @@ export default function AwardGallery() {
       <div className="fixed rounded-full pointer-events-none blur-3xl -z-10"
         style={{ width: 500, height: 500, bottom: 0, right: -100, background: "radial-gradient(circle, rgba(106,144,168,0.09) 0%, transparent 70%)" }} />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 py-20 sm:py-28">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 py-10 ">
 
         {/* ── Hero ── */}
-        <div className="mb-16">
-          {/* Eyebrow */}
-          <div data-aos="fade-right" data-aos-duration="600" className="flex items-center gap-3.5 mb-5">
-            <div className="w-12 h-px bg-orange-500" />
-            <span className="text-[11px] font-semibold tracking-[0.32em] uppercase text-orange-500">
-              IGCSM Achievements
-            </span>
+        <div className="section-header">
+          <div
+            ref={headerRef}
+            className={`fade-up ${headerInView ? "visible" : ""}`}
+          >
+
+            <h2 className="main-title">
+            Awards And <em> recognition</em>
+            </h2>
+            <div className="ornamental-divider">
+              <div className="ornamental-diamond" />
+              <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />
+              <div className="ornamental-diamond" />
+            </div>
           </div>
-
-          {/* Title */}
-          <h2 data-aos="fade-right" data-aos-duration="600" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-2 md:mb-3">
-            Awards &amp;<br />
-            <em className="text-orange-500 not-italic">Recognition</em>
-          </h2>
-
-          {/* Subtitle */}
-          <p className="text-[0.95rem] leading-relaxed font-light max-w-md" style={{ color: "#7A6A55" }}>
-            A curated legacy of honors earned through years of dedicated service, innovation, and measurable community impact.
-          </p>
         </div>
 
         {/* ── Gallery Grid ── */}

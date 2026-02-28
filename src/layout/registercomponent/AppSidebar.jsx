@@ -32,8 +32,13 @@ const student = [
 
     },
     {
-        name: "Signi n",
-        url: "/login",
+        name: "Student Login",
+        url: "/Student-login",
+        icon: LogIn
+    },
+    {
+        name: "Franchise Login",
+        url: "/Franchise-career",
         icon: LogIn
     },
 

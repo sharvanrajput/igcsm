@@ -1,17 +1,37 @@
 import React from 'react'
 import about2 from "@/assets/images/about2.webp"
+import { useInView } from './ChairmanMesage';
 const Aboutus = () => {
+    const [headerRef, headerInView] = useInView();
     return (
-        <section className='pt-20 relative '>
+        <section className='pt-10 relative '>
 
 
             <div className="container">
+
+                <div className="section-header">
+                    <div
+                        ref={headerRef}
+                        className={`fade-up ${headerInView ? "visible" : ""}`}
+                    >
+
+                        <h2 className="main-title">
+                            About<em> us</em>
+                        </h2>
+                        <div className="ornamental-divider">
+                            <div className="ornamental-diamond" />
+                            <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />
+                            <div className="ornamental-diamond" />
+                        </div>
+                    </div>
+                </div>
+
                 <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
                     <div className='self-center'>
                         <div className="flex items-center gap-2 mb-4  ">
                             <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
                             <span className="text-orange-500 font-semibold text-sm md:text-base">
-                              About IGCSM
+                                About IGCSM
                             </span>
                         </div>
                         <h2 className="text-2xl sm:text-2xl md:text-3xl  font-semibold mb-3 sm:mb-4 md:mb-6  leading-tight">

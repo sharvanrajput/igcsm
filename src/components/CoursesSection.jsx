@@ -7,10 +7,17 @@ import { Autoplay, Pagination, Navigation, FreeMode } from 'swiper/modules';
 import { ArrowRight, BookCopy, MoveRight, Star, StarIcon } from 'lucide-react';
 import { FaStar } from 'react-icons/fa';
 
-import c1 from "@/assets/images/c1.jpg"
-import c2 from "@/assets/images/c2.jpg"
-import c3 from "@/assets/images/c3.jpg"
-import c4 from "@/assets/images/c4.jpg"
+// import c1 from "@/assets/images/c1.jpg"
+// import c2 from "@/assets/images/c2.jpg"
+// import c3 from "@/assets/images/c3.jpg"
+// import c4 from "@/assets/images/c4.jpg"
+
+import c1 from "@/assets/images/course-1.png"
+import c2 from "@/assets/images/course-13.png"
+import c3 from "@/assets/images/course-12.png"
+import c4 from "@/assets/images/course-11.png"
+
+// import c4 from "@/assets/images/cap.jfif"
 
 
 import v1 from "@/assets/videos/fashion_design.mp4"
@@ -21,6 +28,8 @@ import v4 from "@/assets/videos/computer_application.mp4"
 
 
 import { useEffect, useRef, useState } from "react";
+import { EnquiryNow } from './EnquiryNow';
+import { Link } from 'react-router-dom';
 
 const CoursesSection = () => {
     // Sample course data
@@ -65,19 +74,19 @@ const CoursesSection = () => {
                 { icon: '🎓', alt: 'Certification Badge' }
             ]
         },
-        {
-            id: 2,
-            title: 'Diploma In Pre Primary Teacher Training',
-            duration: '2 Years',
-            level: '12th (PCB)',
-            rating: 4.8,
-            reviews: '5.2K',
-            video: v3,
-            badges: [
-                { icon: '🏛️', alt: 'University Badge' },
-                { icon: '🎓', alt: 'Certification Badge' }
-            ]
-        },
+        // {
+        //     id: 2,
+        //     title: 'Diploma In Pre Primary Teacher Training',
+        //     duration: '2 Years',
+        //     level: '12th (PCB)',
+        //     rating: 4.8,
+        //     reviews: '5.2K',
+        //     video: v3,
+        //     badges: [
+        //         { icon: '🏛️', alt: 'University Badge' },
+        //         { icon: '🎓', alt: 'Certification Badge' }
+        //     ]
+        // },
         {
             id: 3,
             title: 'Diploma In Fashion Designing',
@@ -226,8 +235,8 @@ const CoursesSection = () => {
                                     >
                                         {/* Image / Banner */}
                                         <div className="h-[150px] relative overflow-hidden">
-                                            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-all duration-300"></div>
-                                            <img src={category.image} alt="" className="w-full h-full object-cover" />
+                                            <div className="absolute inset-0 bg-trainsparent group-hover:bg-[#f9f9f9]transition-all duration-300"></div>
+                                            <img src={category.image} alt="" className="w-40 relative mt-4" />
                                         </div>
 
                                         {/* Label */}
@@ -242,11 +251,21 @@ const CoursesSection = () => {
                         </div>
 
                         {/* Action Buttons */}
-                        <div className="flex flex-col xs:flex-row sm:flex-row gap-3 sm:gap-4 c">
-                            <button className="w-full xs:w-auto group   text-white-900 font-semibold px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-lg transition-all duration-300 bg-orange-500 text-white   shadow-lg flex items-center justify-center gap-2 text-sm sm:text-base">
-                                Enquire Now
-                                <ArrowRight />
-                            </button>
+                        <div className="flex flex-col xs:flex-row sm:flex-row gap-3 sm:gap-4 justify-center ">
+                            <EnquiryNow className='w-full'>
+                                <button className="bg-green-700 hover:bg-green-800 text-white font-semibold px-6 py-1.5 rounded-lg transition-all duration-300 transform active:scale-97 shadow-lg hover:shadow-xl">
+                                    Enquire Now
+
+                                </button>
+                            </EnquiryNow>
+
+
+                            <Link to="/student" >
+                                <button className="bg-green-700 hover:bg-green-800 text-white font-semibold px-6 py-1.5 rounded-lg transition-all duration-300 transform active:scale-97 shadow-lg hover:shadow-xl">
+                                    Apply Now
+
+                                </button>
+                            </Link>
 
                         </div>
                     </div>
@@ -289,10 +308,10 @@ const CoursesSection = () => {
                                     spaceBetween={0}
                                     loop={true}
 
-                                    speed={6000} // ⭐ smooth long motion
+                                    speed={3000}
 
                                     autoplay={{
-                                        delay: 0,
+                                        delay: 2000,
                                         disableOnInteraction: false,
                                         pauseOnMouseEnter: true,
                                     }}
@@ -364,10 +383,12 @@ const CoursesSection = () => {
                                                     </div>
 
                                                     {/* Enquire Button */}
-                                                    <button className="w-full sm:w-auto px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded transition-all duration-300 flex items-center justify-center gap-2 shadow-lg text-sm sm:text-base">
-                                                        Enquire Now
-                                                        <MoveRight className="w-4 h-4" />
-                                                    </button>
+                                                    <Link to="/student" >
+                                                        <button className="w-full  rounded-sm sm:rounded-lg sm:w-auto px-4 py-2 bg-green-700 hover:bg-green-800 text-white font-semibold rounded transition-all duration-300 flex items-center justify-center gap-2 shadow-lg text-sm sm:text-base">
+                                                            Apply Now
+                                                            <MoveRight className="w-4 h-4" />
+                                                        </button>
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </SwiperSlide>

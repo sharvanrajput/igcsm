@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useInView } from "./ChairmanMesage";
 
 const tabs = [
     {
@@ -63,7 +64,7 @@ export default function MissionVision() {
     const [animating, setAnimating] = useState(false);
     // ✅ NEW: track if user is hovering to pause auto-switch
     const [paused, setPaused] = useState(false);
-
+    const [headerRef, headerInView] = useInView();
     const current = tabs.find((t) => t.id === active);
 
     const handleTabClick = (id) => {
@@ -87,8 +88,8 @@ export default function MissionVision() {
                     return tabs[nextIndex].id;
                 });
                 setAnimating(false);
-            }, 250);
-        }, 3000);
+            }, 100);
+        }, 2000);
         return () => clearInterval(interval);
     }, [paused]);
 
@@ -154,7 +155,22 @@ export default function MissionVision() {
 
             {/* ✅ NEW: onMouseEnter/Leave on the container to pause/resume auto-switch */}
             <div className=" container   " onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+                <div className="section-header">
+                    <div
+                        ref={headerRef}
+                        className={`fade-up ${headerInView ? "visible" : ""}`}
+                    >
 
+                        <h2 className="main-title">
+                            Mission <em>Vision</em>
+                        </h2>
+                        <div className="ornamental-divider">
+                            <div className="ornamental-diamond" />
+                            <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />
+                            <div className="ornamental-diamond" />
+                        </div>
+                    </div>
+                </div>
                 <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-stretch">
                     {/* LEFT: Image + Tabs */}
                     <div className="relative w-full lg:w-[420px] flex-shrink-0 rounded-2xl overflow-hidden min-h-[380px] sm:min-h-[460px]">

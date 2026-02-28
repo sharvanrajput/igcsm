@@ -5,7 +5,7 @@ import ContactBody from '@/components/Contactbody'
 const Contact = () => {
     return (
         <>
-            <Breadcrumb Heading={"Contact us"} bg={about} path={"Contact us"} />
+            {/* <Breadcrumb Heading={"Contact us"} bg={about} path={"Contact us"} /> */}
             <ContactBody />
         </>
     )

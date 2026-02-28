@@ -39,6 +39,7 @@ import {
 import { RiMoneyDollarCircleLine, RiLeafLine } from "react-icons/ri";
 import { BsArrowRight, BsPeopleFill } from "react-icons/bs";
 import { Textarea } from "./ui/textarea";
+import { useInView } from "./about/ChairmanMesage";
 
 /* ──────────────────────────────────────────────────
    DATA
@@ -310,7 +311,7 @@ function ApplyModal({ job, open, onClose }) {
 
                 {/* ── Modal Header ── */}
                 <div className="bg-linear-to-br from-orange-500 to-amber-500 px-7 pt-7 pb-6 relative">
-                    
+
 
                     <div className="flex items-center gap-2 mb-1">
                         <HiOutlineSparkles className="text-white/80" size={15} />
@@ -508,6 +509,7 @@ export default function JobUpdateBody() {
     const [selectedJob, setSelectedJob] = useState(null);
     const [modalOpen, setModalOpen] = useState(false);
     const [heroVis, setHeroVis] = useState(false);
+    const [headerRef, headerInView] = useInView();
 
     useEffect(() => {
         const t = setTimeout(() => setHeroVis(true), 80);
@@ -555,21 +557,31 @@ export default function JobUpdateBody() {
 
             <div className="    text-gray-900">
 
-            
 
-  
+
+
                 {/* ════════════════════════════════
             JOB LISTINGS
         ════════════════════════════════ */}
                 <section id="openings" className="bg-white border-t border-b border-gray-100 py-20">
                     <div className="max-w-6xl mx-auto px-6">
-                        <Reveal>
-                            <div className="text-center mb-10">
-                                <h2 className="font-display text-4xl font-bold text-gray-900">Open Positions</h2>
-                                <p className="text-gray-500 mt-3 max-w-md mx-auto">Find the role where you'll do your best work.</p>
-                            </div>
-                        </Reveal>
 
+                        <div className="section-header">
+                            <div
+                                ref={headerRef}
+                                className={`fade-up ${headerInView ? "visible" : ""}`}
+                            >
+
+                                <h2 className="main-title">
+                                    Job <em> Updates</em>
+                                </h2>
+                                <div className="ornamental-divider">
+                                    <div className="ornamental-diamond" />
+                                    <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />
+                                    <div className="ornamental-diamond" />
+                                </div>
+                            </div>
+                        </div>
                         {/* search + filter */}
                         <Reveal delay={100}>
                             <div className="flex flex-col sm:flex-row gap-3 mb-8 flex-wrap">
