@@ -323,7 +323,7 @@ export default function Student() {
 
                 {/* Page Header */}
                 <div className="flex items-center justify-between mb-5">
-                    <h1 className="text-xl font-bold text-gray-800">Student Registration</h1>
+                    <h1 className="text-xl font-bold text-gray-800">Student Admission Form</h1>
                     <p className="text-sm text-gray-400">
                         <Link to={"/"} >
                             <span className="text-orange-500 hover:underline cursor-pointer">Home</span>

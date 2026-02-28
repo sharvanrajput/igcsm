@@ -563,7 +563,7 @@ export default function JobUpdateBody() {
                 {/* ════════════════════════════════
             JOB LISTINGS
         ════════════════════════════════ */}
-                <section id="openings" className="bg-white border-t border-b border-gray-100 py-20">
+                <section id="openings" className="bg-white border-t border-b border-gray-100 py-30">
                     <div className="max-w-6xl mx-auto px-6">
 
                         <div className="section-header">

@@ -5,7 +5,7 @@ import RtiBody from '@/components/terms/RtiBody'
 const Rti = () => {
     return (
         <>
-            <Breadcrumb Heading={"RTI"} bg={about} path={"RTI"} />
+            {/* <Breadcrumb Heading={"RTI"} bg={about} path={"RTI"} /> */}
             <RtiBody />
         </>
     )

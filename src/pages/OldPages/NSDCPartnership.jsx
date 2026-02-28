@@ -9,7 +9,7 @@ import NSDCLogos from "@/components/oldpageComp/NSDCLogos"
 const NSDCPartnership = () => {
     return (
         <>
-            <Breadcrumb Heading={"Enquriy"} bg={about} path={"Enquiry"} />
+            {/* <Breadcrumb Heading={"Enquriy"} bg={about} path={"Enquiry"} /> */}
             <NSCDBody />
             <NSDCLogos />
         </>

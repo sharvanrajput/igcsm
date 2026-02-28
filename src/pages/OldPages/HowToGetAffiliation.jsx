@@ -7,7 +7,7 @@ import HowToGetAffiliationBody from '@/components/oldpageComp/HowToGetAffiliatio
 const HowToGetAffiliation = () => {
     return (
         <>
-            <Breadcrumb Heading={"Enquriy"} bg={about} path={"Enquiry"} />
+            {/* <Breadcrumb Heading={"Enquriy"} bg={about} path={"Enquiry"} /> */}
             <HowToGetAffiliationBody />
         </>
     )

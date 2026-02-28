@@ -6,7 +6,7 @@ import PrivacyPolicyBody from '@/components/terms/PrivacyPolicyBody'
 const PrivacyPolicy = () => {
     return (
         <>
-            <Breadcrumb Heading={"Privacy Policy"} bg={about} path={"Privacy Policy"} />
+            {/* <Breadcrumb Heading={"Privacy Policy"} bg={about} path={"Privacy Policy"} /> */}
             <PrivacyPolicyBody />
         </>
     )

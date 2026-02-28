@@ -43,6 +43,16 @@ const Navbar = () => {
         "/gallery",
         "/job-updates",
         "/contact",
+        "/faq",
+        "/privacy-policy",
+        "/rti",
+        "/terms-and-condition",
+        "/notice-board",
+        "/online-result",
+        "/admission-verification",
+        "/how-to",
+
+        "/nsdc-partnership",
     ];
 
     // const animatedPaths = ["/"];
@@ -63,8 +73,18 @@ const Navbar = () => {
             setanimatenav(scrollY > 70);
         }
 
+
+
+
+
         return () => window.removeEventListener("scroll", handleScroll);
     }, [scrollY, location.pathname]);
+
+    useEffect(() => {
+        window.scroll(0, 0)
+
+    }, [location.pathnam])
+
 
     const toggleDropdown = (menu) => {
         setActiveDropdown(activeDropdown === menu ? null : menu)
@@ -281,33 +301,37 @@ const Navbar = () => {
                                             Online Admission
                                         </Link>
 
+
+                                        {/* 
+                                        <Link to="/student" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Student Admission Form
+                                        </Link> */}
+                                        <Link to="/franchise" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Franchise Registration
+                                        </Link>
+                                        <Link to="/Student-login" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Student Login
+                                        </Link>
+                                        <Link to="/Franchise-career" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            Franchise Login
+                                        </Link>
+
                                         <Link to="/notice-board" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
                                             Notice Board
                                         </Link>
 
-                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                        <Link to="/Student-login" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
                                             Online Examination
                                         </Link>
 
-                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                        <Link to="/online-result" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
                                             Online Results
                                         </Link>
 
-                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                        {/* <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
                                             Payment Information
-                                        </Link>
+                                        </Link> */}
 
-                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                            IGCSM Sample Marksheet
-                                        </Link>
-
-                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                            IGCSM Sample Certificate
-                                        </Link>
-
-                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                            IGCSM Sample Verification
-                                        </Link>
 
 
                                     </div>
@@ -322,13 +346,13 @@ const Navbar = () => {
                                     <div className="absolute py-3 left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-2 transition-all duration-300 overflow-hidden z-50">
                                         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
                                         <div className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
-                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                        <Link to="/admission-verification" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
                                             Admission Verification
                                         </Link>
-                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                        <Link to="/Student-login" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
                                             Result Verification
                                         </Link>
-                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                        <Link to="/Student-login" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
                                             Certificate Verification
                                         </Link>
 
@@ -346,18 +370,20 @@ const Navbar = () => {
                                     <div className="absolute py-3 left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-2 transition-all duration-300 overflow-hidden z-50">
                                         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
                                         <div className="absolute bottom-0 left-0 w-full h-1 bg-linear-to-r from-orange-500 to-yellow-500"></div>
-                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                            India’s Best Franchise & it’s Benefits
-                                        </Link>
-                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+
+                                        <Link to="/franchise" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
                                             Apply for Franchise
                                         </Link>
-                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                        <Link to="/how-to-get-affiliation" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            How To Get Franchise
+                                        </Link>
+                                        <Link to="/nsdc-partnership" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            NSDC Partnership
+                                        </Link>
+                                        <Link to="/terms-and-condition" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
                                             Terms & Conditions
                                         </Link>
-                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
-                                            Download Franchise Brochure
-                                        </Link>
+
 
 
 
@@ -405,8 +431,19 @@ const Navbar = () => {
                                             IGCSM Centre Office Backdrop Flex
                                         </Link>
 
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            IGCSM Sample Marksheet
+                                        </Link>
 
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            IGCSM Sample Certificate
+                                        </Link>
 
+                                        <Link to="/blue-collar" className="block px-4 py-1.5 text-black hover:bg-linear-to-r hover:from-orange-50 hover:to-yellow-50 hover:text-orange-600 text-sm  transition-all duration-200 border-b border-gray-50">
+                                            IGCSM Sample Verification
+                                        </Link>
+
+                                      
 
                                     </div>
                                 </div>
@@ -414,13 +451,13 @@ const Navbar = () => {
 
 
 
-                                <Link
+                                {/* <Link
                                     to="/gallery"
                                     className={`ps-4 py-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 relative group`}
                                 >
                                     Gallery
                                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-orange-500 to-yellow-500 group-hover:w-full transition-all duration-300"></span>
-                                </Link>
+                                </Link> */}
                                 <Link
                                     to="/job-updates"
                                     className={`ps-4 py-2 ${animatenav ? "text-black" : "text-white"} hover:text-orange-600 font-medium text-[14px] transition-all duration-200 relative group`}

@@ -53,7 +53,7 @@ export function DataTable({
 
     return (
         <div className="div">
-            <div className="flex items-center py-4">
+            <div className="flex items-center py-2">
                 <Input
                     className="max-w-sm shadow shadow-orange-400 
              focus:outline-none 

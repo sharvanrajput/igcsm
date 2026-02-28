@@ -5,7 +5,7 @@ import TermsBody from '@/components/terms/TermsBody'
 const TermsAndCo = () => {
     return (
         <>
-            <Breadcrumb Heading={"Terms & Condition"} bg={about} path={"Terms & Condition"} />
+            {/* <Breadcrumb Heading={"Terms & Condition"} bg={about} path={"Terms & Condition"} /> */}
             <TermsBody />
         </>
     )

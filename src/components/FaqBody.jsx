@@ -46,7 +46,7 @@ const FaqBody = () => {
                     >
 
                         <h2 className="main-title">
-                            <em> Faq</em>
+                            <em> F A Q</em>
                         </h2>
                         <div className="ornamental-divider">
                             <div className="ornamental-diamond" />

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import nsdc from "@/assets/images/nsdc.webp"
+import { useInView } from "../about/ChairmanMesage";
 const tableData = [
     { sno: 1, state: "Jammu & Kashmir", project: "Seekho Aur Kamao", trained: 540 },
     { sno: 2, state: "Uttar Pradesh", project: "PMKVY", trained: 325 },
@@ -10,15 +11,29 @@ const tableData = [
 ];
 
 export default function NSCDBody() {
+    const [headerRef, headerInView] = useInView();
     return (
-        <section className="bg-white py-12 px-4 font-sans">
+        <section className="bg-white pt-30 pb-10 px-4 font-sans">
             <div className="container">
 
                 {/* Heading */}
-                <h2 className="text-center text-2xl  font-semibold tracking-widest mb-8" >
-                    NSDC PARTNERSHIP
-                </h2>
 
+                <div className="section-header">
+                    <div
+                        ref={headerRef}
+                        className={`fade-up ${headerInView ? "visible" : ""}`}
+                    >
+
+                        <h2 className="main-title">
+                            NSDC <em>Partnership</em>
+                        </h2>
+                        <div className="ornamental-divider">
+                            <div className="ornamental-diamond" />
+                            <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />
+                            <div className="ornamental-diamond" />
+                        </div>
+                    </div>
+                </div>
                 {/* Top block: certificate placeholder + intro text */}
                 <div className="flex flex-col md:flex-row gap-6 mb-6">
                     {/* Certificate placeholder */}

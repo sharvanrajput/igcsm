@@ -8,6 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import { useInView } from '../about/ChairmanMesage';
 
 
 const rtiData = [
@@ -194,9 +195,28 @@ const budgetData = [
 ];
 
 const RtiBody = () => {
+  const [headerRef, headerInView] = useInView();
   return (
-    <section className='py-20'>
+    <section className='py-30'>
       <div className="container">
+
+
+        <div className="section-header">
+          <div
+            ref={headerRef}
+            className={`fade-up ${headerInView ? "visible" : ""}`}
+          >
+
+            <h2 className="main-title">
+              <em> R T I</em>
+            </h2>
+            <div className="ornamental-divider">
+              <div className="ornamental-diamond" />
+              <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />
+              <div className="ornamental-diamond" />
+            </div>
+          </div>
+        </div>
         <div className="text-center">
           <p className='text-md'>General Information»Information Published In Pursuance of Section 4(1) (B) Of The Right To Information Act, 2005</p>
           <p className='text-sm text-black font-semibold'>INFORMATION PUBLISHED IN PURSUANCE OF SECTION 4(1) (b) OF THE RIGHT TO INFORMATION ACT, 2005</p>

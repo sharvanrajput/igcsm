@@ -16,7 +16,7 @@ const Footer = () => {
 
                     <div className=" md:ps-10 lg:col-span-2  shrink-0 md:mx-0 mx-auto text-center md:text-left">
                         <div className="logo flex  flex-col gap-3 justifycenter md:items-start items-center">
-                            <img src={logo} alt="Logo" className="w-62.5 h-auto" />
+                            <img src={logo} alt="Logo" className="w-90  h-auto" />
                         </div>
 
 
@@ -74,10 +74,10 @@ const Footer = () => {
                                 <Link to="/rti" className="text-white   hover:text-gray-300"> RTI</Link>
                             </li>
 
-                            <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
+                            {/* <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
 
                                 <Link to="/" className="text-white   hover:text-gray-300"> Disclaimer</Link>
-                            </li>
+                            </li> */}
 
                             <li className='hover:translate-x-3 transition-all duration-100 flex md:justify-start justify-center mb-2'>
 
@@ -103,14 +103,14 @@ const Footer = () => {
 
                                 <Link to={"/faq"} className="text-white   hover:text-gray-300"> FAQ</Link>
                             </li>
-                            <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
+                            {/* <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
 
                                 <Link className="text-white  hover:text-gray-300">Download </Link>
                             </li>
                             <li className='hover:translate-x-3  transition-all duration-100 md:justify-start justify-center flex mb-2'>
 
                                 <Link className="text-white  hover:text-gray-300">Support Us </Link>
-                            </li>
+                            </li> */}
 
 
                         </nav>

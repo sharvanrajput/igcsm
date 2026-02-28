@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '../ui/accordion'
+import { useInView } from '../about/ChairmanMesage';
 
 const faqData = [
   {
@@ -33,11 +34,11 @@ const faqData = [
     type: "table",
     columns: ["Specification", "Metro", "Non Metro", "Tehsil", "Village"],
     rows: [
-      { spec: "Area (Sq.Ft.)",      metro: "1500", nonMetro: "1000–1200", tehsil: "800–1000", village: "800–1000" },
-      { spec: "No. of Class Rooms", metro: "2",    nonMetro: "2",         tehsil: "2",         village: "2"         },
-      { spec: "Sitting Capacity",   metro: "20",   nonMetro: "15",        tehsil: "20",        village: "15"        },
-      { spec: "Lab Room",           metro: "1",    nonMetro: "1",         tehsil: "1",         village: "1"         },
-      { spec: "No. of Systems",     metro: "10",   nonMetro: "8",         tehsil: "6",         village: "5"         },
+      { spec: "Area (Sq.Ft.)", metro: "1500", nonMetro: "1000–1200", tehsil: "800–1000", village: "800–1000" },
+      { spec: "No. of Class Rooms", metro: "2", nonMetro: "2", tehsil: "2", village: "2" },
+      { spec: "Sitting Capacity", metro: "20", nonMetro: "15", tehsil: "20", village: "15" },
+      { spec: "Lab Room", metro: "1", nonMetro: "1", tehsil: "1", village: "1" },
+      { spec: "No. of Systems", metro: "10", nonMetro: "8", tehsil: "6", village: "5" },
     ],
   },
   {
@@ -58,11 +59,11 @@ const faqData = [
     type: "table",
     columns: ["Role", "Description"],
     rows: [
-      { role: "Administrator/Manager",    desc: "Management skills and training experience"     },
-      { role: "Faculty",                  desc: "Subject expertise and problem-solving skills"   },
-      { role: "Counsellor/Receptionist",  desc: "Communication skills and course knowledge"      },
-      { role: "Marketing Executive",      desc: "Experienced with good communication"            },
-      { role: "Office Boys",              desc: "Disciplined & experienced"                      },
+      { role: "Administrator/Manager", desc: "Management skills and training experience" },
+      { role: "Faculty", desc: "Subject expertise and problem-solving skills" },
+      { role: "Counsellor/Receptionist", desc: "Communication skills and course knowledge" },
+      { role: "Marketing Executive", desc: "Experienced with good communication" },
+      { role: "Office Boys", desc: "Disciplined & experienced" },
     ],
   },
   {
@@ -121,21 +122,29 @@ const faqData = [
 ]
 
 const HowToGetAffiliationBody = () => {
+  const [headerRef, headerInView] = useInView();
   return (
-    <section className="py-14 sm:py-20 bg-gray-50">
+    <section className="py-14 sm:pt-30 pb-20 bg-gray-50">
       <div className="container">
 
         {/* Section heading */}
-        <div className="mb-10 text-center">
-          <span className="inline-block text-orange-500 font-semibold text-xs tracking-widest uppercase mb-2">
-            Know More
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-            Frequently Asked Questions
-          </h2>
-          <div className="mx-auto mt-3 h-1 w-12 rounded-full bg-orange-500" />
-        </div>
 
+        <div className="section-header">
+          <div
+            ref={headerRef}
+            className={`fade-up ${headerInView ? "visible" : ""}`}
+          >
+
+            <h2 className="main-title">
+              How To Get <em> Franchise</em>
+            </h2>
+            <div className="ornamental-divider">
+              <div className="ornamental-diamond" />
+              <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />
+              <div className="ornamental-diamond" />
+            </div>
+          </div>
+        </div>
         {/* Accordion */}
         <Accordion type="single" collapsible className="w-full space-y-3">
           {faqData.map((faq, index) => (
@@ -201,11 +210,10 @@ const HowToGetAffiliationBody = () => {
                               {Object.values(row).map((val, j) => (
                                 <td
                                   key={j}
-                                  className={`px-4 py-2.5 border-t border-gray-100 ${
-                                    j === 0
-                                      ? "font-medium text-gray-700"
-                                      : "text-gray-600"
-                                  }`}
+                                  className={`px-4 py-2.5 border-t border-gray-100 ${j === 0
+                                    ? "font-medium text-gray-700"
+                                    : "text-gray-600"
+                                    }`}
                                 >
                                   {val}
                                 </td>

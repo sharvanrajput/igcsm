@@ -439,7 +439,7 @@ export default function GalleryBody() {
         .gal-card:hover .gal-zoom { opacity: 1; transform: scale(1); }
       `}</style>
 
-            <section className="pt-20 pb-20" style={{ background: "#fafaf8"}}>
+            <section className="pt-30 pb-20" style={{ background: "#fafaf8"}}>
                 <div className="container">
 
                     <div className="section-header">
@@ -449,7 +449,7 @@ export default function GalleryBody() {
                         >
 
                             <h2 className="main-title">
-                                <em> Gellery</em>
+                              Gallery   <em> Glimpse</em>
                             </h2>
                             <div className="ornamental-divider">
                                 <div className="ornamental-diamond" />

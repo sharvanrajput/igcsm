@@ -82,7 +82,7 @@ export default function ContactBody() {
     return (
         <section
             style={{ fontFamily: "'DM Sans', sans-serif" }}
-            className="min-h-screen pt-10 bg-gray-50"
+            className="min-h-screen pt-30 bg-gray-50"
         >
             <style>{`
       
@@ -141,7 +141,7 @@ export default function ContactBody() {
 
 
 
-            <div className="container py-14">
+            <div className="container ">
                 <div className="section-header">
                     <div
                         ref={headerRef}

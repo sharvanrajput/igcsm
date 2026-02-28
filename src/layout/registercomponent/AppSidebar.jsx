@@ -20,7 +20,7 @@ import { Link, useLocation } from 'react-router-dom'
 
 const student = [
     {
-        name: "Student Registration",
+        name: "Student Admission Form",
         url: "/student",
         icon: UserPlus
 

@@ -4,7 +4,7 @@ import { useInView } from './ChairmanMesage';
 const Aboutus = () => {
     const [headerRef, headerInView] = useInView();
     return (
-        <section className='pt-10 relative '>
+        <section className=' relative '>
 
 
             <div className="container">
@@ -28,12 +28,12 @@ const Aboutus = () => {
 
                 <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
                     <div className='self-center'>
-                        <div className="flex items-center gap-2 mb-4  ">
+                        {/* <div className="flex items-center gap-2 mb-4  ">
                             <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
                             <span className="text-orange-500 font-semibold text-sm md:text-base">
                                 About IGCSM
                             </span>
-                        </div>
+                        </div> */}
                         <h2 className="text-2xl sm:text-2xl md:text-3xl  font-semibold mb-3 sm:mb-4 md:mb-6  leading-tight">
                             <span>"Skill is the unified force of experience, intellect and passion in their operation.”</span> <br />
                             <span>John Ruskin.</span>
@@ -43,7 +43,7 @@ const Aboutus = () => {
                         </p>
                     </div>
                     <div>
-                        <img src={about2} className='h-auto w-full' alt="" />
+                        <img src={about2} className='h-auto mx-auto w-[80%]' alt="" />
                     </div>
                 </div>
             </div>

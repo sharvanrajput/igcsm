@@ -491,7 +491,7 @@ export default function AwardGallery() {
           >
 
             <h2 className="main-title">
-            Awards And <em> recognition</em>
+            Awards and <em> Recognition</em>
             </h2>
             <div className="ornamental-divider">
               <div className="ornamental-diamond" />

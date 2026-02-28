@@ -36,6 +36,8 @@ import Student from './pages/registers/Student';
 import RegisterLayout from './layout/RegisterLayout';
 import FranchiseRegister from './pages/registers/FranchiseRegister';
 import Login from './pages/auth/Login';
+import OnlineResult from './pages/admission/OnlineResult';
+import AdmissionVerification from './pages/admission/AdmissionVerification';
 
 
 // Import Swiper styles
@@ -71,6 +73,8 @@ const App = () => {
           {/* admission   */}
           <Route path='/online-admission/:id?/:cate?' element={<OnlineAdmission />} />
           <Route path='/notice-board' element={<NoticeBoard />} />
+          <Route path='/online-result' element={<OnlineResult />} />
+          <Route path='/admission-verification' element={<AdmissionVerification />} />
 
           {/* contact */}
           <Route path='/contact' element={<Contact />} />

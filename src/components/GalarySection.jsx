@@ -7,14 +7,14 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 
 import gallery1 from "@/assets/images/gallery1.webp";
- 
- 
+
+
 
 import gallery5 from "@/assets/images/gallery5.jpeg";
 import gallery6 from "@/assets/images/gallery6.jpeg";
 // import gallery7 from "@/assets/images/gallery7.jpeg";
 // import g1 from "@/assets/images/award1.jpeg"
- 
+
 import g3 from "@/assets/images/award3.jpg"
 import g4 from "@/assets/images/award4.jpg"
 import g5 from "@/assets/images/award5.jpg"
@@ -23,7 +23,7 @@ import g7 from "@/assets/images/award7.jpg"
 import g8 from "@/assets/images/award8.jpg"
 import g9 from "@/assets/images/award9.jpeg"
 import g10 from "@/assets/images/award10.jpg"
- 
+
 import g12 from "@/assets/images/gallery2.webp"
 // import g13 from "@/assets/images/gallery3.webp"
 import g14 from "@/assets/images/gallery4.jpeg"
@@ -71,18 +71,18 @@ export default function SimpleGallery() {
         // gallery1,
         g22,
         g25,
-       
-       
+
+
         gallery5,
         gallery6,
         // g1,
-        
+
         g4,
         g5,
         // g7,
         g9,
         g10,
-       
+
         // g12,
         // g13,
         // g14,
@@ -101,7 +101,7 @@ export default function SimpleGallery() {
 
     return (
         // `relative` on <section> so nav buttons anchor to the full section width
-        <section className="py-16   relative overflow-hidden">
+        <section className="pt-16 pb-10   relative overflow-hidden">
 
             {/* ── Nav Buttons — OUTSIDE .container so they hug the section edges ─────── */}
             <button
@@ -179,10 +179,10 @@ export default function SimpleGallery() {
 
             <div className="container  relative ">
                 {/* Header */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-10">
 
-                    <h2 className="text-3xl lg:text-4xl font-bold text-orange-500">
-                        Gallery
+                    <h2 className="text-3xl lg:text-4xl font-bold  ">
+                        Gallery   <em className="text-orange-500"> Glimpses</em>
                     </h2>
                 </div>
                 <div className="overflow-x-hidden">
@@ -289,13 +289,13 @@ export default function SimpleGallery() {
 
 
             </div>
-            <div className="w-full flex justify-center">
+            {/* <div className="w-full flex justify-center">
                 <Button asChild className={"mx-auto bg-orange-500 hover:bg-orange-600 "}>
                     <Link to="/gallery"   >
                         See More
                     </Link>
                 </Button>
-            </div>
+            </div> */}
 
 
             {

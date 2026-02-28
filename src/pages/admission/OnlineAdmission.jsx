@@ -4,6 +4,7 @@ import StudentRegistrationForm from '@/components/StudentRegistrationForm'
 import React, { useEffect } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useParams } from 'react-router-dom'
+import { useInView } from '@/components/about/ChairmanMesage'
 const OnlineAdmission = () => {
 
     const { id, cate } = useParams()
@@ -12,8 +13,10 @@ const OnlineAdmission = () => {
         console.log('category slug:', id, 'course:', cate);
     }, [id, cate])
 
+
     return (
-        <section className='pt-35'>
+        <section className='pt-30'>
+
             <div className="container">
 
                 <Tabs defaultValue="one" className={"pt-10"}  >

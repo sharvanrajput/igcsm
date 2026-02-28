@@ -1,9 +1,28 @@
 import React from 'react'
+import { useInView } from '../about/ChairmanMesage';
 
 const PrivacyPolicyBody = () => {
+    const [headerRef, headerInView] = useInView();
     return (
-        <section className='py-20'>
+        <section className='py-30'>
             <div className="container">
+
+                <div className="section-header">
+                    <div
+                        ref={headerRef}
+                        className={`fade-up ${headerInView ? "visible" : ""}`}
+                    >
+
+                        <h2 className="main-title">
+                            Privacy  <em>Policy</em>
+                        </h2>
+                        <div className="ornamental-divider">
+                            <div className="ornamental-diamond" />
+                            <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />
+                            <div className="ornamental-diamond" />
+                        </div>
+                    </div>
+                </div>
                 <div className="space-y-5">
 
                     <p>We value the trust you place in us and recognize the importance of secure transactions and information privacy. This Privacy Policy describes how INDIRA GANDHI COMPUTER SAKSHARTA MISSION(IGCSM) and its affiliates (collectively “INDIRA GANDHI COMPUTER SAKSHARTA MISSION(IGCSM), we, our, us”) collect, use, share or otherwise process your personal information through INDIRA GANDHI COMPUTER SAKSHARTA MISSION(IGCSM) website www.IGCSM.org / www.IGCSMonline.co.in, its mobile application, and m-site (hereinafter referred to as the “Platform”).</p>

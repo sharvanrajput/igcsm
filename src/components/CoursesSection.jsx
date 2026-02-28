@@ -217,36 +217,39 @@ const CoursesSection = () => {
                             }}
                         >
                             {courseCategories.map((category, i) => (
-                                <div
-                                    data-aos="fade-up"
-                                    data-aos-delay={(i + 1) * 200}
-                                    key={category.id}
-                                    className="group relative overflow-hidden rounded-md cursor-pointer hover:shadow-2xl"
-                                    style={{
-                                        transform: `translateY(${offsets[i]}px)`,
-                                        perspective: "800px",
-                                    }}
-                                    onMouseEnter={() => setHoveredCard(category.id)}
-                                    onMouseLeave={() => setHoveredCard(null)}
-                                >
-                                    {/* Flip wrapper */}
-                                    <div
-                                        className={`flip-card-inner ${hoveredCard === category.id ? "flipping" : ""}`}
-                                    >
-                                        {/* Image / Banner */}
-                                        <div className="h-[150px] relative overflow-hidden">
-                                            <div className="absolute inset-0 bg-trainsparent group-hover:bg-[#f9f9f9]transition-all duration-300"></div>
-                                            <img src={category.image} alt="" className="w-40 relative mt-4" />
-                                        </div>
 
-                                        {/* Label */}
-                                        <div className="absolute bottom-0 left-0 right-0 bg-orange-500 py-1 text-center">
-                                            <span className="text-white font-semibold text-[11px]!">
-                                                {category.title}
-                                            </span>
+                                <Link to="/courses/drone-photography" >
+                                    <div
+                                        data-aos="fade-up"
+                                        data-aos-delay={(i + 1) * 200}
+                                        key={category.id}
+                                        className="group relative overflow-hidden rounded-md cursor-pointer hover:shadow-2xl"
+                                        style={{
+                                            transform: `translateY(${offsets[i]}px)`,
+                                            perspective: "800px",
+                                        }}
+                                        onMouseEnter={() => setHoveredCard(category.id)}
+                                        onMouseLeave={() => setHoveredCard(null)}
+                                    >
+                                        {/* Flip wrapper */}
+                                        <div
+                                            className={`flip-card-inner ${hoveredCard === category.id ? "flipping" : ""}`}
+                                        >
+                                            {/* Image / Banner */}
+                                            <div className="h-[150px] relative overflow-hidden">
+                                                <div className="absolute inset-0 bg-trainsparent group-hover:bg-[#f9f9f9]transition-all duration-300"></div>
+                                                <img src={category.image} alt="" className="w-40 relative mt-4" />
+                                            </div>
+
+                                            {/* Label */}
+                                            <div className="absolute bottom-0 left-0 right-0 bg-orange-500 py-1 text-center">
+                                                <span className="text-white font-semibold text-[11px]!">
+                                                    {category.title}
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
 

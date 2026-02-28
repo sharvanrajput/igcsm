@@ -1,9 +1,31 @@
 import React from 'react'
+import { useInView } from '../about/ChairmanMesage';
 
 const TermsBody = () => {
+
+    const [headerRef, headerInView] = useInView();
+
     return (
-        <section className='py-20'>
+        <section className='py-30'>
             <div className="container">
+
+                <div className="section-header">
+                    <div
+                        ref={headerRef}
+                        className={`fade-up ${headerInView ? "visible" : ""}`}
+                    >
+
+                        <h2 className="main-title">
+                            Terms &   <em> Condition</em>
+                        </h2>
+                        <div className="ornamental-divider">
+                            <div className="ornamental-diamond" />
+                            <div className="ornamental-diamond" style={{ width: 5, height: 5, opacity: 0.5 }} />
+                            <div className="ornamental-diamond" />
+                        </div>
+                    </div>
+                </div>
+
                 <div className="space-y-5">
                     <p>Any user accessing and using the site of the organization/company will be deemed to have accepted all the Terms and Conditions referred herein as such along with the clauses that may be added up or deleted by the Organization/company from time to time.</p>
                     <p>Anybody not accepting the terms and conditions are not expected to use the site of the Organization/company.</p>
