@@ -1,12 +1,13 @@
 
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { api } from "../../services/api";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import Recaptcha from "../../components/Recaptcha";
 
 // ─── Zod Schema ────────────────────────────────────────────────────────────────
 const schema = z.object({
@@ -35,6 +36,8 @@ const schema = z.object({
         .regex(/^\d{8,15}$/, "Mobile must be 8–15 digits"),
     altMobile: z.string().optional(),
     email: z.string().min(1, "Email is required").email("Enter a valid email address"),
+    password: z.string().min(6, "Password must be at least 6 characters"),
+    confirmPassword: z.string().min(6, "Please confirm your password"),
     educationalQualification: z.string().min(1, "Educational Qualification is required"),
     qualificationCertificate: z
         .any()
@@ -43,6 +46,9 @@ const schema = z.object({
     signature: z.any().refine((f) => f && f.length > 0, "Signature is required"),
     aadhaarDoc: z.any().refine((f) => f && f.length > 0, "Aadhaar document is required"),
     terms: z.literal(true, { errorMap: () => ({ message: "You must accept Terms and Conditions" }) }),
+}).refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords do not match",
+    path: ["confirmPassword"],
 });
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
@@ -132,6 +138,10 @@ export default function Student() {
     const [resendBusy, setResendBusy] = useState(false);
     const [savedFormData, setSavedFormData] = useState(null); // Store full form for later finalization
     const [otpVerified, setOtpVerified] = useState(false); // Track if OTP step passed
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    const [captchaToken, setCaptchaToken] = useState(null);
+    const recaptchaRef = useRef(null);
 
     const { cat } = useParams()
     useEffect(() => {
@@ -149,8 +159,12 @@ export default function Student() {
         defaultValues: { instituteName: "IGCSM", country: "India", course: `${cat ? cat.toUpperCase()  : ""}` },
     });
 
-    // Step 1: Send OTP (extract only email, mobile, studentName)
+    // Step 1: Send OTP (extract only email, mobile, studentName) + reCAPTCHA
     const onSubmit = (data) => {
+        if (!captchaToken) {
+            toast.error("Please complete the reCAPTCHA (I'm not a robot)");
+            return;
+        }
         setSubmitting(true);
         setSavedFormData(data); // Save full form data for later
 
@@ -158,13 +172,17 @@ export default function Student() {
             email: data.email,
             mobile: data.mobile,
             studentName: data.studentName,
+            captchaToken,
         })
             .then((res) => {
                 setSubmissionId(res.data.submissionId);
                 setOtp("");
                 setOtpVerified(false);
                 setSubmitting(false);
+                setCaptchaToken(null);
+                recaptchaRef.current?.reset();
                 toast.success("OTP sent to your email!");
+                if (res.data.debugOtp) toast.info(`(Debug) OTP: ${res.data.debugOtp}`);
             })
             .catch((err) => {
                 console.error(err?.response?.data || err.message || err);
@@ -230,6 +248,8 @@ export default function Student() {
             formData.append("studentName", savedFormData.studentName);
 
             const res = await api.post("/student-submission/finalize", formData);
+            const data = res.data?.data ?? res.data;
+            if (data?.accessToken) localStorage.setItem("accessToken", data.accessToken);
             setSubmitted(true);
         } catch (err) {
             console.error(err?.response?.data || err.message || err);
@@ -410,6 +430,78 @@ export default function Student() {
                                 <TextInput label="Alternative Mobile No." placeholder="Enter alternative Mobile Number" error={errors.altMobile?.message} {...register("altMobile")} />
                                 <TextInput label="Email" placeholder="Enter Email Address" required error={errors.email?.message} {...register("email")} />
                             </div>
+                            {/* Row 5 - Password */}
+                            <div className="grid grid-cols-3 gap-4">
+                                <div>
+                                    <Label required>Password</Label>
+                                    <div className="relative">
+                                        <input
+                                            type={showPassword ? "text" : "password"}
+                                            className={`w-full border ${errors.password ? "border-red-400" : "border-gray-300"} rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400`}
+                                            placeholder="Enter password"
+                                            {...register("password")}
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={() => setShowPassword(!showPassword)}
+                                            className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                                        >
+                                            {showPassword ? (
+                                                <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21" />
+                                                </svg>
+                                            ) : (
+                                                <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                                </svg>
+                                            )}
+                                        </button>
+                                    </div>
+                                    <FieldError message={errors.password?.message} />
+                                </div>
+                                <div>
+                                    <Label required>Confirm Password</Label>
+                                    <div className="relative">
+                                        <input
+                                            type={showConfirmPassword ? "text" : "password"}
+                                            className={`w-full border ${errors.confirmPassword ? "border-red-400" : "border-gray-300"} rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400`}
+                                            placeholder="Confirm password"
+                                            {...register("confirmPassword")}
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                            className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                                        >
+                                            {showConfirmPassword ? (
+                                                <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21" />
+                                                </svg>
+                                            ) : (
+                                                <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                                </svg>
+                                            )}
+                                        </button>
+                                    </div>
+                                    <FieldError message={errors.confirmPassword?.message} />
+                                </div>
+                                {/* <div className="space-y-3">
+                                    <TextInput label="Educational Qualification" placeholder="Enter Educational Qualification" required error={errors.educationalQualification?.message} {...register("educationalQualification")} />
+                                    <div>
+                                        <Label required>Qualification Certificate</Label>
+                                        <input
+                                            type="file"
+                                            accept=".jpg,.jpeg,.png,.pdf"
+                                            className="block text-sm text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded file:border file:border-gray-300 file:text-xs file:bg-white file:text-gray-700 hover:file:bg-gray-50"
+                                            {...register("qualificationCertificate")}
+                                        />
+                                        <FieldError message={errors.qualificationCertificate?.message} />
+                                    </div>
+                                </div> */}
+                            </div>
                         </div>
                     </div>
 
@@ -516,6 +608,11 @@ export default function Student() {
                         </div>
                     </div>
 
+                    {/* ── reCAPTCHA ──────────────────────────────────────────────────── */}
+                    <div className="bg-white border border-gray-200 rounded-md p-4">
+                        <Recaptcha ref={recaptchaRef} onChange={setCaptchaToken} />
+                    </div>
+
                     {/* ── Terms & Submit ───────────────────────────────────────────────── */}
                     <div className="flex items-center justify-between">
                         <div>
@@ -536,9 +633,10 @@ export default function Student() {
                         </div>
                         <button
                             type="submit"
-                            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm px-10 py-2.5 rounded transition-colors shadow"
+                            disabled={submitting}
+                            className="bg-orange-500 hover:bg-orange-600 disabled:opacity-60 text-white font-semibold text-sm px-10 py-2.5 rounded transition-colors shadow"
                         >
-                            Save
+                            {submitting ? "Sending OTP..." : "Save"}
                         </button>
                     </div>
 

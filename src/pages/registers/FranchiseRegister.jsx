@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Image as ImageIcon } from "lucide-react";
+import { toast } from "react-toastify";
+import { api } from "../../services/api";
+import Recaptcha from "../../components/Recaptcha";
 
 // ─── Zod Schema ────────────────────────────────────────────────────────────────
 const schema = z
@@ -42,7 +45,8 @@ const schema = z
       .refine((v) => v !== "Please Select State", "Please select a state"),
     password: z.string().min(6, "Password must be at least 6 characters"),
     confirmPassword: z.string().min(6, "Please confirm your password"),
-    tradeLicense: z.any().refine((f) => f && f.length > 0, "Trade License is required"),
+    tradeLicenseNumber: z.string().min(1, "Trade License Number is required"),
+    tradeLicense: z.any().refine((f) => f && f.length > 0, "Trade License (document) is required"),
     institutePhoto: z.any().refine((f) => f && f.length > 0, "Institute Photo is required"),
     directorPhoto: z.any().refine((f) => f && f.length > 0, "Director Photo is required"),
     directorSignature: z.any().refine((f) => f && f.length > 0, "Director Signature is required"),
@@ -202,6 +206,17 @@ function FileUploadBox({ label, error, required, onChange, name, ...rest }) {
 // ─── Main Component ────────────────────────────────────────────────────────────
 export default function FranchiseRegister() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submissionId, setSubmissionId] = useState(null);
+  const [otp, setOtp] = useState("");
+  const [verifying, setVerifying] = useState(false);
+  const [resendBusy, setResendBusy] = useState(false);
+  const [savedFormData, setSavedFormData] = useState(null); // Store full form for later finalization
+  const [otpVerified, setOtpVerified] = useState(false); // Track if OTP step passed
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const recaptchaRef = useRef(null);
 
   const {
     register,
@@ -209,9 +224,114 @@ export default function FranchiseRegister() {
     formState: { errors, isSubmitting },
   } = useForm({ resolver: zodResolver(schema) });
 
+  // Step 1: Send OTP (extract only email, mobile, ownerName) + reCAPTCHA
   const onSubmit = (data) => {
-    console.log("✅ Franchise form submitted:", data);
-    setSubmitted(true);
+    if (!captchaToken) {
+      toast.error("Please complete the reCAPTCHA (I'm not a robot)");
+      return;
+    }
+    setSubmitting(true);
+    setSavedFormData(data); // Save full form data for later
+
+    api.post("/franchise-submission/send-otp", {
+      email: data.ownerEmail,
+      mobile: data.ownerMobile,
+      ownerName: data.ownerName,
+      captchaToken,
+    })
+      .then((res) => {
+        setSubmissionId(res.data.submissionId);
+        setOtp("");
+        setOtpVerified(false);
+        setSubmitting(false);
+        setCaptchaToken(null);
+        recaptchaRef.current?.reset();
+        toast.success("OTP sent to your email!");
+        if (res.data.debugOtp) toast.info(`(Debug) OTP: ${res.data.debugOtp}`);
+      })
+      .catch((err) => {
+        console.error(err?.response?.data || err.message || err);
+        toast.error(err?.response?.data?.message || "Failed to send OTP");
+        setSubmitting(false);
+      });
+  };
+
+  // Step 2: Verify OTP
+  const handleVerifyOtp = async () => {
+    if (!submissionId) {
+      toast.error("No submission id");
+      return;
+    }
+    if (!otp || otp.trim().length === 0) {
+      toast.error("Enter OTP");
+      return;
+    }
+    try {
+      setVerifying(true);
+      await api.post("/franchise-submission/verify-otp", { submissionId, email: savedFormData.ownerEmail, otp });
+      setOtpVerified(true);
+      setOtp("");
+      toast.success("Email verified! Completing your registration...");
+      // Now automatically finalize the submission with files
+      await finalizeWithFiles();
+    } catch (err) {
+      console.error(err?.response?.data || err.message || err);
+      toast.error(err?.response?.data?.message || "OTP verification failed");
+    } finally {
+      setVerifying(false);
+    }
+  };
+
+  // Step 3: Finalize submission with files (called after OTP is verified)
+  const finalizeWithFiles = async () => {
+    if (!savedFormData || !submissionId) {
+      toast.error("Form data or submission ID missing");
+      return;
+    }
+
+    try {
+      const formData = new FormData();
+      Object.entries(savedFormData).forEach(([k, v]) => {
+        if (v === undefined || v === null) return;
+        if (["ownerEmail", "ownerMobile", "ownerName"].includes(k)) return;
+        if (v instanceof FileList) {
+          if (v.length > 0) formData.append(k, v[0]);
+          return;
+        }
+        formData.append(k, v);
+      });
+
+      formData.append("submissionId", submissionId);
+      formData.append("email", savedFormData.ownerEmail);
+      formData.append("mobile", savedFormData.ownerMobile);
+      formData.append("ownerName", savedFormData.ownerName);
+
+      const res = await api.post("/franchise-submission/finalize", formData);
+      const data = res.data?.data ?? res.data;
+      if (data?.accessToken) localStorage.setItem("accessToken", data.accessToken);
+      setSubmitted(true);
+      toast.success("Franchise registration submitted successfully!");
+    } catch (err) {
+      console.error(err?.response?.data || err.message || err);
+      toast.error(err?.response?.data?.message || "Failed to complete registration");
+    }
+  };
+
+  const handleResend = async () => {
+    if (!submissionId) {
+      toast.error("No submission id");
+      return;
+    }
+    try {
+      setResendBusy(true);
+      await api.post("/franchise-submission/resend-otp", { submissionId, email: savedFormData.ownerEmail });
+      toast.success("OTP resent to your email");
+    } catch (err) {
+      console.error(err?.response?.data || err.message || err);
+      toast.error(err?.response?.data?.message || "Resend failed");
+    } finally {
+      setResendBusy(false);
+    }
   };
 
   if (submitted) {
@@ -229,6 +349,43 @@ export default function FranchiseRegister() {
           >
             Register Another
           </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (submissionId && !otpVerified) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center pt-24 px-4">
+        <div className="bg-white rounded-xl shadow p-8 text-center max-w-md w-full">
+          <h2 className="text-lg font-bold mb-3">Verify Your Email</h2>
+          <p className="text-sm text-gray-600 mb-4">
+            We've sent a 6-digit OTP to <strong>{savedFormData?.ownerEmail}</strong>. Enter it below to verify and complete registration.
+          </p>
+          <input
+            value={otp}
+            onChange={(e) => setOtp(e.target.value)}
+            maxLength={6}
+            className="w-full border border-gray-300 rounded px-3 py-2 text-sm text-center text-lg tracking-widest mb-4"
+            placeholder="000000"
+          />
+          <div className="flex gap-2">
+            <button
+              onClick={handleVerifyOtp}
+              disabled={verifying || otp.length < 6}
+              className="flex-1 bg-orange-500 hover:bg-orange-600 disabled:bg-gray-400 text-white px-4 py-2 rounded font-semibold transition"
+            >
+              {verifying ? "Verifying..." : "Verify & Complete"}
+            </button>
+            <button
+              onClick={handleResend}
+              disabled={resendBusy}
+              className="flex-1 border border-orange-500 text-orange-500 hover:bg-orange-50 disabled:opacity-50 px-4 py-2 rounded font-semibold transition"
+            >
+              {resendBusy ? "Resending..." : "Resend OTP"}
+            </button>
+          </div>
+          <p className="text-xs text-gray-400 mt-4">Check spam folder or click Resend if you didn't receive the OTP.</p>
         </div>
       </div>
     );
@@ -357,18 +514,69 @@ export default function FranchiseRegister() {
 
               {/* Row 6: Password / Confirm Password */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <TextInput
-                  label="Password" type="password"
-                  placeholder="Enter Password"
-                  required error={errors.password?.message}
-                  {...register("password")}
-                />
-                <div className="sm:col-span-2">
+                <div>
+                  <FieldLabel required>Password</FieldLabel>
+                  <div className="relative">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      className={`w-full border ${errors.password ? "border-red-400" : "border-gray-300"} rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400`}
+                      placeholder="Enter password"
+                      {...register("password")}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                    >
+                      {showPassword ? (
+                        <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21" />
+                        </svg>
+                      ) : (
+                        <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
+                  <FieldError message={errors.password?.message} />
+                </div>
+                <div>
+                  <FieldLabel required>Confirm Password</FieldLabel>
+                  <div className="relative">
+                    <input
+                      type={showConfirmPassword ? "text" : "password"}
+                      className={`w-full border ${errors.confirmPassword ? "border-red-400" : "border-gray-300"} rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400`}
+                      placeholder="Confirm password"
+                      {...register("confirmPassword")}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                      className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                    >
+                      {showConfirmPassword ? (
+                        <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21" />
+                        </svg>
+                      ) : (
+                        <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
+                  <FieldError message={errors.confirmPassword?.message} />
+                </div>
+                <div>
                   <TextInput
-                    label="Confirm Password" type="password"
-                    placeholder="Confirm Password"
-                    required error={errors.confirmPassword?.message}
-                    {...register("confirmPassword")}
+                    label="Trade License Number"
+                    placeholder="Enter Trade License Number"
+                    required
+                    error={errors.tradeLicenseNumber?.message}
+                    {...register("tradeLicenseNumber")}
                   />
                 </div>
               </div>
@@ -381,7 +589,7 @@ export default function FranchiseRegister() {
             <SectionHeader title="KYC" />
             <div className="p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               <FileUploadBox
-                label="Trade License" required
+                label="Trade License (document upload)" required
                 error={errors.tradeLicense?.message}
                 {...register("tradeLicense")}
               />
@@ -401,6 +609,11 @@ export default function FranchiseRegister() {
                 {...register("directorSignature")}
               />
             </div>
+          </div>
+
+          {/* ── reCAPTCHA ──────────────────────────────────────────────────── */}
+          <div className="bg-white border border-gray-200 rounded-md p-4">
+            <Recaptcha ref={recaptchaRef} onChange={setCaptchaToken} />
           </div>
 
           {/* ── Terms & Submit ──────────────────────────────────────────────── */}
@@ -423,10 +636,10 @@ export default function FranchiseRegister() {
             </div>
             <button
               type="submit"
-              disabled={isSubmitting}
+              disabled={isSubmitting || !captchaToken}
               className="bg-orange-500 hover:bg-orange-600 disabled:opacity-60 text-white font-semibold text-sm px-12 py-2.5 rounded transition-colors shadow-sm"
             >
-              {isSubmitting ? "Saving..." : "Save"}
+              {isSubmitting ? "Sending OTP..." : "Save"}
             </button>
           </div>
 

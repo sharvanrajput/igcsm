@@ -1,11 +1,12 @@
-import { Route, Routes, useLocation, useRoutes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import { AuthProvider } from './context/AuthContext';
 import Layout from './layout/Layout'
 import Home from './pages/Home'
 import { useEffect } from 'react';
 import Aos from 'aos';
 import "aos/dist/aos.css";
-import StudentRegistrationForm from './components/StudentRegistrationForm';
-import OnlineAdmission from './pages/admission/OnlineAdmission';
+ 
+// import OnlineAdmission from './pages/admission/OnlineAdmission';
 import About from './pages/about/About';
 import Chariman from './pages/about/Chariman';
 import Team from './pages/about/Team';
@@ -35,9 +36,13 @@ import GovernmentPartnership from './pages/OldPages/GovernmentPartnership';
 import Student from './pages/registers/Student';
 import RegisterLayout from './layout/RegisterLayout';
 import FranchiseRegister from './pages/registers/FranchiseRegister';
-import Login from './pages/auth/Login';
+import LoginForm from './components/LoginForm';
 import OnlineResult from './pages/admission/OnlineResult';
 import AdmissionVerification from './pages/admission/AdmissionVerification';
+// import ProtectedRoute from './components/ProtectedRoute';
+// import StudentDashboard from './pages/StudentDashboard';
+// import FranchiseDashboard from './pages/FranchiseDashboard';
+// import AdminDashboard from './pages/AdminDashboard';
 
 
 // Import Swiper styles
@@ -55,7 +60,7 @@ const App = () => {
 
 
   return (
-    <>
+    <AuthProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -71,7 +76,7 @@ const App = () => {
           <Route path='/courses/:slug/' element={<Courses />} />
 
           {/* admission   */}
-          <Route path='/online-admission/:id?/:cate?' element={<OnlineAdmission />} />
+          {/* <Route path='/online-admission/:id?/:cate?' element={<OnlineAdmission />} /> */}
           <Route path='/notice-board' element={<NoticeBoard />} />
           <Route path='/online-result' element={<OnlineResult />} />
           <Route path='/admission-verification' element={<AdmissionVerification />} />
@@ -108,23 +113,36 @@ const App = () => {
           <Route path='/higher-education' element={<HigherEducation />} />
           <Route path='/government-partnership' element={<GovernmentPartnership />} />
 
-
+          {/* Role-based dashboards */}
+          {/* <Route path='/dashboard' element={
+            <ProtectedRoute requiredRoles={['admin']}>
+              <AdminDashboard />
+            </ProtectedRoute>
+          } />
+          <Route path='/student-dashboard' element={
+            <ProtectedRoute requiredRoles={['student']}>
+              <StudentDashboard />
+            </ProtectedRoute>
+          } />
+          <Route path='/franchise-dashboard' element={
+            <ProtectedRoute requiredRoles={['franchise']}>
+              <FranchiseDashboard />
+            </ProtectedRoute>
+          } /> */}
         </Route>
 
         <Route path="/" element={<RegisterLayout />}>
           <Route path='/student/:cat?' element={<Student />} />
           <Route path='/franchise' element={<FranchiseRegister />} />
-
-
         </Route>
 
-        <Route path='/Student-login' element={<Login />} />
-        <Route path='/Franchise-career' element={<Login />} />
-
+        <Route path='/login' element={<LoginForm />} />
+        <Route path='/Student-login' element={<LoginForm userType="student" />} />
+        <Route path='/Franchise-career' element={<LoginForm userType="franchise" />} />
+        <Route path='/admin-login' element={<LoginForm userType="admin" />} />
 
       </Routes>
-
-    </>
+    </AuthProvider>
   )
 }
 
