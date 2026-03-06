@@ -4,9 +4,13 @@ import ReCAPTCHA from "react-google-recaptcha";
 const SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY || "";
 
 /**
- * reCAPTCHA v2 "I'm not a robot" checkbox.
- * Use with: <Recaptcha ref={recaptchaRef} onChange={setCaptchaToken} />
- * On submit: send captchaToken to backend; then recaptchaRef.current?.reset() to allow resubmit.
+ * Google reCAPTCHA v2 "I'm not a robot" checkbox
+ * (official default widget / design).
+ *
+ * Usage:
+ *   <Recaptcha ref={recaptchaRef} onChange={setCaptchaToken} />
+ *   // on submit send captchaToken to backend; then:
+ *   recaptchaRef.current?.reset()
  */
 const Recaptcha = forwardRef(({ onChange }, ref) => {
   const [value, setValue] = useState(null);
@@ -34,7 +38,7 @@ const Recaptcha = forwardRef(({ onChange }, ref) => {
   }
 
   return (
-    <div className="my-3 flex items-center gap-2">
+    <div className="my-2">
       <ReCAPTCHA
         ref={internalRef}
         sitekey={SITE_KEY}
@@ -43,9 +47,13 @@ const Recaptcha = forwardRef(({ onChange }, ref) => {
           setValue(null);
           onChange?.(null);
         }}
+        onErrored={() => {
+          setValue(null);
+          onChange?.(null);
+        }}
         theme="light"
+        type="image"
       />
-      <span className="text-xs text-gray-500">I'm not a robot</span>
     </div>
   );
 });

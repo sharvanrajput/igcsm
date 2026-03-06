@@ -610,7 +610,8 @@ export default function Student() {
 
                     {/* ── reCAPTCHA ──────────────────────────────────────────────────── */}
                     <div className="bg-white border border-gray-200 rounded-md p-4">
-                        <Recaptcha ref={recaptchaRef} onChange={setCaptchaToken} />
+                        <Reca
+                        ptcha ref={recaptchaRef} onChange={setCaptchaToken} />
                     </div>
 
                     {/* ── Terms & Submit ───────────────────────────────────────────────── */}
