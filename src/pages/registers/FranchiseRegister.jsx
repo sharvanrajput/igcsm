@@ -140,11 +140,10 @@ function MobileInput({ label, error, required, hint, ...rest }) {
         <input
           type="tel"
           maxLength={10}
-          className={`flex-1 border ${
-            error
-              ? "border-red-400 bg-red-50 focus:ring-red-300"
-              : "border-gray-300 focus:ring-orange-400 focus:border-orange-400"
-          } rounded-r px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 transition`}
+          className={`flex-1 border ${error
+            ? "border-red-400 bg-red-50 focus:ring-red-300"
+            : "border-gray-300 focus:ring-orange-400 focus:border-orange-400"
+            } rounded-r px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 transition`}
           {...rest}
         />
       </div>
@@ -158,14 +157,12 @@ function FileUploadBox({ label, error, required, onChange, name, ...rest }) {
   const [fileName, setFileName] = useState(null);
   return (
     <div
-      className={`border-2 border-dashed rounded-lg p-5 bg-white text-center flex flex-col items-center gap-2 transition ${
-        error ? "border-red-300 bg-red-50" : "border-gray-300"
-      }`}
+      className={`border-2 border-dashed rounded-lg p-5 bg-white text-center flex flex-col items-center gap-2 transition ${error ? "border-red-300 bg-red-50" : "border-gray-300"
+        }`}
     >
       <div
-        className={`w-20 h-20 rounded flex items-center justify-center ${
-          fileName ? "bg-orange-50" : "bg-gray-50"
-        }`}
+        className={`w-20 h-20 rounded flex items-center justify-center ${fileName ? "bg-orange-50" : "bg-gray-50"
+          }`}
       >
         {fileName ? (
           <span className="text-3xl">✅</span>
@@ -305,12 +302,15 @@ export default function FranchiseRegister() {
       formData.append("email", savedFormData.ownerEmail);
       formData.append("mobile", savedFormData.ownerMobile);
       formData.append("ownerName", savedFormData.ownerName);
+      formData.append("instituteName", savedFormData.trainingCentreName);
 
       const res = await api.post("/franchise-submission/finalize", formData);
-      const data = res.data?.data ?? res.data;
-      if (data?.accessToken) localStorage.setItem("accessToken", data.accessToken);
-      setSubmitted(true);
-      toast.success("Franchise registration submitted successfully!");
+      if (res.data?.success) {
+        setSubmitted(true);
+        toast.success("Franchise registration submitted successfully!");
+      } else {
+        toast.error(res.data?.message || "Registration failed");
+      }
     } catch (err) {
       console.error(err?.response?.data || err.message || err);
       toast.error(err?.response?.data?.message || "Failed to complete registration");
@@ -337,18 +337,21 @@ export default function FranchiseRegister() {
   if (submitted) {
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
-        <div className="bg-white rounded-2xl shadow-lg p-10 text-center max-w-sm w-full">
+        <div className="bg-white rounded-2xl shadow-lg p-10 text-center max-w-md w-full">
           <div className="text-6xl mb-4">✅</div>
           <h2 className="text-xl font-bold text-gray-800 mb-2">Registration Submitted!</h2>
           <p className="text-sm text-gray-500 mb-6">
-            Your franchise registration has been saved successfully.
+            Your franchise registration has been saved. Please login to access your dashboard.
           </p>
-          <button
-            onClick={() => setSubmitted(false)}
-            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-2.5 rounded-lg text-sm transition shadow"
-          >
-            Register Another
-          </button>
+          <div className="flex gap-3 justify-center flex-wrap">
+            
+            <button
+              onClick={() => setSubmitted(false)}
+              className="border border-orange-500 text-orange-500 font-semibold px-8 py-2.5 rounded-lg text-sm hover:bg-orange-50 transition"
+            >
+              Register Another
+            </button>
+          </div>
         </div>
       </div>
     );

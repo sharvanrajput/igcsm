@@ -39,10 +39,10 @@ import FranchiseRegister from './pages/registers/FranchiseRegister';
 import LoginForm from './components/LoginForm';
 import OnlineResult from './pages/admission/OnlineResult';
 import AdmissionVerification from './pages/admission/AdmissionVerification';
-// import ProtectedRoute from './components/ProtectedRoute';
-// import StudentDashboard from './pages/StudentDashboard';
-// import FranchiseDashboard from './pages/FranchiseDashboard';
-// import AdminDashboard from './pages/AdminDashboard';
+import ProtectedRoute from './components/ProtectedRoute';
+// import StudentDashboard from './pages/dashboard/StudentDashboard';
+// import FranchiseDashboard from './pages/dashboard/FranchiseDashboard';
+// import AdminDashboard from './pages/dashboard/AdminDashboard';
 
 
 // Import Swiper styles
@@ -88,11 +88,6 @@ const App = () => {
           <Route path='/job-updates' element={<JobUpdate />} />
 
 
-
-
-
-
-
           {/* popicies*/}
           <Route path='/privacy-policy' element={<PrivacyPolicy />} />
           <Route path='/terms-and-condition' element={<TermsAndCo />} />
@@ -113,22 +108,7 @@ const App = () => {
           <Route path='/higher-education' element={<HigherEducation />} />
           <Route path='/government-partnership' element={<GovernmentPartnership />} />
 
-          {/* Role-based dashboards */}
-          {/* <Route path='/dashboard' element={
-            <ProtectedRoute requiredRoles={['admin']}>
-              <AdminDashboard />
-            </ProtectedRoute>
-          } />
-          <Route path='/student-dashboard' element={
-            <ProtectedRoute requiredRoles={['student']}>
-              <StudentDashboard />
-            </ProtectedRoute>
-          } />
-          <Route path='/franchise-dashboard' element={
-            <ProtectedRoute requiredRoles={['franchise']}>
-              <FranchiseDashboard />
-            </ProtectedRoute>
-          } /> */}
+          
         </Route>
 
         <Route path="/" element={<RegisterLayout />}>

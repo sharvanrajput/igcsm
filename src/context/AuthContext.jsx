@@ -24,13 +24,22 @@ export const AuthProvider = ({ children }) => {
     const checkAuth = async () => {
         try {
             setLoading(true);
-            const response = await api.get('/auth/me');
-            if (response.data.success) {
-                setUser(response.data.user);
+            const token = localStorage.getItem("token");
+            if (!token) {
+                setUser(null);
+                return;
+            }
+            const response = await api.get('/auth/current');
+            if (response.data.success && response.data.data) {
+                const { user } = response.data.data;
+                setUser(user);
+            } else {
+                setUser(null);
             }
         } catch (error) {
             console.error('Auth check failed:', error);
             setUser(null);
+            localStorage.removeItem("token");
         } finally {
             setLoading(false);
         }
@@ -40,29 +49,18 @@ export const AuthProvider = ({ children }) => {
         try {
             setLoading(true);
             setError(null);
-
-            let endpoint;
-            switch (userType) {
-                case 'student':
-                    endpoint = '/auth/student/login';
-                    break;
-                case 'franchise':
-                    endpoint = '/auth/franchise/login';
-                    break;
-                case 'admin':
-                    endpoint = '/auth/admin/login';
-                    break;
-                default:
-                    throw new Error('Invalid user type');
-            }
-
-            const response = await api.post(endpoint, credentials);
-            
-            if (response.data.success) {
-                setUser(response.data.user);
-                return { success: true, user: response.data.user };
+            // Single backend endpoint for all roles
+            const response = await api.post('/auth/login', {
+                email: credentials.email || credentials.mobileNumber,
+                password: credentials.password,
+            });
+            if (response.data.success && response.data.data) {
+                const { user, accessToken } = response.data.data;
+                localStorage.setItem("token", accessToken);
+                setUser(user);
+                return { success: true, user };
             } else {
-                setError(response.data.message);
+                setError(response.data.message || 'Login failed');
                 return { success: false, message: response.data.message };
             }
         } catch (error) {
@@ -124,12 +122,11 @@ export const AuthProvider = ({ children }) => {
 
     const logout = async () => {
         try {
-            setLoading(true);
-            await api.post('/auth/logout');
+            setUser(null);
+            localStorage.removeItem("token");
         } catch (error) {
             console.error('Logout error:', error);
         } finally {
-            setUser(null);
             setLoading(false);
         }
     };
@@ -162,6 +159,7 @@ export const AuthProvider = ({ children }) => {
         user,
         loading,
         error,
+        setError,
         login,
         register,
         verifyEmail,

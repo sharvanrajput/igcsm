@@ -248,9 +248,11 @@ export default function Student() {
             formData.append("studentName", savedFormData.studentName);
 
             const res = await api.post("/student-submission/finalize", formData);
-            const data = res.data?.data ?? res.data;
-            if (data?.accessToken) localStorage.setItem("accessToken", data.accessToken);
-            setSubmitted(true);
+            if (res.data?.success) {
+                setSubmitted(true);
+            } else {
+                toast.error(res.data?.message || "Registration failed");
+            }
         } catch (err) {
             console.error(err?.response?.data || err.message || err);
             toast.error(err?.response?.data?.message || "Failed to complete registration");
@@ -282,20 +284,23 @@ export default function Student() {
                 <div className="bg-white rounded-xl shadow p-10 text-center  ">
                     <div className="text-5xl mb-4">✅</div>
                     <h2 className="text-xl font-bold text-gray-800 mb-2">Registration Completed!</h2>
-                    <p className="text-sm text-gray-500">Your student account has been created successfully. You can now login and access your profile.</p>
-                    <button
-                        onClick={() => {
-                            setSubmitted(false);
-                            setSubmissionId(null);
-                            setSavedFormData(null);
-                            setOtpVerified(false);
-                            setOtp("");
-                            navigate("/")
-                        }}
-                        className="mt-6 bg-orange-500 text-white px-6 py-2 rounded text-sm font-semibold hover:bg-orange-600 transition"
-                    >
-                        Register Another
-                    </button>
+                    <p className="text-sm text-gray-500 mb-4">Your student account has been created. Please login to access your dashboard, profile, i-card and results.</p>
+                    <div className="flex gap-3 justify-center flex-wrap">
+                        
+                        <button
+                            onClick={() => {
+                                setSubmitted(false);
+                                setSubmissionId(null);
+                                setSavedFormData(null);
+                                setOtpVerified(false);
+                                setOtp("");
+                                navigate("/");
+                            }}
+                            className="border border-orange-500 text-orange-500 px-6 py-2.5 rounded text-sm font-semibold hover:bg-orange-50 transition"
+                        >
+                            Register Another
+                        </button>
+                    </div>
                 </div>
             </div>
         );
@@ -610,8 +615,7 @@ export default function Student() {
 
                     {/* ── reCAPTCHA ──────────────────────────────────────────────────── */}
                     <div className="bg-white border border-gray-200 rounded-md p-4">
-                        <Reca
-                        ptcha ref={recaptchaRef} onChange={setCaptchaToken} />
+                        <Recaptcha ref={recaptchaRef} onChange={setCaptchaToken} />
                     </div>
 
                     {/* ── Terms & Submit ───────────────────────────────────────────────── */}
